@@ -232,6 +232,10 @@
   .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
   .pclear { text-align:center; margin:-8px 0 12px; }
   .pclear button { font-family:inherit; font-size:13px; font-weight:700; color:var(--blue); background:none; border:0; text-decoration:underline; cursor:pointer; padding:4px 8px; }
+  .focus-hint { display:block; margin-top:6px; font-size:13px; color:var(--muted); }
+  .three.cols-2 { grid-template-columns:repeat(2,1fr); }
+  .three.cols-1 { grid-template-columns:1fr; max-width:520px; }
+  @media (max-width:860px){ .three.cols-2 { grid-template-columns:1fr; } }
   .ptag.phish { background: #E8742A; color: #fff; }
   .sender-cats { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:14px; }
   .scat { border:1px solid var(--line); border-radius:10px; padding:16px 18px; }
@@ -299,7 +303,7 @@
     <p class="pclear"><button type="button" id="clearPath" hidden>Clear selection</button></p>
     <div class="pnote" id="pathNote">Select a grade level to see your recommended path from setup to launch. All CyberStudent resources remain available below.</div>
     <div class="psteps" id="pathSteps"></div>
-    <div class="legend" id="pathLegend"><span><i style="background:var(--navy)"></i>Legacy Student Videos</span><span><i style="background:#1F9D55"></i>Neptune Navigate</span><span><i style="background:#E8742A"></i>Student Phishing</span><span><i style="background:var(--tint)"></i>All of CyberStudent</span></div>
+    <div class="legend" id="pathLegend"><span data-lg="legacy"><i style="background:var(--navy)"></i>Legacy Student Videos</span><span data-lg="neptune"><i style="background:#1F9D55"></i>Neptune Navigate</span><span data-lg="phish"><i style="background:#E8742A"></i>Student Phishing</span><span><i style="background:var(--tint)"></i>All of CyberStudent</span></div>
   </div>
 
   <!-- 1. Explore -->
@@ -339,7 +343,7 @@
       </div>
     </div>
     <p id="wellRounded" style="margin:18px 0 0;font-size:15px;font-weight:600;color:var(--navy);">For a well-rounded CyberStudent experience, combine digital citizenship education with ongoing phishing practice to help students apply what they've learned.</p>
-    <div class="box" style="margin-top:14px;">
+    <div class="box" id="fitBox" style="margin-top:14px;">
       <h4>How Legacy Student Videos and Neptune Navigate fit together</h4>
       <p>Each works well on its own. Legacy Student Videos are quick and flexible, ideal for a short lesson or class discussion. Neptune Navigate is a structured program organized by grade band with assessments. Some districts use both, using the videos to reinforce Neptune topics. Your Customer Success Manager can help you choose.</p>
     </div>
@@ -433,7 +437,7 @@
         <li><b>Confirm your account setup first</b>Before you begin, check with your Customer Success Manager that your Neptune Navigate account is set up and that teachers and students have access.</li>
         <li><b>Use your district's sign-in method</b>Neptune Navigate supports ClassLink, Clever, Google, Microsoft, or email and password.</li>
         <li><b>Share the login link</b>Post it in your LMS, class website, or student bookmarks.</li>
-        <li><b>Test sign-in</b>Have a teacher and a student sign in and open their grade band course to confirm access works. For Pre-K and K, confirm a teacher can find the Pre-K / K lessons under Resources.</li>
+        <li><b>Test sign-in</b><span id="testGB">Have a teacher and a student sign in and open their grade band course to confirm access works.</span> <span id="testPK">For Pre-K and K, confirm a teacher can find the Pre-K / K lessons under Resources.</span></li>
       </ol>
       <a class="btn" href="https://universal.neptunenavigate.com/auth/login" target="_blank" rel="noopener">Open Neptune Navigate</a>
     </div>
@@ -638,15 +642,15 @@
     <div class="section-head">
       <span class="ptag both">Step 4 &middot; Measure Success</span>
       <h2>Measure Success</h2>
-      <p>Check in on three things throughout the year.</p>
+      <p id="measureIntro">Check in on three things throughout the year.</p>
     </div>
     <div class="pcall" id="measureNote"></div>
     <div class="three">
-      <div class="box"><div class="label">Lesson Completion</div><h4>Are students finishing lessons?</h4><p>In Neptune Navigate, use the gradebook, Student Progress Report, Navigate District Report, and Pre-K / K Summary Report. Export on demand, on a schedule, or from a past month.</p></div>
-      <div class="box"><div class="label">Student Engagement</div><h4>Are students participating?</h4><p>Legacy Student Videos participation is teacher-observed through class discussion and printable quizzes. Neptune Navigate (quiz results) and Student Phishing (acorns and leaderboards) offer platform-based metrics.</p></div>
-      <div class="box"><div class="label">Reporting Behavior</div><h4>Are students reporting phishing?</h4><p>Review campaign results by student, school, and district in the CyberNut Admin Portal to see reporting grow over time.</p></div>
+      <div class="box"><div class="label">Lesson Completion</div><h4>Are students finishing lessons?</h4><p id="completeText">In Neptune Navigate, use the gradebook, Student Progress Report, Navigate District Report, and Pre-K / K Summary Report. Export on demand, on a schedule, or from a past month.</p></div>
+      <div class="box"><div class="label">Student Engagement</div><h4>Are students participating?</h4><p id="engageText">Legacy Student Videos participation is teacher-observed through class discussion and printable quizzes. Neptune Navigate (quiz results) and Student Phishing (acorns and leaderboards) offer platform-based metrics.</p></div>
+      <div class="box" id="reportBox"><div class="label">Reporting Behavior</div><h4>Are students reporting phishing?</h4><p>Review campaign results by student, school, and district in the CyberNut Admin Portal to see reporting grow over time.</p></div>
     </div>
-    <p style="margin:16px 0 0;font-size:14.5px;color:var(--navy);font-weight:600;">If engagement or reporting is low, resend the teacher and student templates, pair a related lesson with a friendly competition, and contact your Customer Success Manager for help.</p>
+    <p style="margin:16px 0 0;font-size:14.5px;color:var(--navy);font-weight:600;"><span id="lowAction">If engagement or reporting is low, resend the teacher and student templates, pair a related lesson with a friendly competition, and contact your Customer Success Manager for help.</span></p>
     <p style="margin:8px 0 0;font-size:14px;color:var(--muted);">Completion records can be exported and may help document your district's compliance efforts.</p>
   </div>
 
@@ -896,9 +900,8 @@
       if (all || t.g.indexOf(tplState.path) > -1) { mine += card(t, i); nMine++; } else { other += card(t, i); nOther++; }
     });
     var out = "";
-    if (!all) out += '<p class="tpl-filter">' + (nMine ? "Recommended templates for the " + PN[tplState.path] + " path." : "This offering is not part of the " + PN[tplState.path] + " path. Its templates are below.") + '</p>';
+    if (!all) out += '<p class="tpl-filter">Templates for the ' + PN[tplState.path] + ' path. Clear the grade level selection at the top to see every template.</p>';
     out += mine;
-    if (nOther) out += nMine ? '<details class="more tpl-other"><summary>Templates for other grade levels (' + nOther + ')</summary><div class="more-body">' + other + '</div></details>' : other;
     tplList.innerHTML = out;
   }
   function fallbackCopy(text) {
@@ -947,7 +950,7 @@
   });
 
   /* ===== Grade band paths ===== */
-  var PATHS = {"all": {"note": "<b>All grades:</b> Explore everything CyberStudent offers, or pick an age band above for a tailored path.", "steps": [[["l", "33 Legacy Student Videos for Elementary and Middle/High School", "#part-legacy"], ["n", "Neptune Navigate courses for Grades 1 to 12, plus Pre-K and K lessons", "#part-neptune"], ["p", "Year-long Student Phishing with student-specific senders", "#part-phish"], ["b", "How the resources work together", "#overview"]], [["l", "Sign in to the Teacher Portal", "#setup-legacy"], ["n", "Confirm Neptune Navigate access and test sign-in", "#setup-neptune"], ["p", "Prepare your campaign in the Admin Portal", "#setup-phish"]], [["l", "Legacy launch checklist", "#launch-legacy"], ["n", "Neptune launch checklist", "#launch-neptune"], ["p", "Phishing launch checklist", "#launch-phish"], ["b", "Communication templates and Example Year", "#templates"]], [["b", "Lesson completion, engagement, and reporting", "#measure"]]]}, "early": {"note": "<b>Early Learners (Pre-K and K):</b> Use the three Neptune Navigate Pre-K / K standalone lessons. Legacy Student Videos start at Elementary, and Student Phishing is not part of this path.", "steps": [[["n", "Three Pre-K / K standalone lessons: Welcome to the Digital World, Online Safety, and Taking Care of Your Devices", "#courses"], ["x", "Legacy Student Videos start at Elementary", ""], ["x", "Student Phishing begins in Middle School", ""]], [["n", "Confirm Neptune Navigate access with your Customer Success Manager", "#setup-neptune"], ["n", "Have a teacher sign in and find the Pre-K / K lessons under Resources", "#setup-neptune"]], [["n", "Start Lesson 1: Welcome to the Digital World, then teach Lessons 2 and 3 in order", "#courses"], ["n", "Follow the Pre-K / K instructions in the Neptune Launch section", "#launch-neptune"], ["n", "Pre-K / K teacher and student templates", "#templates"]], [["n", "Pre-K / K Tracking and Pre-K / K Summary Report", "#measure"]]]}, "elem": {"note": "<b>Elementary (Grades 1 to 5):</b> Use the Elementary Legacy Student Videos and two Neptune Navigate courses, Grades 1 to 3 and Grades 4 and 5. Student Phishing begins in Middle School and is not part of this path.", "steps": [[["l", "14 Elementary videos, each with a Teacher Guide and printable quiz", "#library"], ["n", "Grades 1 to 3: short video parts and a 5-question knowledge check", "#courses"], ["n", "Grades 4 and 5: short video parts and a 10-question quiz", "#courses"], ["x", "Student Phishing begins in Middle School", ""]], [["l", "Teachers sign in to the Teacher Portal", "#setup-legacy"], ["n", "Confirm Neptune Navigate access and test a student sign-in", "#setup-neptune"]], [["l", "First video: Don't Click That! or Phishing Made Simple", "#launch-legacy"], ["n", "Start Lesson 1, Digital Citizenship Overview, in the Grades 1 to 3 and Grades 4 and 5 courses", "#launch-neptune"], ["b", "Send the teacher heads-up and student announcement", "#templates"]], [["n", "Neptune gradebook and Student Progress Report", "#measure"], ["l", "Teacher-observed discussion and printable quizzes", "#measure"]]]}, "middle": {"note": "<b>Middle School (Grades 6 to 8):</b> Use the Middle/High School Legacy Student Videos, the Neptune Navigate Grades 6 to 8 course, and Student Phishing.", "steps": [[["l", "19 Middle/High School videos on scams, social media, gaming, and AI", "#library"], ["n", "Grades 6 to 8: video, two readings, and a 10-question quiz", "#courses"], ["p", "Student Phishing with student-specific senders and acorns", "#part-phish"]], [["l", "Teachers sign in to the Teacher Portal", "#setup-legacy"], ["n", "Confirm Neptune Navigate access and test a student sign-in", "#setup-neptune"], ["p", "Prepare your year-long campaign in the Admin Portal", "#setup-phish"]], [["n", "Start Lesson 1 with its readings: How to Be a Good Digital Citizen and Showing Respect Online", "#launch-neptune"], ["l", "First video: Don't Get Hooked: Phishing and QR Code Traps", "#launch-legacy"], ["p", "Send the phishing announcement, then launch the campaign", "#launch-phish"]], [["n", "Neptune gradebook and quiz results", "#measure"], ["p", "Reporting, acorns, and leaderboards in Student Phishing", "#measure"]]]}, "high": {"note": "<b>High School (Grades 9 to 12):</b> Use the Middle/High School Legacy Student Videos, the Neptune Navigate Grades 9 to 12 course, and Student Phishing.", "steps": [[["l", "19 Middle/High School videos on scams, social media, gaming, and AI", "#library"], ["n", "Grades 9 to 12: video, two readings, and a 10-question quiz", "#courses"], ["p", "Student Phishing with student-specific senders and acorns", "#part-phish"]], [["l", "Teachers sign in to the Teacher Portal", "#setup-legacy"], ["n", "Confirm Neptune Navigate access and test a student sign-in", "#setup-neptune"], ["p", "Prepare your year-long campaign in the Admin Portal", "#setup-phish"]], [["n", "Start Lesson 1 with its readings: The Sleepless Generation and How Teens and Parents Approach Screen Time", "#launch-neptune"], ["l", "First video: Don't Get Hooked: Phishing and QR Code Traps", "#launch-legacy"], ["p", "Send the phishing announcement, then launch the campaign", "#launch-phish"]], [["n", "Neptune gradebook and Navigate District Report", "#measure"], ["p", "Reporting, acorns, and leaderboards in Student Phishing", "#measure"]]]}};
+  var PATHS = {"all": {"note": "<b>All grades:</b> Explore everything CyberStudent offers, or pick an age band above for a tailored path.", "steps": [[["l", "33 Legacy Student Videos for Elementary and Middle/High School", "#part-legacy"], ["n", "Neptune Navigate courses for Grades 1 to 12, plus Pre-K and K lessons", "#part-neptune"], ["p", "Year-long Student Phishing with student-specific senders", "#part-phish"], ["b", "How the resources work together", "#overview"]], [["l", "Sign in to the Teacher Portal", "#setup-legacy"], ["n", "Confirm Neptune Navigate access and test sign-in", "#setup-neptune"], ["p", "Prepare your campaign in the Admin Portal", "#setup-phish"]], [["l", "Legacy launch checklist", "#launch-legacy"], ["n", "Neptune launch checklist", "#launch-neptune"], ["p", "Phishing launch checklist", "#launch-phish"], ["b", "Communication templates and Example Year", "#templates"]], [["b", "Lesson completion, engagement, and reporting", "#measure"]]]}, "early": {"note": "<b>Early Learners (Pre-K and K):</b> Use the three Neptune Navigate Pre-K / K standalone lessons. Legacy Student Videos start at Elementary, and Student Phishing begins in Middle School.", "steps": [[["n", "Three Pre-K / K standalone lessons: Welcome to the Digital World, Online Safety, and Taking Care of Your Devices", "#courses"], ["x", "Legacy Student Videos start at Elementary", ""], ["x", "Student Phishing begins in Middle School", ""]], [["n", "Confirm Neptune Navigate access with your Customer Success Manager", "#setup-neptune"], ["n", "Have a teacher sign in and find the Pre-K / K lessons under Resources", "#setup-neptune"]], [["n", "Start Lesson 1: Welcome to the Digital World, then teach Lessons 2 and 3 in order", "#courses"], ["n", "Follow the Pre-K / K instructions in the Neptune Launch section", "#launch-neptune"], ["n", "Pre-K / K teacher and student templates", "#templates"]], [["n", "Pre-K / K Tracking and Pre-K / K Summary Report", "#measure"]]]}, "elem": {"note": "<b>Elementary (Grades 1 to 5):</b> Use the Elementary Legacy Student Videos and two Neptune Navigate courses, Grades 1 to 3 and Grades 4 and 5. Student Phishing begins in Middle School and is not part of this path.", "steps": [[["l", "14 Elementary videos, each with a Teacher Guide and printable quiz", "#library"], ["n", "Grades 1 to 3: short video parts and a 5-question knowledge check", "#courses"], ["n", "Grades 4 and 5: short video parts and a 10-question quiz", "#courses"], ["x", "Student Phishing begins in Middle School", ""]], [["l", "Teachers sign in to the Teacher Portal", "#setup-legacy"], ["n", "Confirm Neptune Navigate access and test a student sign-in", "#setup-neptune"]], [["l", "First video: Don't Click That! or Phishing Made Simple", "#launch-legacy"], ["n", "Start Lesson 1, Digital Citizenship Overview, in the Grades 1 to 3 and Grades 4 and 5 courses", "#launch-neptune"], ["b", "Send the teacher heads-up and student announcement", "#templates"]], [["n", "Neptune gradebook and Student Progress Report", "#measure"], ["l", "Teacher-observed discussion and printable quizzes", "#measure"]]]}, "middle": {"note": "<b>Middle School (Grades 6 to 8):</b> Use the Middle/High School Legacy Student Videos, the Neptune Navigate Grades 6 to 8 course, and Student Phishing.", "steps": [[["l", "19 Middle/High School videos on scams, social media, gaming, and AI", "#library"], ["n", "Grades 6 to 8: video, two readings, and a 10-question quiz", "#courses"], ["p", "Student Phishing with student-specific senders and acorns", "#part-phish"]], [["l", "Teachers sign in to the Teacher Portal", "#setup-legacy"], ["n", "Confirm Neptune Navigate access and test a student sign-in", "#setup-neptune"], ["p", "Prepare your year-long campaign in the Admin Portal", "#setup-phish"]], [["n", "Start Lesson 1 with its readings: How to Be a Good Digital Citizen and Showing Respect Online", "#launch-neptune"], ["l", "First video: Don't Get Hooked: Phishing and QR Code Traps", "#launch-legacy"], ["p", "Send the phishing announcement, then launch the campaign", "#launch-phish"]], [["n", "Neptune gradebook and quiz results", "#measure"], ["p", "Reporting, acorns, and leaderboards in Student Phishing", "#measure"]]]}, "high": {"note": "<b>High School (Grades 9 to 12):</b> Use the Middle/High School Legacy Student Videos, the Neptune Navigate Grades 9 to 12 course, and Student Phishing.", "steps": [[["l", "19 Middle/High School videos on scams, social media, gaming, and AI", "#library"], ["n", "Grades 9 to 12: video, two readings, and a 10-question quiz", "#courses"], ["p", "Student Phishing with student-specific senders and acorns", "#part-phish"]], [["l", "Teachers sign in to the Teacher Portal", "#setup-legacy"], ["n", "Confirm Neptune Navigate access and test a student sign-in", "#setup-neptune"], ["p", "Prepare your year-long campaign in the Admin Portal", "#setup-phish"]], [["n", "Start Lesson 1 with its readings: The Sleepless Generation and How Teens and Parents Approach Screen Time", "#launch-neptune"], ["l", "First video: Don't Get Hooked: Phishing and QR Code Traps", "#launch-legacy"], ["p", "Send the phishing announcement, then launch the campaign", "#launch-phish"]], [["n", "Neptune gradebook and Navigate District Report", "#measure"], ["p", "Reporting, acorns, and leaderboards in Student Phishing", "#measure"]]]}};
   var STEP_NAMES = ["Explore", "Get Set Up", "Launch", "Measure Success"];
   var CFG = {
     all:    { band: "elem", g: "le", offers: { legacy: 1, neptune: 1, phish: 1 } },
@@ -972,7 +975,7 @@
   function renderPath(k) {
     var d = PATHS[k], c = CFG[k];
     var none = k === "all";
-    document.getElementById("pathNote").innerHTML = none ? "Select a grade level to see your recommended path from setup to launch. All CyberStudent resources remain available below." : d.note;
+    document.getElementById("pathNote").innerHTML = none ? "Select a grade level to see your recommended path from setup to launch. All CyberStudent resources remain available below." : d.note + ' <span class="focus-hint">The page below now shows only what applies to this grade level. Choose Clear selection to see every resource.</span>';
     document.getElementById("pathNote").classList.toggle("pnote-start", none);
     document.getElementById("pathLegend").hidden = none;
     document.getElementById("pathSteps").innerHTML = none ? "" : d.steps.map(function (items, i) {
@@ -1035,10 +1038,10 @@
     document.querySelector(".prek").classList.toggle("hl", k === "early");
     var CN = {
       all: "",
-      early: "<b>Early Learners path:</b> Use the three Pre-K / K standalone lessons, shown at the top of the course list. The grade band courses are for Grades 1 to 12.",
-      elem: "<b>Elementary path:</b> Grades 1 to 3 and Grades 4 and 5 are separate courses with different formats. Use the highlighted tab that matches each class.",
-      middle: "<b>Middle School path:</b> Use the highlighted Grades 6 to 8 course.",
-      high: "<b>High School path:</b> Use the highlighted Grades 9 to 12 course."
+      early: "<b>Early Learners path:</b> Use the three Pre-K / K standalone lessons below.",
+      elem: "<b>Elementary path:</b> Grades 1 to 3 and Grades 4 and 5 are separate courses with different formats. Use the tab that matches each class.",
+      middle: "<b>Middle School path:</b> Showing the Grades 6 to 8 course.",
+      high: "<b>High School path:</b> Showing the Grades 9 to 12 course."
     };
     document.getElementById("coursePathNote").innerHTML = CN[k];
     var NL = {
@@ -1068,14 +1071,60 @@
     var CT = {
       early: "<b>Early Learners path:</b> These parent guides follow the eight Grades 1 to 12 lessons. For Pre-K and K, use the <a href=\"https://neptunenavigate.com/ctc-prek/\" target=\"_blank\" rel=\"noopener\">Pre-K / K Lessons page</a>."
     };
-    document.getElementById("ctcNote").innerHTML = CT[k] || "";
+    document.getElementById("ctcNote").innerHTML = "";
+    /* Focus mode: show only what applies to the selected grade level */
+    function hideIf(sel, h) { document.querySelectorAll(sel).forEach(function (e) { e.hidden = h; }); }
+    var offL = k !== "all" && c.offers.legacy === 0, offP = k !== "all" && c.offers.phish === 0;
+    hideIf("#part-legacy, #setup-legacy, #library, #launch-legacy, .pillar[data-offer=legacy], #tplTabs .tab[data-t=legacy]", offL);
+    hideIf("#part-phish, #phishing, #setup-phish, #launch-phish, .pillar[data-offer=phish], #tplTabs .tab[data-t=phish], #reportBox", offP);
+    hideIf("#fitBox", offL);
+    hideIf("#ctc", k === "early");
+    hideIf(".prek", k !== "all" && k !== "early");
+    hideIf("#gradeTabs, #gradeIntro, #gradeGrid", k === "early");
+    var RECG = { elem: ["le", "ue"], middle: ["jh"], high: ["hs"] };
+    document.querySelectorAll("#gradeTabs .tab").forEach(function (t) { t.hidden = !!RECG[k] && RECG[k].indexOf(t.getAttribute("data-g")) < 0; });
+    document.querySelectorAll(".tab[data-band]").forEach(function (t) { t.hidden = k !== "all" && !!c.band && k !== "early" && t.getAttribute("data-band") !== c.band; });
+    var active = document.querySelector("#tplTabs .tab.active");
+    if (active && active.hidden) { var first = document.querySelector("#tplTabs .tab:not([hidden])"); if (first) first.click(); }
+    var visibleOffers = ["legacy", "neptune", "phish"].filter(function (o) { return !(k !== "all" && c.offers[o] === 0); }).length;
+    document.querySelectorAll("#pathLegend [data-lg]").forEach(function (e) { e.hidden = k !== "all" && c.offers[e.getAttribute("data-lg")] === 0; });
+    document.getElementById("testGB").hidden = k === "early";
+    document.getElementById("testPK").hidden = k !== "all" && k !== "early";
+    var on = 0;
+    ["part-legacy", "part-neptune", "part-phish"].forEach(function (id) {
+      var d = document.getElementById(id), eb = d.querySelector(".eyebrow");
+      if (!d.hidden) { on++; eb.textContent = "Offering " + on; }
+    });
+    var ov = document.querySelector("#overview .three");
+    ov.classList.remove("cols-1", "cols-2"); if (visibleOffers < 3) ov.classList.add("cols-" + visibleOffers);
+    var LS = document.querySelector("#library-details > summary"), CS = document.querySelector("#course-details > summary");
+    if (!LS.dataset.orig) { LS.dataset.orig = LS.textContent; CS.dataset.orig = CS.textContent; }
+    LS.textContent = { elem: "Browse the Elementary videos", middle: "Browse the Middle/High School videos", high: "Browse the Middle/High School videos" }[k] || LS.dataset.orig;
+    CS.textContent = { early: "Browse the Pre-K / K lessons", elem: "Browse the Grades 1 to 3 and Grades 4 and 5 lessons", middle: "Browse the Grades 6 to 8 lessons", high: "Browse the Grades 9 to 12 lessons" }[k] || CS.dataset.orig;
     var MN = {
       early: "<b>Early Learners path:</b> Track completion with Pre-K / K Tracking and the Pre-K / K Summary Report. Reporting behavior applies to Student Phishing, which begins in Middle School.",
       elem: "<b>Elementary path:</b> Use the Neptune gradebook and Student Progress Report for Grades 1 to 5, plus teacher-observed discussion after videos. Reporting behavior applies once students reach Middle School and Student Phishing.",
       middle: "<b>Middle School path:</b> Track all three: Neptune completion and quiz results for Grades 6 to 8, class discussion after videos, and phishing reporting.",
       high: "<b>High School path:</b> Track all three: Neptune completion and quiz results for Grades 9 to 12, class discussion after videos, and phishing reporting."
     };
-    document.getElementById("measureNote").innerHTML = MN[k] || "";
+    document.getElementById("measureNote").innerHTML = "";
+    document.getElementById("measureIntro").textContent = offP ? "Check in on two things throughout the year." : "Check in on three things throughout the year.";
+    var mg = document.querySelector("#measure .three"); mg.classList.toggle("cols-2", offP);
+    var LA = document.getElementById("lowAction");
+    if (!LA.dataset.orig) LA.dataset.orig = LA.innerHTML;
+    LA.innerHTML = (k === "early" || k === "elem") ? "If participation is low, resend the teacher and student templates, revisit the lesson pace, and contact your Customer Success Manager for help." : LA.dataset.orig;
+    var CTX = document.getElementById("completeText"), ETX = document.getElementById("engageText");
+    if (!CTX.dataset.orig) { CTX.dataset.orig = CTX.innerHTML; ETX.dataset.orig = ETX.innerHTML; }
+    CTX.innerHTML = {
+      early: "Use Pre-K / K Tracking and the Pre-K / K Summary Report under Reports and Tools.",
+      elem: "In Neptune Navigate, use the gradebook and Student Progress Report for the Grades 1 to 3 and Grades 4 and 5 courses. Export on demand, on a schedule, or from a past month.",
+      middle: "In Neptune Navigate, use the gradebook, Student Progress Report, and Navigate District Report for the Grades 6 to 8 course. Export on demand, on a schedule, or from a past month.",
+      high: "In Neptune Navigate, use the gradebook, Student Progress Report, and Navigate District Report for the Grades 9 to 12 course. Export on demand, on a schedule, or from a past month."
+    }[k] || CTX.dataset.orig;
+    ETX.innerHTML = {
+      early: "Teachers observe participation during the three Pre-K / K lessons.",
+      elem: "Legacy Student Videos participation is teacher-observed through class discussion and printable quizzes. Neptune Navigate quiz results show participation in the platform."
+    }[k] || ETX.dataset.orig;
   }
   document.querySelectorAll("#picker .pk").forEach(function (b) {
     b.addEventListener("click", function () { selectPath(b.classList.contains("on") ? "all" : b.getAttribute("data-path")); });
