@@ -35,17 +35,12 @@
 
   /* Header */
   .header { text-align: center; padding: 30px 32px 22px; }
-  .header .icon {
-    width: 62px; height: 62px; border-radius: 50%; background: #5B6CF0;
-    display: inline-flex; align-items: center; justify-content: center; margin-bottom: 14px;
-  }
   .header .wordmark { display:block; width:100%; max-width:380px; height:auto; margin:0 auto 18px; }
   .header .icons { display:block; height:56px; width:auto; margin:0 auto 10px; }
   .hero { position: relative; }
   .footer-note { text-align:center; color:#fff; opacity:.85; font-size:12.5px; font-weight:600; margin-top:-16px; }
   .header h1 { font-size: 32px; font-weight: 700; }
   .header .sub { font-size: 14px; color: var(--muted); margin-top: 4px; font-weight: 600; }
-
 
   /* Hero */
   .hero {
@@ -60,24 +55,11 @@
   .hero h2 span { color: var(--yellow); }
   .hero p { margin: 0; font-size: 15px; opacity: .95; }
 
-  /* Find tiles */
-  .tile a { color: inherit; text-decoration: none; }
-  .tile span a { color: var(--blue); text-decoration: underline; }
-  .tlinks { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }
-  .tlinks a { font-size:12px; font-weight:700; background:#fff; color:var(--blue); padding:4px 9px; border-radius:6px; text-decoration:none; }
-  .tlinks a:hover { background:var(--blue); color:#fff; }
+  /* Start Here */
   .check li a { color: var(--blue); font-weight: 700; }
   .pillar li a { font-weight:700; color:var(--blue); text-decoration:none; }
   .find-title { text-align: center; font-size: 22px; font-weight: 800; margin: 34px 0 20px; }
   .find-title .spark { color: var(--yellow); margin: 0 10px; }
-  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; }
-  .tile { background: var(--tint); border-radius: 10px; padding: 18px; text-decoration: none; color: var(--navy); transition: transform .15s ease; }
-  .tile .n {
-    width: 34px; height: 34px; border-radius: 50%; background: var(--blue); color: var(--white);
-    display: inline-flex; align-items: center; justify-content: center; font-weight: 800; margin-bottom: 10px;
-  }
-  .tile b { display: block; font-size: 14px; margin-bottom: 4px; }
-  .tile span { font-size: 12.5px; color: var(--muted); }
 
   /* Sections */
   .section-head h2 { font-size: 21px; font-weight: 700; margin-bottom: 8px; }
@@ -86,7 +68,6 @@
   .banner .brand { font-weight: 700; font-size: 20px; min-width: 150px; opacity: .95; }
   .banner h3 { color: var(--white); font-size: 26px; font-weight: 800; margin-top: 4px; }
   .panel { border: 2px solid var(--blue); border-top: none; border-radius: 0 0 8px 8px; padding: 26px 32px; }
-  .stack + .stack { margin-top: 28px; }
 
   .two { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
   .three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -182,7 +163,6 @@
   table.year tr:nth-child(even) td { background:#FAFBFF; }
   .prek { border-left:4px solid #1F9D55; background:#E9F6EE; border-radius:8px; padding:14px 18px; margin-bottom:18px; font-size:14px; }
   .prek b { color:var(--navy); }
-  @media (max-width:860px){ }
   #tplTabs .tab[data-t="legacy"] { border-color:var(--navy); color:var(--navy); }
   #tplTabs .tab[data-t="legacy"].active { background:var(--navy); color:#fff; }
   #tplTabs .tab[data-t="neptune"] { border-color:#1F9D55; color:#1F9D55; }
@@ -209,6 +189,49 @@
   details.more > summary:focus-visible { outline:2px solid var(--blue); outline-offset:2px; }
   details.more > summary:hover { background:var(--tint-soft); }
   details.more > .more-body { padding:4px 18px 18px; }
+  .ask { text-align:center; color:var(--muted); font-weight:600; margin:-8px 0 16px; }
+  .picker { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:14px; }
+  .pk { font-family:inherit; border:2px solid var(--tint); background:var(--tint-soft); border-radius:12px; padding:12px 8px; cursor:pointer; text-align:center; color:var(--navy); }
+  .pk b { display:block; font-size:14.5px; }
+  .pk span { font-size:12px; color:var(--muted); font-weight:600; }
+  .pk.on { background:var(--blue); border-color:var(--blue); color:#fff; }
+  .pk.on span { color:#dfe5ff; }
+  .pnote { background:var(--tint-soft); border-radius:10px; padding:12px 16px; font-size:14px; margin-bottom:14px; }
+  .pnote b { color:var(--navy); }
+  .psteps { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+  .pst { border:1px solid var(--line); border-radius:12px; padding:16px; display:flex; flex-direction:column; }
+  .pst .num { width:30px; height:30px; border-radius:50%; background:var(--blue); color:#fff; font-weight:800; display:flex; align-items:center; justify-content:center; margin-bottom:8px; }
+  .pst h4 { font-size:15px; margin:0 0 8px; color:var(--navy); }
+  .pst ul { list-style:none; padding:0; margin:0; display:grid; gap:8px; }
+  .pst li { font-size:13px; padding-left:11px; border-left:4px solid var(--tint); line-height:1.45; }
+  .pst li a { color:inherit; text-decoration:none; }
+  .pst li a:hover { color:var(--blue); text-decoration:underline; }
+  .pst li.cl { border-color:var(--navy); } .pst li.cn { border-color:#1F9D55; } .pst li.cp { border-color:#E8742A; }
+  .pst li.cx { color:var(--muted); font-style:italic; }
+  .legend { display:flex; gap:16px; flex-wrap:wrap; font-size:12px; font-weight:700; color:var(--muted); margin-top:14px; }
+  .legend i { display:inline-block; width:12px; height:12px; border-radius:3px; margin-right:6px; vertical-align:-1px; }
+  .pathflag:empty, .pillflag:empty { display:none; }
+  .pathflag { margin-top:12px; display:inline-block; background:rgba(255,255,255,.18); border-radius:8px; padding:8px 12px; font-size:13.5px; font-weight:700; }
+  .pillar .pillflag { font-size:12.5px; font-weight:700; color:var(--navy); background:var(--yellow); border-radius:6px; padding:6px 9px; border:0; }
+  .pillar.dim { opacity:.5; }
+  .pillar li:has(+ .pillflag:empty) { border-bottom:none; }
+  table.year.hide-l .col-l, table.year.hide-p .col-p { display:none; }
+  @media (max-width:860px){ .picker { grid-template-columns:1fr 1fr; } .psteps { grid-template-columns:1fr; } }
+  .prek-list { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0; }
+  .prek-list span { color:#fff; font-weight:800; font-style:italic; font-size:13px; padding:7px 12px; border-radius:8px; }
+  .phint { text-align:center; font-size:13px; color:var(--muted); margin:-4px 0 14px; }
+  .pcall { background:var(--yellow); color:var(--navy); border-radius:10px; padding:12px 16px; font-size:14px; margin-bottom:16px; }
+  .pcall:empty { display:none; }
+  #gradeTabs .tab.rec { box-shadow:0 0 0 3px var(--yellow); }
+  .prek.hl { outline:3px solid var(--yellow); }
+  .tpl-filter { background:var(--tint-soft); border-radius:8px; padding:10px 14px; font-size:13.5px; margin:0 0 14px; color:var(--navy); }
+  [hidden] { display:none !important; }
+  .pnote-start { text-align:center; font-weight:700; color:var(--navy); }
+  .tpl-other { margin-top:4px; }
+  .video { position:relative; width:100%; max-width:820px; margin:28px auto 0; aspect-ratio:16/9; border-radius:12px; overflow:hidden; background:var(--navy); box-shadow:0 10px 28px rgba(10,19,67,.18); }
+  .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .pclear { text-align:center; margin:-8px 0 12px; }
+  .pclear button { font-family:inherit; font-size:13px; font-weight:700; color:var(--blue); background:none; border:0; text-decoration:underline; cursor:pointer; padding:4px 8px; }
   .ptag.phish { background: #E8742A; color: #fff; }
   .sender-cats { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:14px; }
   .scat { border:1px solid var(--line); border-radius:10px; padding:16px 18px; }
@@ -231,16 +254,12 @@
   .help p { margin: 0 auto 16px; max-width: 640px; font-size: 15px; }
 
   @media (max-width: 860px) {
-    .hero { grid-template-columns: 1fr; padding: 28px 22px; }
-      .hero h2 { font-size: 28px; }
-      .tiles { grid-template-columns: 1fr 1fr; }
+    .hero { padding: 28px 22px; }
+    .hero h2 { font-size: 28px; }
     .two, .three, .grid { grid-template-columns: 1fr; }
     .banner { flex-direction: column; align-items: flex-start; gap: 8px; padding: 20px 22px; }
     .panel, .card { padding: 22px 20px; }
     .search { width: 100%; min-width: 0; }
-  }
-  @media (max-width: 520px) {
-    .tiles { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -265,13 +284,22 @@
       </div>
     </div>
 
-    <div class="find-title"><span class="spark">+</span>Start Here<span class="spark">+</span></div>
-    <div class="tiles">
-      <div class="tile"><div class="n">1</div><b>Explore</b><span>Explore your CyberStudent resources and how they work together.</span><div class="tlinks"><a href="#overview">View offerings</a></div></div>
-      <div class="tile"><div class="n">2</div><b>Get Set Up</b><span>Access each portal and prepare your campaign.</span><div class="tlinks"><a href="#setup-legacy">Legacy</a><a href="#setup-neptune">Neptune</a><a href="#setup-phish">Phishing</a></div></div>
-      <div class="tile"><div class="n">3</div><b>Launch</b><span>Checklists, <a href="#templates">templates</a>, and an <a href="#year">Example Year</a>.</span><div class="tlinks"><a href="#launch-legacy">Legacy</a><a href="#launch-neptune">Neptune</a><a href="#launch-phish">Phishing</a></div></div>
-      <div class="tile"><div class="n">4</div><b>Measure Success</b><span>What to monitor once students are learning.</span><div class="tlinks"><a href="#measure">What to monitor</a></div></div>
+    <div class="video">
+      <iframe src="https://www.youtube-nocookie.com/embed/sTu2I6vzSNE" title="CyberStudent: Digital Citizenship and Phishing Training, Pre-K to 12" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
+
+    <div class="find-title"><span class="spark">+</span>Start Here<span class="spark">+</span></div>
+    <p class="ask">Who are you planning for?</p>
+    <div class="picker" id="picker" role="group" aria-label="Choose a grade band path">
+      <button class="pk" data-path="early" aria-pressed="false"><b>Early Learners</b><span>Pre-K and K</span></button>
+      <button class="pk" data-path="elem" aria-pressed="false"><b>Elementary</b><span>Grades 1 to 5</span></button>
+      <button class="pk" data-path="middle" aria-pressed="false"><b>Middle School</b><span>Grades 6 to 8</span></button>
+      <button class="pk" data-path="high" aria-pressed="false"><b>High School</b><span>Grades 9 to 12</span></button>
+    </div>
+    <p class="pclear"><button type="button" id="clearPath" hidden>Clear selection</button></p>
+    <div class="pnote" id="pathNote">Select a grade level to see your recommended path from setup to launch. All CyberStudent resources remain available below.</div>
+    <div class="psteps" id="pathSteps"></div>
+    <div class="legend" id="pathLegend"><span><i style="background:var(--navy)"></i>Legacy Student Videos</span><span><i style="background:#1F9D55"></i>Neptune Navigate</span><span><i style="background:#E8742A"></i>Student Phishing</span><span><i style="background:var(--tint)"></i>All of CyberStudent</span></div>
   </div>
 
   <!-- 1. Explore -->
@@ -282,32 +310,35 @@
       <p>Your CyberStudent resources are designed to work together. Each lives in its own portal, so explore what's available and how they connect.</p>
     </div>
     <div class="three">
-      <div class="pillar">
+      <div class="pillar" data-offer="legacy">
         <div class="top" style="background:var(--navy)"><div class="eyebrow">Quick Learning</div><h4>Legacy Student Videos</h4></div>
         <ul>
           <li><b>What it is</b>Short, flexible cybersecurity lessons and discussion resources, aligned to Common Sense Media.</li>
           <li><b>Where it lives</b>The CyberNut Teacher Portal</li>
           <li><a href="#part-legacy">Go to Legacy Student Videos</a></li>
+          <li class="pillflag" data-pf="legacy"></li>
         </ul>
       </div>
-      <div class="pillar">
+      <div class="pillar" data-offer="neptune">
         <div class="top" style="background:#1F9D55"><div class="eyebrow" style="color:#fff">Structured Curriculum</div><h4>Neptune Navigate</h4></div>
         <ul>
           <li><b>What it is</b>Structured, ISTE-aligned digital citizenship and AI media literacy education with assessments and progress tracking.</li>
           <li><b>Where it lives</b>The Neptune Navigate Portal</li>
           <li><a href="#part-neptune">Go to Neptune Navigate</a></li>
+          <li class="pillflag" data-pf="neptune"></li>
         </ul>
       </div>
-      <div class="pillar">
+      <div class="pillar" data-offer="phish">
         <div class="top" style="background:#E8742A"><div class="eyebrow" style="color:#fff">Hands-On Practice</div><h4>Student Phishing</h4></div>
         <ul>
           <li><b>What it is</b>Phishing simulations, reporting practice, and reinforcement of safe behaviors.</li>
           <li><b>Where it lives</b>The CyberNut Admin Portal</li>
           <li><a href="#part-phish">Go to Student Phishing</a></li>
+          <li class="pillflag" data-pf="phish"></li>
         </ul>
       </div>
     </div>
-    <p style="margin:18px 0 0;font-size:15px;font-weight:600;color:var(--navy);">For a well-rounded CyberStudent experience, combine digital citizenship education with ongoing phishing practice to help students apply what they've learned.</p>
+    <p id="wellRounded" style="margin:18px 0 0;font-size:15px;font-weight:600;color:var(--navy);">For a well-rounded CyberStudent experience, combine digital citizenship education with ongoing phishing practice to help students apply what they've learned.</p>
     <div class="box" style="margin-top:14px;">
       <h4>How Legacy Student Videos and Neptune Navigate fit together</h4>
       <p>Each works well on its own. Legacy Student Videos are quick and flexible, ideal for a short lesson or class discussion. Neptune Navigate is a structured program organized by grade band with assessments. Some districts use both, using the videos to reinforce Neptune topics. Your Customer Success Manager can help you choose.</p>
@@ -319,6 +350,7 @@
     <div class="eyebrow" style="color:var(--yellow)">Offering 1</div>
     <h2>Legacy Student Videos</h2>
     <p>Short, flexible lessons and discussion resources in the CyberNut Teacher Portal.</p>
+    <div class="pathflag" data-flag="part-legacy"></div>
   </div>
 
   <div class="card" id="setup-legacy">
@@ -346,9 +378,9 @@
     <details class="more" id="library-details">
       <summary>Browse all videos by grade band: Elementary and Middle/High School</summary>
       <div class="more-body">
-    <div class="tabs" role="tablist">
-      <button class="tab active" data-band="elem" role="tab">Elementary</button>
-      <button class="tab" data-band="mshs" role="tab">Middle/High School</button>
+    <div class="tabs" role="group">
+      <button class="tab active" data-band="elem">Elementary</button>
+      <button class="tab" data-band="mshs">Middle/High School</button>
     </div>
 
     <div class="lib-intro" id="libIntro"></div>
@@ -377,7 +409,7 @@
       </div>
       <div>
         <div class="section-head"><span class="ptag legacy">Legacy Student Videos &middot; Launch</span><h2>Tips for Success</h2></div>
-        <div class="box" style="margin-bottom:12px;"><h4>Not sure where to begin? Try a phishing video</h4><p>Elementary: <a href="#library" data-find="elem|Don't Click That">Don't Click That!</a> or <a href="#library" data-find="elem|Phishing Made Simple">Phishing Made Simple</a>. Middle/High School: <a href="#library" data-find="mshs|Don't Get Hooked">Don't Get Hooked: Phishing &amp; QR Code Traps</a>. Each pairs well with Student Phishing.</p></div>
+        <div class="box" id="legacyStartTip" style="margin-bottom:12px;"><h4>Not sure where to begin? Try a phishing video</h4><p><span class="tip-elem">Elementary: <a href="#library" data-find="elem|Don't Click That">Don't Click That!</a> or <a href="#library" data-find="elem|Phishing Made Simple">Phishing Made Simple</a>.</span> <span class="tip-mshs">Middle/High School: <a href="#library" data-find="mshs|Don't Get Hooked">Don't Get Hooked: Phishing &amp; QR Code Traps</a>.</span> <span class="tip-pair">Each pairs well with Student Phishing.</span></p></div>
         <div class="box"><h4>Pause and discuss</h4><p>Videos are short, so talk through the learning outcomes as a class afterward.</p></div>
       </div>
     </div>
@@ -388,6 +420,7 @@
     <div class="eyebrow" style="color:#fff">Offering 2</div>
     <h2>Neptune Navigate</h2>
     <p>Structured digital citizenship and AI media literacy education in the Neptune Navigate Portal, separate from the CyberNut Teacher Portal.</p>
+    <div class="pathflag" data-flag="part-neptune"></div>
   </div>
 
   <div class="card" id="setup-neptune">
@@ -400,7 +433,7 @@
         <li><b>Confirm your account setup first</b>Before you begin, check with your Customer Success Manager that your Neptune Navigate account is set up and that teachers and students have access.</li>
         <li><b>Use your district's sign-in method</b>Neptune Navigate supports ClassLink, Clever, Google, Microsoft, or email and password.</li>
         <li><b>Share the login link</b>Post it in your LMS, class website, or student bookmarks.</li>
-        <li><b>Test sign-in</b>Have a teacher and a student sign in and open their grade band course to confirm access works.</li>
+        <li><b>Test sign-in</b>Have a teacher and a student sign in and open their grade band course to confirm access works. For Pre-K and K, confirm a teacher can find the Pre-K / K lessons under Resources.</li>
       </ol>
       <a class="btn" href="https://universal.neptunenavigate.com/auth/login" target="_blank" rel="noopener">Open Neptune Navigate</a>
     </div>
@@ -410,15 +443,18 @@
     <div class="section-head">
       <span class="ptag neptune">Neptune Navigate</span>
       <h2>Courses by Grade Band</h2>
-      <p>Four ISTE-aligned courses cover Grades 1 to 12, one for each grade band, and each follows the same eight-lesson path. Pre-K and Kindergarten have their own separate lessons.</p>
+      <p>Four ISTE-aligned courses cover Grades 1 to 12, one for each grade band, and each follows the same eight-lesson path. Pre-K and Kindergarten have three standalone lessons. All student content is available in English and Spanish, and a course map and scope and sequence are provided for whole-class planning.</p>
     </div>
+    <div class="pcall" id="coursePathNote"></div>
 
     <details class="more" id="course-details">
       <summary>Browse all lessons by grade band: Pre-K through 12</summary>
       <div class="more-body">
-    <div class="prek"><b>Pre-K and Kindergarten:</b> Younger learners have their own Pre-K and K lessons, found under Resources in the Neptune Navigate Portal. Track their completion with Pre-K / K Tracking and the Pre-K / K Summary Report under Reports and Tools. <a href="https://neptunenavigate.com/ctc-prek/" target="_blank" rel="noopener">View Pre-K / K Lessons</a></div>
+    <div class="prek"><b>Pre-K and Kindergarten:</b> Three standalone lessons, found under Resources in the Neptune Navigate Portal. Track completion with Pre-K / K Tracking and the Pre-K / K Summary Report under Reports and Tools.
+      <div class="prek-list"><span style="background:#83C171">1. Welcome to the Digital World</span><span style="background:#CF5C33">2. Online Safety</span><span style="background:#4479E3">3. Taking Care of Your Devices</span></div>
+      <a href="https://neptunenavigate.com/ctc-prek/" target="_blank" rel="noopener">View Pre-K / K Lessons</a></div>
 
-    <div class="tabs" role="tablist" id="gradeTabs">
+    <div class="tabs" role="group" id="gradeTabs">
       <button class="tab active" data-g="le">Grades 1 to 3</button>
       <button class="tab" data-g="ue">Grades 4 and 5</button>
       <button class="tab" data-g="jh">Grades 6 to 8</button>
@@ -436,6 +472,7 @@
       <span class="ptag neptune">Neptune Navigate</span>
       <h2>Continue the Conversation for Parents</h2>
     </div>
+    <div class="pcall" id="ctcNote"></div>
     <p style="margin:0 0 18px;font-size:15px;">Continue the Conversation helps families keep learning at home. Each of the eight Neptune Navigate lessons has a short parent guide, so families know what their child learned and can talk about it together. Guides are available in English and Spanish. Share the link in your newsletter, on your website, or after each lesson.</p>
     <div class="ctc-grid">
       <div class="ctc-tile" style="background:#E38B35"><span class="t">1. Digital Citizenship Overview</span><span class="b" style="background:#CF5C33"></span></div>
@@ -451,18 +488,36 @@
   </div>
 
   <div class="card" id="launch-neptune">
-    <div class="two">
+    <div class="pcall" id="nepLaunchNote"></div>
+    <div class="two" id="nepLaunchEarly" hidden>
+      <div>
+        <div class="section-head"><span class="ptag neptune">Neptune Navigate &middot; Pre-K / K Launch</span><h2>Launch Checklist</h2></div>
+        <ul class="check">
+          <li>Send teachers the Pre-K / K heads-up email (see <a href="#templates">templates</a>)</li>
+          <li>Teach Lesson 1: Welcome to the Digital World</li>
+          <li>Teach Lesson 2: Online Safety</li>
+          <li>Teach Lesson 3: Taking Care of Your Devices</li>
+        </ul>
+      </div>
+      <div>
+        <div class="section-head"><span class="ptag neptune">Neptune Navigate &middot; Pre-K / K Launch</span><h2>Tips for Success</h2></div>
+        <div class="box"><h4>Teach in order</h4><p>The three lessons build on each other. Follow completion with Pre-K / K Tracking under Reports and Tools.</p></div>
+      </div>
+    </div>
+    <div class="two" id="nepLaunchStd">
       <div>
         <div class="section-head"><span class="ptag neptune">Neptune Navigate &middot; Launch</span><h2>Launch Checklist</h2></div>
         <ul class="check">
           <li>Choose a pace for the eight-lesson path (see the <a href="#year">Example Year</a>)</li>
           <li>Send the teacher heads-up and student announcement (see <a href="#templates">templates</a>)</li>
-          <li>Start Lesson 1 in each grade band course. Lesson formats vary by grade band, from short video parts and a knowledge check in Grades 1 to 5 to a video, readings, and a quiz in Grades 6 to 12.</li>
+          <li id="nepStartLi">Start Lesson 1 in each grade band course. Lesson formats vary by grade band, from short video parts and a knowledge check in Grades 1 to 5 to a video, readings, and a quiz in Grades 6 to 12.</li>
           <li>Share the parent guides with families using the parent letter</li>
+          <li>Optional: lock assignment dates district-wide or school by school with Assignment Lock Until Date, so classes stay on the same schedule</li>
         </ul>
       </div>
       <div>
         <div class="section-head"><span class="ptag neptune">Neptune Navigate &middot; Launch</span><h2>Tips for Success</h2></div>
+        <div class="box" style="margin-bottom:12px;"><h4>Assign, lead, or mix</h4><p>Students can complete lessons on their own, teachers can lead them with the whole class, or mix the two. Either way, there's nothing to prepare.</p></div>
         <div class="box"><h4>Keep a steady pace</h4><p>One lesson a month moves students through the full course and keeps progress data easy to follow.</p></div>
       </div>
     </div>
@@ -473,13 +528,14 @@
     <div class="eyebrow" style="color:#fff">Offering 3</div>
     <h2>Student Phishing</h2>
     <p>Simulations, reporting practice, and reinforcement of safe behaviors, managed in the CyberNut Admin Portal.</p>
+    <div class="pathflag" data-flag="part-phish"></div>
   </div>
 
   <div class="card" id="phishing">
     <div class="three" style="margin-bottom:26px;">
       <div class="box"><div class="label" style="color:#E8742A">Realistic</div><h4>Student-Specific Senders</h4><p>Templates based on the school tools, games, and brands students use. Simulations get harder as each student improves.</p></div>
-      <div class="box"><div class="label" style="color:#E8742A">Reinforcing</div><h4>Microlessons and Points</h4><p>Short microlessons teach what to look for. Students earn points for spotting scams and climb class leaderboards.</p></div>
-      <div class="box"><div class="label" style="color:#E8742A">Practice</div><h4>Reporting Practice</h4><p>Students practice recognizing and reporting suspicious emails through simulations. CyberNut can also help districts identify and remediate real email threats, depending on enabled services.</p></div>
+      <div class="box"><div class="label" style="color:#E8742A">Reinforcing</div><h4>Microlessons and Acorns</h4><p>Every click gets instant feedback, and short microlessons teach what to look for. Students earn acorns for spotting scams and climb class leaderboards.</p></div>
+      <div class="box"><div class="label" style="color:#E8742A">Practice</div><h4>Reporting Practice</h4><p>Students practice recognizing and reporting suspicious emails through simulations. CyberNut can also help districts identify and remediate real email threats, depending on enabled services. If a reported phish comes from a district account, CyberNut flags it as likely compromised and alerts admins, and districts can turn on auto-suspend.</p></div>
     </div>
     <details class="more" id="senders">
       <summary>Student Sender Library: see all 33 senders by category</summary>
@@ -535,13 +591,13 @@
     <div class="section-head">
       <span class="ptag both">Step 3 &middot; Launch</span>
       <h2>Example Year</h2>
-      <p>One way to pace CyberStudent across a school year. It is an example, not a required schedule. Use only the columns that apply to you. Neptune Navigate lesson names and activities can vary by grade band, so the table shows each lesson's general topic. Legacy video pairings list the Elementary video first, then the Middle/High School video. Student Phishing runs as one campaign all year, with leaderboard resets for friendly competitions.</p>
+      <p id="yearIntro">One way to pace CyberStudent across a school year. It is an example, not a required schedule. Use only the columns that apply to you. Neptune Navigate lesson names and activities can vary by grade band, so the table shows each lesson's general topic. Legacy video pairings list the Elementary video first, then the Middle/High School video. Student Phishing runs as one campaign all year, with leaderboard resets for friendly competitions.</p>
     </div>
     <details class="more" id="year-details">
       <summary>Show the example year, month by month</summary>
       <div class="more-body">
     <div class="tbl-wrap">
-      <table class="year">
+      <table class="year" id="yearTable">
         <thead><tr><th>Month</th><th class="n">Neptune Navigate Lesson</th><th class="l">Legacy Student Video Pairing</th><th class="p">Student Phishing</th></tr></thead>
         <tbody>
           <tr><td class="m">August</td><td>Get set up: confirm access and share portal links</td><td>Pick starting videos</td><td>Prepare your year-long campaign</td></tr>
@@ -568,7 +624,7 @@
       <h2>Communication Templates</h2>
       <p>Teacher, student, and family templates for each offering. Fill in the bracketed details. Send staff emails from a recognizable district address, signed by a district leader.</p>
     </div>
-    <div class="tabs" role="tablist" id="tplTabs">
+    <div class="tabs" role="group" id="tplTabs">
       <button class="tab active" data-t="legacy">Legacy Student Videos</button>
       <button class="tab" data-t="neptune">Neptune Navigate</button>
       <button class="tab" data-t="phish">Student Phishing</button>
@@ -584,9 +640,10 @@
       <h2>Measure Success</h2>
       <p>Check in on three things throughout the year.</p>
     </div>
+    <div class="pcall" id="measureNote"></div>
     <div class="three">
-      <div class="box"><div class="label">Lesson Completion</div><h4>Are students finishing lessons?</h4><p>In Neptune Navigate, use the gradebook, Student Progress Report, Navigate District Report, and Pre-K / K Summary Report.</p></div>
-      <div class="box"><div class="label">Student Engagement</div><h4>Are students participating?</h4><p>Legacy Student Videos participation is teacher-observed through class discussion and printable quizzes. Neptune Navigate (quiz results) and Student Phishing (points and leaderboards) offer platform-based metrics.</p></div>
+      <div class="box"><div class="label">Lesson Completion</div><h4>Are students finishing lessons?</h4><p>In Neptune Navigate, use the gradebook, Student Progress Report, Navigate District Report, and Pre-K / K Summary Report. Export on demand, on a schedule, or from a past month.</p></div>
+      <div class="box"><div class="label">Student Engagement</div><h4>Are students participating?</h4><p>Legacy Student Videos participation is teacher-observed through class discussion and printable quizzes. Neptune Navigate (quiz results) and Student Phishing (acorns and leaderboards) offer platform-based metrics.</p></div>
       <div class="box"><div class="label">Reporting Behavior</div><h4>Are students reporting phishing?</h4><p>Review campaign results by student, school, and district in the CyberNut Admin Portal to see reporting grow over time.</p></div>
     </div>
     <p style="margin:16px 0 0;font-size:14.5px;color:var(--navy);font-weight:600;">If engagement or reporting is low, resend the teacher and student templates, pair a related lesson with a friendly competition, and contact your Customer Success Manager for help.</p>
@@ -596,7 +653,7 @@
   <!-- Help -->
   <div class="card help">
     <h2>Need a Hand?</h2>
-    <p>Your Customer Success Manager can help you decide how to use each resource, confirm access, and plan your rollout.</p>
+    <p>Your Customer Success Manager can help you decide how to use each resource, confirm access, and plan your rollout. You can also email <a href="mailto:hello@cybernut.com">hello@cybernut.com</a> or use the live chat on the <a href="https://www.cybernut.com/support" target="_blank" rel="noopener">CyberNut support page</a>.</p>
   </div>
 
   <p class="footer-note">&copy; 2026 CyberNut Inc. All rights reserved.</p>
@@ -630,7 +687,7 @@
       ]
     },
     mshs: {
-      intro: "<b>Middle/High School videos</b> tackle the real situations older students face, from social media and gaming to scams, AI tools, and digital wellness. Each is a short classroom video with clear learning outcomes.",
+      intro: "<b>Middle/High School videos</b> keep up with new risks students face, like AI tools, payment app scams, account security, and digital addiction, plus social media and gaming. Each is a short classroom video with clear learning outcomes.",
       cats: ["Media Literacy", "Device/Account Security", "Healthy Tech Use", "Cybersecurity Basics", "Safe Online Behavior", "Data Privacy & Protection", "Engaging AI Safely"],
       mods: [
         { c: "Media Literacy", t: "Echo Chambers & Filter Bubbles: Breaking Out of Your Feed", s: "How social media algorithms create filter bubbles by tracking engagement and serving similar content. Students learn how echo chambers form and why they make users vulnerable to misinformation.", o: ["Understand how algorithms create filter bubbles and echo chambers", "Recognize the importance of diversifying information sources", "Apply critical thinking by fact checking content before sharing"] },
@@ -804,20 +861,22 @@
   renderGrade("le");
 
   /* In-page links: scroll without changing the URL so they work inside embeds like Dock */
-  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
-    a.addEventListener("click", function (e) {
-      var el = document.getElementById(a.getAttribute("href").slice(1));
-      if (!el) return;
-      e.preventDefault();
-      if (el.id === "year") { var d = el.querySelector("details.more"); if (d) d.open = true; }
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
+  var AUTO_OPEN = { "year": 1, "library": 1, "courses": 1, "phishing": 1, "senders": 1 };
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest ? e.target.closest('a[href^="#"]') : null;
+    if (!a) return;
+    var el = document.getElementById(a.getAttribute("href").slice(1));
+    if (!el) return;
+    e.preventDefault();
+    if (el.tagName === "DETAILS") el.open = true;
+    else if (AUTO_OPEN[el.id]) { var d = el.querySelector("details.more"); if (d) d.open = true; }
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 
   /* Communication templates */
-  var TPL = {"legacy": [{"t": "Teacher Heads-Up", "a": "Email to teachers from a district leader. Send a week before you want teachers to start.", "b": "Subject: 5-minute videos to help students stay safe online\n\nHi [Teacher Name],\n\nStudents are online more than ever, and scams, oversharing, and AI misinformation reach them every day. To help, you now have a library of short classroom videos on phishing, privacy, online kindness, and using AI safely.\n\nWhat we're asking:\n- Show one video [this month / each month]. Each takes just a few minutes.\n- Follow it with a quick class discussion.\n\nGetting started takes two minutes:\n1. Go to teachers.cybernut.com\n2. Sign in with your school Google or Microsoft account\n3. Choose Elementary or Middle/High School and pick a video\n\nElementary videos include a Teacher Guide and a printable quiz. Suggested first video: [Video Title]\n\nQuestions? Contact [Program Contact Name, Email].\n\nThank you,\n[District Leader Name], [Title]"}, {"t": "Student Announcement: Welcome to Digital Safety Videos", "a": "Read aloud or post in your LMS when you introduce the videos.", "b": "Welcome to Digital Safety Videos!\n\nThis year we'll watch short videos about staying safe, smart, and kind online. Each one only takes a few minutes, and afterward we'll talk about it together.\n\nHere's what you'll learn:\n- How to spot scams and suspicious links\n- What's okay to share online and what to keep private\n- How to treat others with kindness online\n- How to use AI safely and tell what's real\n- How to keep your devices and accounts secure\n- How to build healthy tech habits\n\nBring your questions and your stories. The best ideas often come from you!"}], "neptune": [{"t": "Teacher Heads-Up", "a": "Email to teachers from a district leader. Send one to two weeks before Lesson 1.", "b": "Subject: Digital citizenship lessons start [Start Date]: what you need to know\n\nHi [Teacher Name],\n\nStarting [Start Date], students in [Grades / Schools] will complete Neptune Navigate, an ISTE-aligned course on digital citizenship and AI media literacy. Each grade band course has eight lessons, and we'll complete one each [month / other pace].\n\nLesson formats vary by grade band. Grades 1 to 5 watch short video parts and finish with a knowledge check or quiz. Grades 6 to 12 watch a video, complete two brief readings, and take a quiz.\n\nWhat we're asking:\n1. Post this link where students can find it: [Neptune Navigate login link]\n2. Give students class time for the lesson by [Due Date]\n3. Remind students to stay on the video until it ends. Leaving the tab can make them restart.\n\nYou can check completion and quiz results anytime in the Neptune Navigate gradebook. Short parent guides for every lesson are available to share with families at https://neptunenavigate.com/ctc/\n\nQuestions? Contact [Program Contact Name, Email].\n\nThank you,\n[District Leader Name], [Title]"}, {"t": "Student Announcement: Welcome to Neptune Navigate", "a": "Read aloud or post in your LMS when you introduce the program.", "b": "Welcome to Neptune Navigate!\n\nThis year you'll take a journey through eight lessons about being a smart, safe, and responsible digital citizen. Each lesson has a short video and a quick check to see what you learned.\n\nHere's what you'll learn:\n- What it means to be a good digital citizen\n- How to handle and stand up to cyberbullying\n- How your digital footprint follows you\n- How to stay safe on social media and online\n- How to spot fake news and AI tricks\n- How to protect your privacy\n- The rules and laws that apply online\n\nBy the end of the year, you'll have the skills to navigate the digital world with confidence. Let's get started!"}, {"t": "Parent Letter", "a": "Email or newsletter to families. Send around the time Lesson 1 begins.", "b": "Subject: Helping your child stay safe online this year\n\nDear Families,\n\nThis year, [School / District Name] students are learning how to stay safe, kind, and smart online. Lessons cover cyberbullying, privacy, social media, recognizing misinformation, and using AI responsibly.\n\nYou can help at home. Each lesson has a short parent guide with what your child learned and easy ways to talk about it. Guides are available in English and Spanish:\nhttps://neptunenavigate.com/ctc/\n\nThree easy conversation starters:\n- What is one thing you learned about staying safe online?\n- What would you do if someone you don't know messaged you?\n- How can you tell if something online is fake?\n\nQuestions? Contact [Contact Name, Email].\n\nThank you for partnering with us,\n[Your Name]\n[School / District Name]"}], "phish": [{"t": "Teacher Heads-Up", "a": "Email to teachers from a district leader. Send a few days before the campaign launches.", "b": "Subject: Helping students spot phishing, starting [Start Date]\n\nHi [Teacher Name],\n\nScammers target students through the apps, games, and accounts they use every day. Starting [Start Date], students in [Grades / Schools] will receive safe practice phishing emails so they can learn to catch them.\n\nThe one thing to remember: if a student asks about a suspicious email, tell them to report it with {REPORT}. When in doubt, report.\n\nShow students where the button is (each video is about 2 minutes or less):\n- On a computer: {VIDEO_WEB}\n- On a phone: {VIDEO_MOBILE}\n\nWhat to expect:\n- Students who report a practice email earn points.\n- Students who click see a short lesson on the warning signs.\n- This is a learning program, not a test.\n\nPlease don't confirm which emails are practice, so the training stays realistic.\n\nQuestions? Contact [Program Contact Name, Email].\n\nThank you,\n[District Leader Name], [Title]"}, {"t": "Student Announcement: Can You Spot the Phish?", "a": "Read aloud, post in your LMS, or show on screen before the campaign launches.", "b": "Can You Spot the Phish?\n\nScammers send fake messages to trick people into clicking links or sharing passwords. This year you'll get practice emails that look like they come from games, apps, and brands you know. Your mission: catch them!\n\nHow to catch a phish:\n1. Pause. Was I expecting this?\n2. Look. Is it rushing me or too good to be true? Does the sender or link look off?\n3. Report it with {REPORT}.\n\nWatch how (under 2 minutes):\n- On a computer: {VIDEO_WEB}\n- On a phone: {VIDEO_MOBILE}\n\nEvery phish you catch earns points, and your class can climb the leaderboard. Clicked one by accident? No worries. You'll get a quick tip so you can catch the next one.\n\nWhen in doubt, report it!"}]};
+  var TPL = {"legacy": [{"t": "Teacher Heads-Up", "a": "Grades 1 to 12. Email to teachers from a district leader. Send a week before teachers start.", "b": "Subject: 5-minute videos to help students stay safe online\n\nHi [Teacher Name],\n\nStudents are online more than ever, and scams, oversharing, and AI misinformation reach them every day. To help, you now have a library of short classroom videos on phishing, privacy, online kindness, and using AI safely.\n\nWhat we're asking:\n- Show one video [this month / each month]. Each takes just a few minutes.\n- Follow it with a quick class discussion.\n\nGetting started takes two minutes:\n1. Go to teachers.cybernut.com\n2. Sign in with your school Google or Microsoft account\n3. Choose Elementary or Middle/High School and pick a video\n\nElementary videos include a Teacher Guide and a printable quiz. Suggested first video: [Video Title]\n\nQuestions? Contact [Program Contact Name, Email].\n\nThank you,\n[District Leader Name], [Title]", "g": ["elem", "middle", "high"]}, {"t": "Student Announcement: Elementary", "g": ["elem"], "a": "Grades 1 to 5. Read aloud when you introduce the videos.", "b": "Welcome to Digital Safety Videos!\n\nThis year we'll watch short videos about being safe and kind online. After each video, we'll talk about it together.\n\nHere's what you'll learn:\n- Think before you click\n- What's okay to share online and what to keep private\n- How to be kind online\n- How to tell if you're talking to a robot or a person\n- How to take care of your device\n- How to balance screen time with play and rest\n\nBring your questions and your stories. Your ideas help everyone learn!"}, {"t": "Student Announcement: Middle/High School", "g": ["middle", "high"], "a": "Grades 6 to 12. Read aloud or post in your LMS when you introduce the videos.", "b": "Quick Videos, Real Situations\n\nThis year we'll watch short videos about situations you actually face online, then talk about them as a class.\n\nTopics include:\n- Phishing and QR code traps\n- Scams on payment apps and marketplaces\n- Keeping your gaming and social accounts secure\n- Privacy, oversharing, and your digital footprint\n- Using AI tools without crossing the line\n- Why apps are designed to keep you hooked\n\nCome ready to share your take. The best discussions start with real experiences."}], "neptune": [{"t": "Teacher Heads-Up: Grades 1 to 12", "g": ["elem", "middle", "high"], "a": "Grades 1 to 12. Email to teachers from a district leader. Send one to two weeks before Lesson 1.", "b": "Subject: Digital citizenship lessons start [Start Date], ready to go with no planning needed\n\nHi [Teacher Name],\n\nBecause we value our students' safety online, [District Name] is partnering with Neptune Navigate, an ISTE-aligned digital citizenship and AI media literacy course. Starting [Start Date], students in [Grades / Schools] will complete one lesson each [month / other pace].\n\nThe lessons are ready to go, with no lesson planning needed. Assign them for students to complete on their own, lead them with the whole class, or mix the two. Formats vary by grade band:\n- Grades 1 to 5: short video parts and a knowledge check or quiz\n- Grades 6 to 12: a video, two brief readings with real-world examples, and a quiz\n\nWhat we're asking:\n1. Post this link where students can find it: [Neptune Navigate login link]\n2. Give students class time for each lesson by [Due Date]\n3. Remind students to stay on the video until it ends. Leaving the tab can make them restart.\n\nYou can check completion and quiz results in the Neptune Navigate gradebook. Parent guides for every lesson are at https://neptunenavigate.com/ctc/\n\nWe know you already go above and beyond for your students. Thank you for helping them become safe, responsible, and respectful digital citizens.\n\nQuestions? Contact [Program Contact Name, Email].\n\n[District Leader Name], [Title]"}, {"t": "Teacher Heads-Up: Pre-K and K", "g": ["early"], "a": "Pre-K and K. Email to teachers from a district leader. Send a week before Lesson 1.", "b": "Subject: Three short digital safety lessons for our youngest learners\n\nHi [Teacher Name],\n\nOur Pre-K and Kindergarten students will complete three short Neptune Navigate lessons designed just for them:\n1. Welcome to the Digital World\n2. Online Safety\n3. Taking Care of Your Devices\n\nThe lessons are ready to go, with no planning needed. Find them under Resources in the Neptune Navigate Portal at [Neptune Navigate login link]. Please teach them in order, starting [Start Date].\n\nWe'll follow completion with Pre-K / K Tracking.\n\nThank you for helping our youngest students build safe habits from the start.\n\nQuestions? Contact [Program Contact Name, Email].\n\n[District Leader Name], [Title]"}, {"t": "Student Announcement: Pre-K and K", "g": ["early"], "a": "Pre-K and K. Read aloud before Lesson 1.", "b": "Friends, today we're starting an adventure in the digital world!\n\nComputers and tablets help us learn and play. In our next lessons, we'll learn:\n- What the digital world is\n- How to stay safe online\n- How to take care of our devices\n\nRemember, always ask a grown-up before you go online.\n\nAre you ready to be smart, safe, and kind? Let's go!"}, {"t": "Student Announcement: Grades 1 to 5", "g": ["elem"], "a": "Grades 1 to 5. Read aloud before Lesson 1.", "b": "Welcome to Neptune Navigate!\n\nThis year we're going on a journey to become smart, safe, and kind digital citizens. Each lesson has short videos and a quick check to show what you learned.\n\nYou'll learn how to:\n- Be kind online and stand up to cyberbullying\n- Keep your personal information private\n- Make strong passwords\n- Spot things online that might not be true\n- Use apps and websites that are right for your age\n\nIf something online ever feels wrong, tell a trusted grown-up.\n\nLet's get started!"}, {"t": "Student Announcement: Grades 6 to 12", "g": ["middle", "high"], "a": "Grades 6 to 12. Read aloud or post in your LMS before Lesson 1.", "b": "Dear Students,\n\nWhat you do online can follow you for years. Scholarships, athletic careers, and job offers have been lost because of something posted in the past.\n\nThat's why our school is partnering with Neptune Navigate. This year you'll build the skills to navigate the digital world with integrity, empathy, and accountability.\n\nEach lesson has a video, two short readings with real-world examples, and a 10-question quiz. Topics include your digital reputation, social media, cyberbullying, spotting misinformation and deepfakes, protecting your privacy, and tech laws.\n\nTo start, go to [Neptune Navigate login link] and sign in with [sign-in method]. Tip: stay on the video until it ends. If you switch tabs, you may have to start over.\n\nThe choices you make online today shape your future. Let's make them good ones."}, {"t": "Parent Letter", "a": "Grades 1 to 12. Email or newsletter to families. Send around the time Lesson 1 begins.", "b": "Subject: Helping your child stay safe online this year\n\nDear Families,\n\nThis year, [School / District Name] students are learning how to stay safe, kind, and smart online. Lessons cover cyberbullying, privacy, social media, recognizing misinformation, and using AI responsibly.\n\nYou can help at home. Each lesson has a short parent guide with what your child learned and easy ways to talk about it. Guides are available in English and Spanish:\nhttps://neptunenavigate.com/ctc/\n\nThree easy conversation starters:\n- What is one thing you learned about staying safe online?\n- What would you do if someone you don't know messaged you?\n- How can you tell if something online is fake?\n\nQuestions? Contact [Contact Name, Email].\n\nThank you for partnering with us,\n[Your Name]\n[School / District Name]", "g": ["elem", "middle", "high"]}], "phish": [{"t": "Teacher Heads-Up", "a": "Grades 6 to 12. Email to teachers from a district leader. Send a few days before the campaign launches.", "b": "Subject: Helping students spot phishing, starting [Start Date]\n\nHi [Teacher Name],\n\nScammers target students through the apps, games, and accounts they use every day. Starting [Start Date], students in [Grades 6 to 12 / Schools] will receive safe practice phishing emails so they can learn to catch them.\n\nThe one thing to remember: if a student asks about a suspicious email, tell them to report it with {REPORT}. When in doubt, report.\n\nShow students where the button is (each video is about 2 minutes or less):\n- On a computer: {VIDEO_WEB}\n- On a phone: {VIDEO_MOBILE}\n\nWhat to expect:\n- Students who report a practice email earn acorns (points).\n- Students who click see a short lesson on the warning signs.\n- This is a learning program, not a test.\n\nPlease don't confirm which emails are practice, so the training stays realistic.\n\nQuestions? Contact [Program Contact Name, Email].\n\nThank you,\n[District Leader Name], [Title]", "g": ["middle", "high"]}, {"t": "Student Announcement: Middle/High School", "a": "Grades 6 to 12. Read aloud, post in your LMS, or show on screen before the campaign launches.", "b": "Can You Spot the Phish?\n\nScammers send fake messages to trick people into clicking links or sharing passwords. This year you'll get practice emails that look like they come from games, apps, and brands you know. Your mission: catch them!\n\nHow to catch a phish:\n1. Pause. Was I expecting this?\n2. Look. Is it rushing me or too good to be true? Does the sender or link look off?\n3. Report it with {REPORT}.\n\nWatch how (under 2 minutes):\n- On a computer: {VIDEO_WEB}\n- On a phone: {VIDEO_MOBILE}\n\nEvery phish you catch earns acorns, and your class can climb the leaderboard. Clicked one by accident? No worries. You'll get a quick tip so you can catch the next one.\n\nWhen in doubt, report it!", "g": ["middle", "high"]}]};
   var PLAT = {"google": {"REPORT": "the blue squirrel Report button in Gmail (in the sidebar or above an open email)", "VIDEO_WEB": "https://www.loom.com/share/0c4d3fbebbc542f3beddcfe0851ad0e0", "VIDEO_MOBILE": "https://www.loom.com/share/0e032427e3664fbd9e7c138266deb6b1"}, "microsoft": {"REPORT": "the blue squirrel Report button in your Outlook toolbar", "VIDEO_WEB": "https://www.loom.com/share/88e851d3856e4f66ae111279494f0112", "VIDEO_MOBILE": "https://www.loom.com/share/c9a14fbba5e24c04a3774e39e09bff19"}};
-  var tplState = { k: "legacy", plat: "google" };
+  var tplState = { k: "legacy", plat: "google", path: "all" };
   var tplList = document.getElementById("tplList");
   var platBar = document.getElementById("platBar");
   function escT(x) { return x.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
@@ -826,11 +885,21 @@
   function renderTpl() {
     var k = tplState.k;
     platBar.style.display = k === "phish" ? "flex" : "none";
-    tplList.innerHTML = TPL[k].map(function (t, i) {
+    var PN = { early: "Early Learners", elem: "Elementary", middle: "Middle School", high: "High School" };
+    function card(t, i) {
       return '<div class="tpl"><div class="tpl-hd"><div><b>' + escT(t.t) + '</b><span>' + escT(t.a) + '</span></div>' +
         '<button class="copy" data-i="' + i + '">Copy</button></div>' +
         '<pre class="tpl-body">' + linkify(escT(fill(t.b))) + '</pre></div>';
-    }).join("");
+    }
+    var all = tplState.path === "all", mine = "", other = "", nMine = 0, nOther = 0;
+    TPL[k].forEach(function (t, i) {
+      if (all || t.g.indexOf(tplState.path) > -1) { mine += card(t, i); nMine++; } else { other += card(t, i); nOther++; }
+    });
+    var out = "";
+    if (!all) out += '<p class="tpl-filter">' + (nMine ? "Recommended templates for the " + PN[tplState.path] + " path." : "This offering is not part of the " + PN[tplState.path] + " path. Its templates are below.") + '</p>';
+    out += mine;
+    if (nOther) out += nMine ? '<details class="more tpl-other"><summary>Templates for other grade levels (' + nOther + ')</summary><div class="more-body">' + other + '</div></details>' : other;
+    tplList.innerHTML = out;
   }
   function fallbackCopy(text) {
     var ta = document.createElement("textarea");
@@ -876,6 +945,151 @@
       searchEl.value = parts[1]; state.q = parts[1]; render();
     });
   });
+
+  /* ===== Grade band paths ===== */
+  var PATHS = {"all": {"note": "<b>All grades:</b> Explore everything CyberStudent offers, or pick an age band above for a tailored path.", "steps": [[["l", "33 Legacy Student Videos for Elementary and Middle/High School", "#part-legacy"], ["n", "Neptune Navigate courses for Grades 1 to 12, plus Pre-K and K lessons", "#part-neptune"], ["p", "Year-long Student Phishing with student-specific senders", "#part-phish"], ["b", "How the resources work together", "#overview"]], [["l", "Sign in to the Teacher Portal", "#setup-legacy"], ["n", "Confirm Neptune Navigate access and test sign-in", "#setup-neptune"], ["p", "Prepare your campaign in the Admin Portal", "#setup-phish"]], [["l", "Legacy launch checklist", "#launch-legacy"], ["n", "Neptune launch checklist", "#launch-neptune"], ["p", "Phishing launch checklist", "#launch-phish"], ["b", "Communication templates and Example Year", "#templates"]], [["b", "Lesson completion, engagement, and reporting", "#measure"]]]}, "early": {"note": "<b>Early Learners (Pre-K and K):</b> Use the three Neptune Navigate Pre-K / K standalone lessons. Legacy Student Videos start at Elementary, and Student Phishing is not part of this path.", "steps": [[["n", "Three Pre-K / K standalone lessons: Welcome to the Digital World, Online Safety, and Taking Care of Your Devices", "#courses"], ["x", "Legacy Student Videos start at Elementary", ""], ["x", "Student Phishing begins in Middle School", ""]], [["n", "Confirm Neptune Navigate access with your Customer Success Manager", "#setup-neptune"], ["n", "Have a teacher sign in and find the Pre-K / K lessons under Resources", "#setup-neptune"]], [["n", "Start Lesson 1: Welcome to the Digital World, then teach Lessons 2 and 3 in order", "#courses"], ["n", "Follow the Pre-K / K instructions in the Neptune Launch section", "#launch-neptune"], ["n", "Pre-K / K teacher and student templates", "#templates"]], [["n", "Pre-K / K Tracking and Pre-K / K Summary Report", "#measure"]]]}, "elem": {"note": "<b>Elementary (Grades 1 to 5):</b> Use the Elementary Legacy Student Videos and two Neptune Navigate courses, Grades 1 to 3 and Grades 4 and 5. Student Phishing begins in Middle School and is not part of this path.", "steps": [[["l", "14 Elementary videos, each with a Teacher Guide and printable quiz", "#library"], ["n", "Grades 1 to 3: short video parts and a 5-question knowledge check", "#courses"], ["n", "Grades 4 and 5: short video parts and a 10-question quiz", "#courses"], ["x", "Student Phishing begins in Middle School", ""]], [["l", "Teachers sign in to the Teacher Portal", "#setup-legacy"], ["n", "Confirm Neptune Navigate access and test a student sign-in", "#setup-neptune"]], [["l", "First video: Don't Click That! or Phishing Made Simple", "#launch-legacy"], ["n", "Start Lesson 1, Digital Citizenship Overview, in the Grades 1 to 3 and Grades 4 and 5 courses", "#launch-neptune"], ["b", "Send the teacher heads-up and student announcement", "#templates"]], [["n", "Neptune gradebook and Student Progress Report", "#measure"], ["l", "Teacher-observed discussion and printable quizzes", "#measure"]]]}, "middle": {"note": "<b>Middle School (Grades 6 to 8):</b> Use the Middle/High School Legacy Student Videos, the Neptune Navigate Grades 6 to 8 course, and Student Phishing.", "steps": [[["l", "19 Middle/High School videos on scams, social media, gaming, and AI", "#library"], ["n", "Grades 6 to 8: video, two readings, and a 10-question quiz", "#courses"], ["p", "Student Phishing with student-specific senders and acorns", "#part-phish"]], [["l", "Teachers sign in to the Teacher Portal", "#setup-legacy"], ["n", "Confirm Neptune Navigate access and test a student sign-in", "#setup-neptune"], ["p", "Prepare your year-long campaign in the Admin Portal", "#setup-phish"]], [["n", "Start Lesson 1 with its readings: How to Be a Good Digital Citizen and Showing Respect Online", "#launch-neptune"], ["l", "First video: Don't Get Hooked: Phishing and QR Code Traps", "#launch-legacy"], ["p", "Send the phishing announcement, then launch the campaign", "#launch-phish"]], [["n", "Neptune gradebook and quiz results", "#measure"], ["p", "Reporting, acorns, and leaderboards in Student Phishing", "#measure"]]]}, "high": {"note": "<b>High School (Grades 9 to 12):</b> Use the Middle/High School Legacy Student Videos, the Neptune Navigate Grades 9 to 12 course, and Student Phishing.", "steps": [[["l", "19 Middle/High School videos on scams, social media, gaming, and AI", "#library"], ["n", "Grades 9 to 12: video, two readings, and a 10-question quiz", "#courses"], ["p", "Student Phishing with student-specific senders and acorns", "#part-phish"]], [["l", "Teachers sign in to the Teacher Portal", "#setup-legacy"], ["n", "Confirm Neptune Navigate access and test a student sign-in", "#setup-neptune"], ["p", "Prepare your year-long campaign in the Admin Portal", "#setup-phish"]], [["n", "Start Lesson 1 with its readings: The Sleepless Generation and How Teens and Parents Approach Screen Time", "#launch-neptune"], ["l", "First video: Don't Get Hooked: Phishing and QR Code Traps", "#launch-legacy"], ["p", "Send the phishing announcement, then launch the campaign", "#launch-phish"]], [["n", "Neptune gradebook and Navigate District Report", "#measure"], ["p", "Reporting, acorns, and leaderboards in Student Phishing", "#measure"]]]}};
+  var STEP_NAMES = ["Explore", "Get Set Up", "Launch", "Measure Success"];
+  var CFG = {
+    all:    { band: "elem", g: "le", offers: { legacy: 1, neptune: 1, phish: 1 } },
+    early:  { band: "elem", g: null, offers: { legacy: 0, neptune: 1, phish: 0 } },
+    elem:   { band: "elem", g: "le", offers: { legacy: 1, neptune: 1, phish: 0 } },
+    middle: { band: "mshs", g: "jh", offers: { legacy: 1, neptune: 1, phish: 1 } },
+    high:   { band: "mshs", g: "hs", offers: { legacy: 1, neptune: 1, phish: 1 } }
+  };
+  var PNAME = { early: "Early Learners", elem: "Elementary", middle: "Middle School", high: "High School" };
+  var NEP_ELEM = ["", "1. Digital Citizenship Overview", "2. Cyberbullying", "3. Digital Footprint", "4. Digital World Basics", "5. Media Literacy", "6. Privacy and Cyber Awareness", "7. Age Appropriateness", "8. Review", ""];
+  var NEP_SEC  = ["", "1. Digital Citizenship Overview", "2. Cyberbullying", "3. Digital Reputation", "4. Social Media", "5. Media Literacy", "6. Privacy and Cyber Awareness", "7. Tech Laws", "8. Review", ""];
+  var yRows = Array.prototype.slice.call(document.querySelectorAll("#yearTable tbody tr"));
+  var yOrig = yRows.map(function (r) { return Array.prototype.map.call(r.children, function (c) { return c.innerHTML; }); });
+  (function markCols() {
+    document.querySelectorAll("#yearTable tr").forEach(function (r) {
+      if (r.children[2]) r.children[2].classList.add("col-l");
+      if (r.children[3]) r.children[3].classList.add("col-p");
+    });
+  })();
+  var YEAR_INTRO_ALL = document.getElementById("yearIntro").innerHTML;
+  function escP(x) { return x.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+  function renderPath(k) {
+    var d = PATHS[k], c = CFG[k];
+    var none = k === "all";
+    document.getElementById("pathNote").innerHTML = none ? "Select a grade level to see your recommended path from setup to launch. All CyberStudent resources remain available below." : d.note;
+    document.getElementById("pathNote").classList.toggle("pnote-start", none);
+    document.getElementById("pathLegend").hidden = none;
+    document.getElementById("pathSteps").innerHTML = none ? "" : d.steps.map(function (items, i) {
+      return '<div class="pst"><div class="num">' + (i + 1) + '</div><h4>' + STEP_NAMES[i] + '</h4><ul>' +
+        items.map(function (it) {
+          var t = escP(it[1]);
+          return '<li class="c' + it[0] + '">' + (it[2] ? '<a href="' + it[2] + '">' + t + '</a>' : t) + '</li>';
+        }).join("") + '</ul></div>';
+    }).join("");
+    /* Explore pillars and part banners */
+    ["legacy", "neptune", "phish"].forEach(function (o) {
+      var v = c.offers[o], pill = document.querySelector('.pillar[data-offer="' + o + '"]');
+      var pf = document.querySelector('.pillflag[data-pf="' + o + '"]');
+      var flag = document.querySelector('.pathflag[data-flag="part-' + o + '"]');
+      pill.classList.toggle("dim", v === 0);
+      var msg = "";
+      if (k !== "all" && v === 0) msg = "Not part of the " + PNAME[k] + " path";
+      pf.textContent = msg; flag.textContent = msg;
+    });
+    /* Legacy library and Neptune course tabs */
+    if (c.band) { var bt = document.querySelector('.tab[data-band="' + c.band + '"]'); if (bt) bt.click(); }
+    if (c.g) { var gt = document.querySelector('#gradeTabs .tab[data-g="' + c.g + '"]'); if (gt) gt.click(); }
+    else if (k === "early") {
+      document.querySelectorAll("#gradeTabs .tab").forEach(function (t) { t.classList.remove("active", "rec"); });
+      document.getElementById("gradeIntro").innerHTML = "<b>Grades 1 to 12 courses.</b> These are not part of the Early Learners path. Choose a tab above to browse them.";
+      document.getElementById("gradeGrid").innerHTML = "";
+    }
+    document.getElementById("legacyStartTip").hidden = k === "early";
+    /* Example Year */
+    var tbl = document.getElementById("yearTable");
+    tbl.classList.toggle("hide-l", c.offers.legacy === 0);
+    tbl.classList.toggle("hide-p", c.offers.phish === 0);
+    yRows.forEach(function (r, i) {
+      var o = yOrig[i], cells = r.children;
+      cells[1].innerHTML = o[1]; cells[2].innerHTML = o[2]; cells[3].innerHTML = o[3];
+      if (k === "early") {
+        var EARLY = { 0: "Get set up: confirm access", 1: "Lesson 1: Welcome to the Digital World", 4: "Lesson 2: Online Safety", 7: "Lesson 3: Taking Care of Your Devices", 9: "Review the Pre-K / K Summary Report" };
+        cells[1].innerHTML = EARLY[i] || "&nbsp;";
+      } else if (k !== "all") {
+        var names = (k === "elem") ? NEP_ELEM : NEP_SEC;
+        if (names[i]) cells[1].innerHTML = names[i];
+        var parts = o[2].split(" / ");
+        if (parts.length === 2) cells[2].innerHTML = (c.band === "elem") ? parts[0] : parts[1];
+      }
+    });
+    var YI = {
+      all: YEAR_INTRO_ALL,
+      early: "One way to pace the three Pre-K / K standalone lessons across a school year. It is an example, not a required schedule. Legacy Student Videos and Student Phishing are not part of this path, so those columns are hidden. Clear the selection to see the full table.",
+      elem: "One way to pace CyberStudent for Grades 1 to 5. It is an example, not a required schedule. The Grades 1 to 3 and Grades 4 and 5 courses share these lesson topics, and video pairings show Elementary videos. Student Phishing begins in Middle School, so that column is hidden. Clear the selection to see the full table.",
+      middle: "One way to pace CyberStudent for Grades 6 to 8. It is an example, not a required schedule. Lesson names match the Grades 6 to 8 course, and video pairings show Middle/High School videos. Student Phishing runs as one campaign all year, with leaderboard resets for friendly competitions.",
+      high: "One way to pace CyberStudent for Grades 9 to 12. It is an example, not a required schedule. Lesson names match the Grades 9 to 12 course, and video pairings show Middle/High School videos. Student Phishing runs as one campaign all year, with leaderboard resets for friendly competitions."
+    };
+    document.getElementById("yearIntro").innerHTML = YI[k];
+    var th = document.querySelector("#yearTable thead th:nth-child(2)");
+    th.textContent = k === "early" ? "Neptune Navigate Pre-K / K Lesson" : "Neptune Navigate Lesson";
+    document.querySelector("#yearTable thead th:nth-child(4)").textContent = "Student Phishing";
+    /* Neptune course and launch notes */
+    var REC = { elem: ["le", "ue"], middle: ["jh"], high: ["hs"] };
+    document.querySelectorAll("#gradeTabs .tab").forEach(function (t) { t.classList.toggle("rec", !!(REC[k] && REC[k].indexOf(t.getAttribute("data-g")) > -1)); });
+    document.querySelector(".prek").classList.toggle("hl", k === "early");
+    var CN = {
+      all: "",
+      early: "<b>Early Learners path:</b> Use the three Pre-K / K standalone lessons, shown at the top of the course list. The grade band courses are for Grades 1 to 12.",
+      elem: "<b>Elementary path:</b> Grades 1 to 3 and Grades 4 and 5 are separate courses with different formats. Use the highlighted tab that matches each class.",
+      middle: "<b>Middle School path:</b> Use the highlighted Grades 6 to 8 course.",
+      high: "<b>High School path:</b> Use the highlighted Grades 9 to 12 course."
+    };
+    document.getElementById("coursePathNote").innerHTML = CN[k];
+    var NL = {
+      all: "", elem: "", middle: "", high: "",
+      early: "<b>Early Learners path:</b> This Pre-K / K checklist replaces the eight-lesson launch steps. Select another grade level at the top to see the Grades 1 to 12 checklist.",
+    };
+    document.getElementById("nepLaunchNote").innerHTML = NL[k];
+    document.getElementById("nepLaunchEarly").hidden = k !== "early";
+    document.getElementById("nepLaunchStd").hidden = k === "early";
+    tplState.path = k;
+    var tplTab = document.querySelector('#tplTabs .tab[data-t="' + (k === "early" ? "neptune" : tplState.k) + '"]');
+    if (k === "early" && tplState.k !== "neptune" && tplTab) { tplTab.click(); } else { renderTpl(); }
+    var WR = document.getElementById("wellRounded");
+    if (!WR.dataset.orig) WR.dataset.orig = WR.innerHTML;
+    WR.innerHTML = k === "early" ? "For Early Learners, focus on the three Pre-K / K lessons. Student Phishing begins in Middle School." : k === "elem" ? "For Elementary, combine Legacy Student Videos and Neptune Navigate. Student Phishing begins in Middle School, building on what students learn now." : WR.dataset.orig;
+    document.querySelectorAll(".tip-elem").forEach(function (e) { e.hidden = (k === "middle" || k === "high"); });
+    document.querySelectorAll(".tip-pair").forEach(function (e) { e.hidden = (k === "early" || k === "elem"); });
+    document.querySelectorAll(".tip-mshs").forEach(function (e) { e.hidden = (k === "elem" || k === "early"); });
+    var NS = document.getElementById("nepStartLi");
+    if (!NS.dataset.orig) NS.dataset.orig = NS.innerHTML;
+    var NSX = {
+      elem: "Start Lesson 1 in the Grades 1 to 3 and Grades 4 and 5 courses. Students watch short video parts, then finish with a knowledge check or quiz.",
+      middle: "Start Lesson 1 in the Grades 6 to 8 course. Students watch a video, complete two short readings, and take a 10-question quiz.",
+      high: "Start Lesson 1 in the Grades 9 to 12 course. Students watch a video, complete two short readings, and take a 10-question quiz."
+    };
+    NS.innerHTML = NSX[k] || NS.dataset.orig;
+    var CT = {
+      early: "<b>Early Learners path:</b> These parent guides follow the eight Grades 1 to 12 lessons. For Pre-K and K, use the <a href=\"https://neptunenavigate.com/ctc-prek/\" target=\"_blank\" rel=\"noopener\">Pre-K / K Lessons page</a>."
+    };
+    document.getElementById("ctcNote").innerHTML = CT[k] || "";
+    var MN = {
+      early: "<b>Early Learners path:</b> Track completion with Pre-K / K Tracking and the Pre-K / K Summary Report. Reporting behavior applies to Student Phishing, which begins in Middle School.",
+      elem: "<b>Elementary path:</b> Use the Neptune gradebook and Student Progress Report for Grades 1 to 5, plus teacher-observed discussion after videos. Reporting behavior applies once students reach Middle School and Student Phishing.",
+      middle: "<b>Middle School path:</b> Track all three: Neptune completion and quiz results for Grades 6 to 8, class discussion after videos, and phishing reporting.",
+      high: "<b>High School path:</b> Track all three: Neptune completion and quiz results for Grades 9 to 12, class discussion after videos, and phishing reporting."
+    };
+    document.getElementById("measureNote").innerHTML = MN[k] || "";
+  }
+  document.querySelectorAll("#picker .pk").forEach(function (b) {
+    b.addEventListener("click", function () { selectPath(b.classList.contains("on") ? "all" : b.getAttribute("data-path")); });
+  });
+  function selectPath(k) {
+    document.querySelectorAll("#picker .pk").forEach(function (x) {
+      var on = x.getAttribute("data-path") === k;
+      x.classList.toggle("on", on); x.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    document.getElementById("clearPath").hidden = k === "all";
+    renderPath(k);
+  }
+  document.getElementById("clearPath").addEventListener("click", function () { selectPath("all"); });
+  renderPath("all");
 </script>
 </body>
 </html>
