@@ -66,6 +66,7 @@
   .tlinks { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }
   .tlinks a { font-size:12px; font-weight:700; background:#fff; color:var(--blue); padding:4px 9px; border-radius:6px; text-decoration:none; }
   .tlinks a:hover { background:var(--blue); color:#fff; }
+  .check li a { color: var(--blue); font-weight: 700; }
   .pillar li a { font-weight:700; color:var(--blue); text-decoration:none; }
   .find-title { text-align: center; font-size: 22px; font-weight: 800; margin: 34px 0 20px; }
   .find-title .spark { color: var(--yellow); margin: 0 10px; }
@@ -166,22 +167,12 @@
   .part-div { color:#fff; padding:30px 32px; margin-bottom:24px; }
   .part-div h2 { color:#fff; font-size:30px; font-weight:800; margin:6px 0 8px; }
   .part-div p { margin:0; font-size:15px; opacity:.95; max-width:760px; }
-  .ctc-lang { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:22px; }
-  .ctc-lang .box h4 { display:flex; align-items:center; gap:8px; }
-  .lang { font-size:11px; font-weight:800; letter-spacing:.08em; background:var(--navy); color:var(--yellow); padding:3px 8px; border-radius:6px; }
   .ctc-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:20px; }
+  .btn-lg { font-size:16px; padding:15px 30px; border-radius:10px; }
   .ctc-tile { border-radius:10px; overflow:hidden; text-decoration:none; display:flex; flex-direction:column; min-height:150px; }
   .ctc-tile .t { flex:1; padding:14px 14px 10px; color:#fff; font-weight:800; font-style:italic; font-size:16px; line-height:1.2; }
-  .ctc-tile .es { display:block; font-size:12px; font-weight:600; font-style:normal; opacity:.92; margin-top:6px; }
   .ctc-tile .b { height:26px; }
-  @media (max-width:860px){ .ctc-lang { grid-template-columns:1fr; } .ctc-grid { grid-template-columns:1fr 1fr; } }
-  .family { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
-  .fam { border:1px solid var(--line); border-radius:10px; padding:14px 16px; }
-  .fam.on { border:2px solid var(--blue); background:var(--tint-soft); }
-  .fam b { display:block; color:var(--navy); font-size:15px; }
-  .fam .tl { display:block; font-size:12px; font-weight:800; letter-spacing:.06em; color:var(--blue); margin:2px 0 6px; text-transform:uppercase; }
-  .fam p { margin:0; font-size:13px; }
-  .fam .you { float:right; font-size:10px; font-weight:800; background:var(--yellow); color:var(--navy); padding:2px 7px; border-radius:999px; }
+  @media (max-width:860px){ .ctc-grid { grid-template-columns:1fr 1fr; } }
   .tbl-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:10px; }
   table.year { border-collapse:collapse; width:100%; min-width:760px; font-size:13.5px; }
   table.year th { background:var(--navy); color:#fff; text-align:left; padding:10px 12px; font-size:12px; letter-spacing:.04em; }
@@ -191,7 +182,33 @@
   table.year tr:nth-child(even) td { background:#FAFBFF; }
   .prek { border-left:4px solid #1F9D55; background:#E9F6EE; border-radius:8px; padding:14px 18px; margin-bottom:18px; font-size:14px; }
   .prek b { color:var(--navy); }
-  @media (max-width:860px){ .family { grid-template-columns:1fr; } }
+  @media (max-width:860px){ }
+  #tplTabs .tab[data-t="legacy"] { border-color:var(--navy); color:var(--navy); }
+  #tplTabs .tab[data-t="legacy"].active { background:var(--navy); color:#fff; }
+  #tplTabs .tab[data-t="neptune"] { border-color:#1F9D55; color:#1F9D55; }
+  #tplTabs .tab[data-t="neptune"].active { background:#1F9D55; color:#fff; }
+  #tplTabs .tab[data-t="phish"] { border-color:#E8742A; color:#E8742A; }
+  #tplTabs .tab[data-t="phish"].active { background:#E8742A; color:#fff; }
+  .platbar { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:-4px 0 16px; font-size:13px; font-weight:700; color:var(--navy); }
+  .plat { font-family:inherit; font-size:13px; font-weight:700; padding:7px 13px; border-radius:999px; border:1px solid var(--line); background:var(--tint-soft); color:var(--navy); cursor:pointer; }
+  .plat.active { background:var(--yellow); border-color:var(--yellow); }
+  .tpl-body a { color:var(--blue); word-break:break-all; }
+  .tpl { border:1px solid var(--line); border-radius:10px; margin-bottom:16px; overflow:hidden; }
+  .tpl-hd { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:12px 16px; background:var(--tint-soft); flex-wrap:wrap; }
+  .tpl-hd b { color:var(--navy); font-size:15px; display:block; }
+  .tpl-hd span { font-size:12.5px; color:var(--muted); font-weight:600; }
+  .copy { font-family:inherit; font-size:13px; font-weight:700; border:0; border-radius:8px; padding:9px 16px; background:var(--blue); color:#fff; cursor:pointer; }
+  .copy.done { background:#1F9D55; }
+  .tpl-body { max-height:280px; overflow:auto; margin:0; padding:16px; white-space:pre-wrap; font-family:inherit; font-size:14px; line-height:1.6; color:var(--text); background:#fff; }
+  details.more { border:1px solid var(--line); border-radius:10px; margin-top:4px; }
+  details.more > summary { list-style:none; cursor:pointer; padding:14px 18px; font-weight:700; font-size:14.5px; color:var(--blue); display:flex; justify-content:space-between; align-items:center; gap:12px; border-radius:10px; }
+  details.more > summary::-webkit-details-marker { display:none; }
+  details.more > summary::after { content:"+"; font-size:20px; line-height:1; font-weight:800; color:var(--blue); }
+  details.more[open] > summary::after { content:"\2212"; }
+  details.more > summary:focus { outline:none; }
+  details.more > summary:focus-visible { outline:2px solid var(--blue); outline-offset:2px; }
+  details.more > summary:hover { background:var(--tint-soft); }
+  details.more > .more-body { padding:4px 18px 18px; }
   .ptag.phish { background: #E8742A; color: #fff; }
   .sender-cats { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:14px; }
   .scat { border:1px solid var(--line); border-radius:10px; padding:16px 18px; }
@@ -250,9 +267,9 @@
 
     <div class="find-title"><span class="spark">+</span>Start Here<span class="spark">+</span></div>
     <div class="tiles">
-      <div class="tile"><div class="n">1</div><b>Explore</b><span>See the three offerings and choose what fits.</span><div class="tlinks"><a href="#overview">View offerings</a></div></div>
-      <div class="tile"><div class="n">2</div><b>Get Set Up</b><span>Access each portal.</span><div class="tlinks"><a href="#setup-legacy">Legacy</a><a href="#setup-neptune">Neptune</a><a href="#setup-phish">Phishing</a></div></div>
-      <div class="tile"><div class="n">3</div><b>Launch</b><span>Checklists, tips, and an <a href="#year">example year</a>.</span><div class="tlinks"><a href="#launch-legacy">Legacy</a><a href="#launch-neptune">Neptune</a><a href="#launch-phish">Phishing</a></div></div>
+      <div class="tile"><div class="n">1</div><b>Explore</b><span>Explore your CyberStudent resources and how they work together.</span><div class="tlinks"><a href="#overview">View offerings</a></div></div>
+      <div class="tile"><div class="n">2</div><b>Get Set Up</b><span>Access each portal and prepare your campaign.</span><div class="tlinks"><a href="#setup-legacy">Legacy</a><a href="#setup-neptune">Neptune</a><a href="#setup-phish">Phishing</a></div></div>
+      <div class="tile"><div class="n">3</div><b>Launch</b><span>Checklists, <a href="#templates">templates</a>, and an <a href="#year">Example Year</a>.</span><div class="tlinks"><a href="#launch-legacy">Legacy</a><a href="#launch-neptune">Neptune</a><a href="#launch-phish">Phishing</a></div></div>
       <div class="tile"><div class="n">4</div><b>Measure Success</b><span>What to monitor once students are learning.</span><div class="tlinks"><a href="#measure">What to monitor</a></div></div>
     </div>
   </div>
@@ -262,7 +279,7 @@
     <div class="section-head">
       <span class="ptag both">Step 1 &middot; Explore</span>
       <h2>What's in CyberStudent</h2>
-      <p>Three offerings, each in its own portal. Start with the one that fits your goals.</p>
+      <p>Your CyberStudent resources are designed to work together. Each lives in its own portal, so explore what's available and how they connect.</p>
     </div>
     <div class="three">
       <div class="pillar">
@@ -276,29 +293,24 @@
       <div class="pillar">
         <div class="top" style="background:#1F9D55"><div class="eyebrow" style="color:#fff">Structured Curriculum</div><h4>Neptune Navigate</h4></div>
         <ul>
-          <li><b>What it is</b>Structured, ISTE aligned digital citizenship and AI media literacy education with assessments and progress tracking.</li>
-          <li><b>Where it lives</b>The Neptune Navigate portal</li>
+          <li><b>What it is</b>Structured, ISTE-aligned digital citizenship and AI media literacy education with assessments and progress tracking.</li>
+          <li><b>Where it lives</b>The Neptune Navigate Portal</li>
           <li><a href="#part-neptune">Go to Neptune Navigate</a></li>
         </ul>
       </div>
       <div class="pillar">
-        <div class="top" style="background:#E8742A"><div class="eyebrow" style="color:#fff">Hands On Practice</div><h4>Student Phishing</h4></div>
+        <div class="top" style="background:#E8742A"><div class="eyebrow" style="color:#fff">Hands-On Practice</div><h4>Student Phishing</h4></div>
         <ul>
           <li><b>What it is</b>Phishing simulations, reporting practice, and reinforcement of safe behaviors.</li>
-          <li><b>Where it lives</b>The CyberNut admin portal</li>
+          <li><b>Where it lives</b>The CyberNut Admin Portal</li>
           <li><a href="#part-phish">Go to Student Phishing</a></li>
         </ul>
       </div>
     </div>
-    <div class="box" style="margin-top:18px;">
-      <h4>How Legacy Videos and Neptune Navigate fit together</h4>
-      <p>Each works well on its own. Legacy videos are quick and flexible, ideal for a short lesson or class discussion. Neptune Navigate is a structured, grade by grade program with assessments. Some districts use both, using the videos to reinforce Neptune topics. Your Customer Success Manager can help you choose.</p>
-    </div>
-    <h3 style="font-size:16px;margin:22px 0 10px;">Where CyberStudent Fits</h3>
-    <div class="family">
-      <div class="fam"><b>CyberStaff</b><span class="tl">Train. Protect. Comply.</span><p>For the adults in your district. Phishing simulations, threat reporting and remediation, and compliance records.</p></div>
-      <div class="fam on"><span class="you">You are here</span><b>CyberStudent</b><span class="tl">Educate. Protect. Comply.</span><p>For students. Curriculum, student phishing simulations, threat reporting, and completion records.</p></div>
-      <div class="fam"><b>CyberAutomations</b><span class="tl">Automate. Protect. Control.</span><p>Runs across both. Compromised accounts caught automatically, reported threats scored and removed.</p></div>
+    <p style="margin:18px 0 0;font-size:15px;font-weight:600;color:var(--navy);">For a well-rounded CyberStudent experience, combine digital citizenship education with ongoing phishing practice to help students apply what they've learned.</p>
+    <div class="box" style="margin-top:14px;">
+      <h4>How Legacy Student Videos and Neptune Navigate fit together</h4>
+      <p>Each works well on its own. Legacy Student Videos are quick and flexible, ideal for a short lesson or class discussion. Neptune Navigate is a structured program organized by grade band with assessments. Some districts use both, using the videos to reinforce Neptune topics. Your Customer Success Manager can help you choose.</p>
     </div>
   </div>
 
@@ -318,8 +330,7 @@
       <ol class="steps">
         <li><b>Go to the Teacher Portal</b>Open teachers.cybernut.com. It is available to teachers at schools enrolled in the CyberNut program.</li>
         <li><b>Sign in with your school account</b>Choose Sign in with Google or Sign in with Microsoft.</li>
-        <li><b>Find a lesson</b>Choose Elementary or Middle and High School, then filter by topic.</li>
-        <li><b>Prep with teacher resources</b>Elementary lessons include a Teacher Guide and a printable quiz. Preview the video before class.</li>
+        <li><b>Share access with teachers</b>Send participating teachers the Teacher Portal link and confirm they can sign in.</li>
       </ol>
       <a class="btn" href="https://teachers.cybernut.com/" target="_blank" rel="noopener">Open the Teacher Portal</a>
     </div>
@@ -329,23 +340,28 @@
     <div class="section-head">
       <span class="ptag legacy">Legacy Student Videos</span>
       <h2>Legacy Student Video Library</h2>
-      <p>Every video by grade band and topic, aligned to Common Sense Media. Watch them in the Teacher Portal.</p>
+      <p>33 short videos across two grade bands, aligned to Common Sense Media. Watch them in the Teacher Portal.</p>
     </div>
 
+    <details class="more" id="library-details">
+      <summary>Browse all videos by grade band: Elementary and Middle/High School</summary>
+      <div class="more-body">
     <div class="tabs" role="tablist">
       <button class="tab active" data-band="elem" role="tab">Elementary</button>
-      <button class="tab" data-band="mshs" role="tab">Middle and High School</button>
+      <button class="tab" data-band="mshs" role="tab">Middle/High School</button>
     </div>
 
     <div class="lib-intro" id="libIntro"></div>
 
     <div class="tools">
       <div class="chips" id="chips"></div>
-      <input class="search" id="search" type="search" placeholder="Search lessons" aria-label="Search lessons">
+      <input class="search" id="search" type="search" placeholder="Search videos" aria-label="Search videos">
     </div>
     <div class="count" id="count"></div>
     <div class="grid" id="grid"></div>
-    <div class="empty" id="empty">No lessons match that search. Try a different word or topic.</div>
+    <div class="empty" id="empty">No videos match that search. Try a different word or topic.</div>
+      </div>
+    </details>
   </div>
 
   <div class="card" id="launch-legacy">
@@ -353,14 +369,15 @@
       <div>
         <div class="section-head"><span class="ptag legacy">Legacy Student Videos &middot; Launch</span><h2>Launch Checklist</h2></div>
         <ul class="check">
-          <li>Share the Teacher Portal link with participating teachers</li>
-          <li>Confirm teachers can sign in with Google or Microsoft</li>
+          <li>Send teachers the heads-up email (see <a href="#templates">templates</a>)</li>
           <li>Pick a starting video for each class</li>
+          <li>Preview the video and, for Elementary, the Teacher Guide and quiz</li>
+          <li>Read the student announcement before the first video</li>
         </ul>
       </div>
       <div>
         <div class="section-head"><span class="ptag legacy">Legacy Student Videos &middot; Launch</span><h2>Tips for Success</h2></div>
-        <div class="box" style="margin-bottom:12px;"><h4>Start with phishing</h4><p>Try Don't Click That or Phishing Made Simple for elementary, or Don't Get Hooked for older students.</p></div>
+        <div class="box" style="margin-bottom:12px;"><h4>Not sure where to begin? Try a phishing video</h4><p>Elementary: <a href="#library" data-find="elem|Don't Click That">Don't Click That!</a> or <a href="#library" data-find="elem|Phishing Made Simple">Phishing Made Simple</a>. Middle/High School: <a href="#library" data-find="mshs|Don't Get Hooked">Don't Get Hooked: Phishing &amp; QR Code Traps</a>. Each pairs well with Student Phishing.</p></div>
         <div class="box"><h4>Pause and discuss</h4><p>Videos are short, so talk through the learning outcomes as a class afterward.</p></div>
       </div>
     </div>
@@ -370,7 +387,7 @@
   <div class="card part-div" id="part-neptune" style="background:#1F9D55">
     <div class="eyebrow" style="color:#fff">Offering 2</div>
     <h2>Neptune Navigate</h2>
-    <p>Structured digital citizenship and AI media literacy education in the Neptune Navigate portal, separate from the CyberNut Teacher Portal.</p>
+    <p>Structured digital citizenship and AI media literacy education in the Neptune Navigate Portal, separate from the CyberNut Teacher Portal.</p>
   </div>
 
   <div class="card" id="setup-neptune">
@@ -381,9 +398,9 @@
     <div class="panel" style="border-color:#1F9D55">
       <ol class="steps">
         <li><b>Confirm your account setup first</b>Before you begin, check with your Customer Success Manager that your Neptune Navigate account is set up and that teachers and students have access.</li>
-        <li><b>Use your district's sign in method</b>Neptune Navigate supports ClassLink, Clever, Google, Microsoft, or email and password.</li>
+        <li><b>Use your district's sign-in method</b>Neptune Navigate supports ClassLink, Clever, Google, Microsoft, or email and password.</li>
         <li><b>Share the login link</b>Post it in your LMS, class website, or student bookmarks.</li>
-        <li><b>Start the first module</b>Students open their grade level course, watch the video, complete any readings, and finish with the quiz.</li>
+        <li><b>Test sign-in</b>Have a teacher and a student sign in and open their grade band course to confirm access works.</li>
       </ol>
       <a class="btn" href="https://universal.neptunenavigate.com/auth/login" target="_blank" rel="noopener">Open Neptune Navigate</a>
     </div>
@@ -392,11 +409,14 @@
   <div class="card" id="courses">
     <div class="section-head">
       <span class="ptag neptune">Neptune Navigate</span>
-      <h2>Courses by Grade Level</h2>
-      <p>Four ISTE aligned grade level courses, each following the same eight lesson path at the right depth for each age.</p>
+      <h2>Courses by Grade Band</h2>
+      <p>Four ISTE-aligned courses cover Grades 1 to 12, one for each grade band, and each follows the same eight-lesson path. Pre-K and Kindergarten have their own separate lessons.</p>
     </div>
 
-    <div class="prek"><b>Pre-K and Kindergarten:</b> Younger learners have their own Pre-K and K lessons, found under Resources in the Neptune Navigate portal. Track their completion with Pre-K / K Tracking and the Pre-K / K Summary Report under Reports and Tools. <a href="https://neptunenavigate.com/ctc-prek/" target="_blank" rel="noopener">View Pre-K / K Lessons</a></div>
+    <details class="more" id="course-details">
+      <summary>Browse all lessons by grade band: Pre-K through 12</summary>
+      <div class="more-body">
+    <div class="prek"><b>Pre-K and Kindergarten:</b> Younger learners have their own Pre-K and K lessons, found under Resources in the Neptune Navigate Portal. Track their completion with Pre-K / K Tracking and the Pre-K / K Summary Report under Reports and Tools. <a href="https://neptunenavigate.com/ctc-prek/" target="_blank" rel="noopener">View Pre-K / K Lessons</a></div>
 
     <div class="tabs" role="tablist" id="gradeTabs">
       <button class="tab active" data-g="le">Grades 1 to 3</button>
@@ -407,6 +427,8 @@
 
     <div class="lib-intro" id="gradeIntro"></div>
     <div class="grid" id="gradeGrid"></div>
+      </div>
+    </details>
   </div>
 
   <div class="card" id="ctc">
@@ -414,21 +436,18 @@
       <span class="ptag neptune">Neptune Navigate</span>
       <h2>Continue the Conversation for Parents</h2>
     </div>
-    <div class="ctc-lang">
-      <div class="box"><h4><span class="lang">EN</span> What is it?</h4><p>Continue the Conversation helps families keep learning at home. Each of the eight Neptune Navigate lessons has a short guide for parents, so they know what their child learned and can talk about it together. Share the link in your newsletter, on your website, or after each lesson.</p></div>
-      <div class="box"><h4><span class="lang">ES</span> &iquest;Qu&eacute; es?</h4><p>Continuar la Conversaci&oacute;n ayuda a las familias a seguir aprendiendo en casa. Cada una de las ocho lecciones de Neptune Navigate tiene una gu&iacute;a breve para padres, para que sepan lo que su hijo aprendi&oacute; y puedan hablar del tema juntos. Comparta el enlace en su bolet&iacute;n, en su sitio web o despu&eacute;s de cada lecci&oacute;n.</p></div>
-    </div>
+    <p style="margin:0 0 18px;font-size:15px;">Continue the Conversation helps families keep learning at home. Each of the eight Neptune Navigate lessons has a short parent guide, so families know what their child learned and can talk about it together. Guides are available in English and Spanish. Share the link in your newsletter, on your website, or after each lesson.</p>
     <div class="ctc-grid">
-      <a class="ctc-tile" href="https://neptunenavigate.com/ctc/" target="_blank" rel="noopener" style="background:#E38B35"><span class="t">1. Digital Citizenship Overview<span class="es">Resumen de Ciudadan&iacute;a Digital</span></span><span class="b" style="background:#CF5C33"></span></a>
-      <a class="ctc-tile" href="https://neptunenavigate.com/ctc/" target="_blank" rel="noopener" style="background:#4479E3"><span class="t">2. Cyberbullying<span class="es">Ciberacoso</span></span><span class="b" style="background:#95B4E3"></span></a>
-      <a class="ctc-tile" href="https://neptunenavigate.com/ctc/" target="_blank" rel="noopener" style="background:#6A9E58"><span class="t">3. Digital Footprint / Digital Reputation<span class="es">Huella Digital / Reputaci&oacute;n Digital</span></span><span class="b" style="background:#83C171"></span></a>
-      <a class="ctc-tile" href="https://neptunenavigate.com/ctc/" target="_blank" rel="noopener" style="background:#7FA0DA"><span class="t">4. Digital World Basics / Social Media<span class="es">Conceptos B&aacute;sicos del Mundo Digital / Redes Sociales</span></span><span class="b" style="background:#4479E3"></span></a>
-      <a class="ctc-tile" href="https://neptunenavigate.com/ctc/" target="_blank" rel="noopener" style="background:#B9ADA4"><span class="t">5. Media Literacy<span class="es">Alfabetizaci&oacute;n Medi&aacute;tica</span></span><span class="b" style="background:#E38B35"></span></a>
-      <a class="ctc-tile" href="https://neptunenavigate.com/ctc/" target="_blank" rel="noopener" style="background:#83C171"><span class="t">6. Privacy &amp; Cyber Awareness<span class="es">Privacidad y Conciencia Cibern&eacute;tica</span></span><span class="b" style="background:#6A9E58"></span></a>
-      <a class="ctc-tile" href="https://neptunenavigate.com/ctc/" target="_blank" rel="noopener" style="background:#CF5C33"><span class="t">7. Age Appropriateness / Tech Laws<span class="es">Adecuaci&oacute;n a la Edad / Leyes Tecnol&oacute;gicas</span></span><span class="b" style="background:#E38B35"></span></a>
-      <a class="ctc-tile" href="https://neptunenavigate.com/ctc/" target="_blank" rel="noopener" style="background:#231F20"><span class="t">8. Review<span class="es">Repaso</span></span><span class="b" style="background:#4479E3"></span></a>
+      <div class="ctc-tile" style="background:#E38B35"><span class="t">1. Digital Citizenship Overview</span><span class="b" style="background:#CF5C33"></span></div>
+      <div class="ctc-tile" style="background:#4479E3"><span class="t">2. Cyberbullying</span><span class="b" style="background:#95B4E3"></span></div>
+      <div class="ctc-tile" style="background:#6A9E58"><span class="t">3. Digital Footprint / Digital Reputation</span><span class="b" style="background:#83C171"></span></div>
+      <div class="ctc-tile" style="background:#7FA0DA"><span class="t">4. Digital World Basics / Social Media</span><span class="b" style="background:#4479E3"></span></div>
+      <div class="ctc-tile" style="background:#B9ADA4"><span class="t">5. Media Literacy</span><span class="b" style="background:#E38B35"></span></div>
+      <div class="ctc-tile" style="background:#83C171"><span class="t">6. Privacy &amp; Cyber Awareness</span><span class="b" style="background:#6A9E58"></span></div>
+      <div class="ctc-tile" style="background:#CF5C33"><span class="t">7. Age Appropriateness / Tech Laws</span><span class="b" style="background:#E38B35"></span></div>
+      <div class="ctc-tile" style="background:#231F20"><span class="t">8. Review</span><span class="b" style="background:#4479E3"></span></div>
     </div>
-    <a class="btn" href="https://neptunenavigate.com/ctc/" target="_blank" rel="noopener" style="background:#1F9D55">Open Parent Guides / Abrir Gu&iacute;as para Padres</a>
+    <div style="text-align:center;"><a class="btn btn-lg" href="https://neptunenavigate.com/ctc/" target="_blank" rel="noopener" style="background:#1F9D55">Open Parent Guides (English and Spanish)</a></div>
   </div>
 
   <div class="card" id="launch-neptune">
@@ -436,15 +455,15 @@
       <div>
         <div class="section-head"><span class="ptag neptune">Neptune Navigate &middot; Launch</span><h2>Launch Checklist</h2></div>
         <ul class="check">
-          <li>Confirm account setup and access with your Customer Success Manager</li>
-          <li>Post the Neptune Navigate login link where students can find it</li>
-          <li>Choose a pace for the eight lesson path</li>
-          <li>Share the Continue the Conversation guides with families</li>
+          <li>Choose a pace for the eight-lesson path (see the <a href="#year">Example Year</a>)</li>
+          <li>Send the teacher heads-up and student announcement (see <a href="#templates">templates</a>)</li>
+          <li>Start Lesson 1 in each grade band course. Lesson formats vary by grade band, from short video parts and a knowledge check in Grades 1 to 5 to a video, readings, and a quiz in Grades 6 to 12.</li>
+          <li>Share the parent guides with families using the parent letter</li>
         </ul>
       </div>
       <div>
         <div class="section-head"><span class="ptag neptune">Neptune Navigate &middot; Launch</span><h2>Tips for Success</h2></div>
-        <div class="box"><h4>Keep a steady pace</h4><p>One module a month moves students through the full course and keeps progress data easy to follow.</p></div>
+        <div class="box"><h4>Keep a steady pace</h4><p>One lesson a month moves students through the full course and keeps progress data easy to follow.</p></div>
       </div>
     </div>
   </div>
@@ -453,16 +472,18 @@
   <div class="card part-div" id="part-phish" style="background:#E8742A">
     <div class="eyebrow" style="color:#fff">Offering 3</div>
     <h2>Student Phishing</h2>
-    <p>Simulations, reporting practice, and reinforcement of safe behaviors, managed in the CyberNut admin portal.</p>
+    <p>Simulations, reporting practice, and reinforcement of safe behaviors, managed in the CyberNut Admin Portal.</p>
   </div>
 
   <div class="card" id="phishing">
     <div class="three" style="margin-bottom:26px;">
-      <div class="box"><div class="label" style="color:#E8742A">Realistic</div><h4>Student Specific Senders</h4><p>Templates based on the school tools, games, and brands students use. Simulations get harder as each student improves.</p></div>
+      <div class="box"><div class="label" style="color:#E8742A">Realistic</div><h4>Student-Specific Senders</h4><p>Templates based on the school tools, games, and brands students use. Simulations get harder as each student improves.</p></div>
       <div class="box"><div class="label" style="color:#E8742A">Reinforcing</div><h4>Microlessons and Points</h4><p>Short microlessons teach what to look for. Students earn points for spotting scams and climb class leaderboards.</p></div>
-      <div class="box"><div class="label" style="color:#E8742A">Practice</div><h4>Reporting and Removal</h4><p>Students practice flagging suspicious messages, and reported threats can be removed from student inboxes. CyberAutomations can score and remove reported threats and catch compromised accounts automatically.</p></div>
+      <div class="box"><div class="label" style="color:#E8742A">Practice</div><h4>Reporting Practice</h4><p>Students practice recognizing and reporting suspicious emails through simulations. CyberNut can also help districts identify and remediate real email threats, depending on enabled services.</p></div>
     </div>
-    <h3 style="font-size:17px;margin-bottom:12px;">Student Sender Library</h3>
+    <details class="more" id="senders">
+      <summary>Student Sender Library: see all 33 senders by category</summary>
+      <div class="more-body">
     <div class="sender-cats">
       <div class="scat"><div class="hd"><b>EdTech Vendor</b><span>14 senders</span></div><div class="snd"><span>Canvas</span><span>ClassLink</span><span>Clever</span><span>Google Classroom</span><span>Google Drive</span><span>Google Workspace</span><span>i-Ready</span><span>Infinite Campus</span><span>Khan Academy</span><span class="more">and more</span></div></div>
       <div class="scat"><div class="hd"><b>Gaming</b><span>10 senders</span></div><div class="snd"><span>Discord</span><span>EA/EA Sports</span><span>Fortnite/Epic Games</span><span>Minecraft/Mojang</span><span>Nintendo</span><span>PlayStation Network</span><span>Roblox</span><span class="more">and more</span></div></div>
@@ -470,19 +491,21 @@
       <div class="scat"><div class="hd"><b>Food and Retail</b><span>3 senders</span></div><div class="snd"><span>Chick-fil-A</span><span>McDonald's</span><span>Starbucks</span></div></div>
       <div class="scat"><div class="hd"><b>Prizes and Giveaways</b><span>2 senders</span></div><div class="snd"><span>"You Won" Giveaway</span><span>Gift Card Giveaway</span></div></div>
     </div>
+      </div>
+    </details>
   </div>
 
   <div class="card" id="setup-phish">
     <div class="banner" style="background:#E8742A">
       <div class="brand">CyberStudent</div>
-      <div><div class="eyebrow" style="color:#fff">Student Phishing &middot; Get Set Up</div><h3>Build a Student Phishing Campaign</h3></div>
+      <div><div class="eyebrow" style="color:#fff">Student Phishing &middot; Get Set Up</div><h3>Prepare a Student Phishing Campaign</h3></div>
     </div>
     <div class="panel" style="border-color:#E8742A">
       <ol class="steps">
-        <li><b>Start a new campaign</b>In the CyberNut admin portal, create a campaign and choose a student campaign type.</li>
+        <li><b>Start a new campaign</b>In the CyberNut Admin Portal, create a campaign and choose a student campaign type.</li>
         <li><b>Set up and create teams</b>Complete setup, then build teams for the students you want to include.</li>
         <li><b>Review senders</b>All senders are on by default. Preview templates and turn off any that don't fit. At least 8 must stay on.</li>
-        <li><b>Final review and launch</b>Confirm your settings and launch.</li>
+        <li><b>Final review</b>Confirm your settings, but hold off on launching. The campaign starts during Launch, after teachers and students know what to expect.</li>
       </ol>
       <a class="btn" href="https://admin.cybernut.com/" target="_blank" rel="noopener" style="background:#E8742A">Open the Admin Portal</a>
     </div>
@@ -493,15 +516,16 @@
       <div>
         <div class="section-head"><span class="ptag phish">Student Phishing &middot; Launch</span><h2>Launch Checklist</h2></div>
         <ul class="check">
-          <li>Let teachers know simulations are coming so they can reinforce reporting</li>
-          <li>Pair your first campaign with a phishing lesson</li>
-          <li>Choose how often to run campaigns</li>
+          <li>Send the teacher heads-up and student announcement (see <a href="#templates">templates</a>)</li>
+          <li>Schedule a phishing lesson for the same week</li>
+          <li>Launch the campaign from Final review. This is when simulations begin, and the campaign runs all year.</li>
+          <li>Plan friendly competitions by resetting the leaderboard for a length you choose</li>
         </ul>
       </div>
       <div>
         <div class="section-head"><span class="ptag phish">Student Phishing &middot; Launch</span><h2>Tips for Success</h2></div>
         <div class="box" style="margin-bottom:12px;"><h4>Celebrate reporting</h4><p>Recognize students who report phishing and use class leaderboards to build momentum.</p></div>
-        <div class="box"><h4>Start broad, then tune</h4><p>Begin with all senders on and adjust after your first campaign.</p></div>
+        <div class="box"><h4>Start broad, then tune</h4><p>Begin with all senders on and adjust after the first few weeks.</p></div>
       </div>
     </div>
   </div>
@@ -511,25 +535,46 @@
     <div class="section-head">
       <span class="ptag both">Step 3 &middot; Launch</span>
       <h2>Example Year</h2>
-      <p>One way to pace CyberStudent across a school year. It is an example, not a required schedule. Use only the columns that apply to you. Video pairings show Elementary / Middle and High School.</p>
+      <p>One way to pace CyberStudent across a school year. It is an example, not a required schedule. Use only the columns that apply to you. Neptune Navigate lesson names and activities can vary by grade band, so the table shows each lesson's general topic. Legacy video pairings list the Elementary video first, then the Middle/High School video. Student Phishing runs as one campaign all year, with leaderboard resets for friendly competitions.</p>
     </div>
+    <details class="more" id="year-details">
+      <summary>Show the example year, month by month</summary>
+      <div class="more-body">
     <div class="tbl-wrap">
       <table class="year">
-        <thead><tr><th>Month</th><th class="n">Neptune Navigate Lesson</th><th class="l">Legacy Student Video Pairing</th><th class="p">Student Phishing Training</th></tr></thead>
+        <thead><tr><th>Month</th><th class="n">Neptune Navigate Lesson</th><th class="l">Legacy Student Video Pairing</th><th class="p">Student Phishing</th></tr></thead>
         <tbody>
-          <tr><td class="m">August</td><td>Setup: roster students, share portal links</td><td>Pick starting videos</td><td>Build student teams</td></tr>
-          <tr><td class="m">September</td><td>1. Digital Citizenship Overview</td><td>Classroom Technology Rules / Online Challenges and Risky Trends</td><td>&nbsp;</td></tr>
-          <tr><td class="m">October</td><td>2. Cyberbullying</td><td>Kindness Counts Online / Cyberbullying and Harassment: A Security Risk</td><td>Campaign 1 (Cybersecurity Awareness Month)</td></tr>
+          <tr><td class="m">August</td><td>Get set up: confirm access and share portal links</td><td>Pick starting videos</td><td>Prepare your year-long campaign</td></tr>
+          <tr><td class="m">September</td><td>1. Digital Citizenship Overview</td><td>Classroom Technology Rules / Online Challenges and Risky Trends</td><td>Launch the campaign. Simulations begin and run all year.</td></tr>
+          <tr><td class="m">October</td><td>2. Cyberbullying</td><td>Kindness Counts Online / Cyberbullying and Harassment: A Security Risk</td><td>Friendly competition for Cybersecurity Awareness Month</td></tr>
           <tr><td class="m">November</td><td>3. Digital Footprint / Reputation</td><td>The Digital Trail You Leave Behind / Your Digital Footprint and Personal Security</td><td>&nbsp;</td></tr>
-          <tr><td class="m">December</td><td>4. Digital World Basics / Social Media</td><td>Sharing Accounts Isn't Sharing Toys / Passwords and MFA for Social/Game Accounts</td><td>Campaign 2</td></tr>
+          <tr><td class="m">December</td><td>4. Digital World Basics / Social Media</td><td>Sharing Accounts Isn't Sharing Toys / Passwords and MFA for Social/Game Accounts</td><td>Reset the leaderboard for a winter challenge</td></tr>
           <tr><td class="m">January</td><td>5. Media Literacy</td><td>Can You Believe Everything Online? / Spotting Fake News and Misinformation</td><td>&nbsp;</td></tr>
-          <tr><td class="m">February</td><td>6. Privacy and Cyber Awareness</td><td>Personal Info: What's Okay to Share? / What is Doxxing?</td><td>Campaign 3</td></tr>
+          <tr><td class="m">February</td><td>6. Privacy and Cyber Awareness</td><td>Personal Info: What's Okay to Share? / What is Doxxing?</td><td>New friendly competition</td></tr>
           <tr><td class="m">March</td><td>7. Age Appropriateness / Tech Laws</td><td>Is That a Robot or a Person? / AI Can Help, But Don't Copy/Paste</td><td>&nbsp;</td></tr>
-          <tr><td class="m">April</td><td>8. Review</td><td>Phishing Made Simple / Don't Get Hooked: Phishing and QR Code Traps</td><td>Campaign 4</td></tr>
+          <tr><td class="m">April</td><td>8. Review</td><td>Phishing Made Simple / Don't Get Hooked: Phishing and QR Code Traps</td><td>Final competition of the year</td></tr>
           <tr><td class="m">May</td><td>Export reports and celebrate</td><td>Screen Time Balance / Screen Time and Digital Balance</td><td>Export results, recognize top reporters</td></tr>
         </tbody>
       </table>
     </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- Templates -->
+  <div class="card" id="templates">
+    <div class="section-head">
+      <span class="ptag both">Step 3 &middot; Launch</span>
+      <h2>Communication Templates</h2>
+      <p>Teacher, student, and family templates for each offering. Fill in the bracketed details. Send staff emails from a recognizable district address, signed by a district leader.</p>
+    </div>
+    <div class="tabs" role="tablist" id="tplTabs">
+      <button class="tab active" data-t="legacy">Legacy Student Videos</button>
+      <button class="tab" data-t="neptune">Neptune Navigate</button>
+      <button class="tab" data-t="phish">Student Phishing</button>
+    </div>
+    <div id="platBar" class="platbar"><span>Your district uses:</span><button class="plat active" data-p="google">Google (Gmail)</button><button class="plat" data-p="microsoft">Microsoft (Outlook)</button></div>
+    <div id="tplList"></div>
   </div>
 
   <!-- 4. Measure Success -->
@@ -541,16 +586,17 @@
     </div>
     <div class="three">
       <div class="box"><div class="label">Lesson Completion</div><h4>Are students finishing lessons?</h4><p>In Neptune Navigate, use the gradebook, Student Progress Report, Navigate District Report, and Pre-K / K Summary Report.</p></div>
-      <div class="box"><div class="label">Student Engagement</div><h4>Are students participating?</h4><p>Watch Neptune quiz results, class discussion after Legacy Videos, and points and leaderboards in Student Phishing.</p></div>
-      <div class="box"><div class="label">Reporting Behavior</div><h4>Are students reporting phishing?</h4><p>Review campaign results by student, school, and district in the admin portal to see reporting grow over time.</p></div>
+      <div class="box"><div class="label">Student Engagement</div><h4>Are students participating?</h4><p>Legacy Student Videos participation is teacher-observed through class discussion and printable quizzes. Neptune Navigate (quiz results) and Student Phishing (points and leaderboards) offer platform-based metrics.</p></div>
+      <div class="box"><div class="label">Reporting Behavior</div><h4>Are students reporting phishing?</h4><p>Review campaign results by student, school, and district in the CyberNut Admin Portal to see reporting grow over time.</p></div>
     </div>
-    <p style="margin:16px 0 0;font-size:14px;color:var(--muted);">Completion records can be exported and may help document your district's compliance efforts.</p>
+    <p style="margin:16px 0 0;font-size:14.5px;color:var(--navy);font-weight:600;">If engagement or reporting is low, resend the teacher and student templates, pair a related lesson with a friendly competition, and contact your Customer Success Manager for help.</p>
+    <p style="margin:8px 0 0;font-size:14px;color:var(--muted);">Completion records can be exported and may help document your district's compliance efforts.</p>
   </div>
 
   <!-- Help -->
   <div class="card help">
     <h2>Need a Hand?</h2>
-    <p>Your Customer Success Manager can help you choose an offering, confirm access, and plan your rollout.</p>
+    <p>Your Customer Success Manager can help you decide how to use each resource, confirm access, and plan your rollout.</p>
   </div>
 
   <p class="footer-note">&copy; 2026 CyberNut Inc. All rights reserved.</p>
@@ -564,7 +610,7 @@
 
   var BANDS = {
     elem: {
-      intro: "<b>Elementary lessons</b> pair a short classroom video with a Teacher Guide and a printable quiz, so you can teach each topic with no extra prep.",
+      intro: "<b>Elementary videos</b> pair a short classroom video with a Teacher Guide and a printable quiz, so you can teach each topic with no extra prep.",
       cats: ["Cybersecurity Basics", "Healthy Tech Use", "Safe Online Behavior", "Data Privacy & Protection", "Engaging AI Safely", "Media Literacy", "Device/Account Security"],
       mods: [
         { c: "Cybersecurity Basics", t: "Don't Click That!", d: "3:45", f: "Don't%20Click%20That", s: "Learn why it's important to think before clicking on links or buttons online. Students learn to recognize suspicious links and avoid potential online dangers.", o: ["Identify suspicious links and buttons", "Understand consequences of clicking unknown links", "Practice safe clicking habits"] },
@@ -584,7 +630,7 @@
       ]
     },
     mshs: {
-      intro: "<b>Middle and High School lessons</b> tackle the real situations older students face, from social media and gaming to scams, AI tools, and digital wellness. Each one is a short classroom video with clear learning outcomes.",
+      intro: "<b>Middle/High School videos</b> tackle the real situations older students face, from social media and gaming to scams, AI tools, and digital wellness. Each is a short classroom video with clear learning outcomes.",
       cats: ["Media Literacy", "Device/Account Security", "Healthy Tech Use", "Cybersecurity Basics", "Safe Online Behavior", "Data Privacy & Protection", "Engaging AI Safely"],
       mods: [
         { c: "Media Literacy", t: "Echo Chambers & Filter Bubbles: Breaking Out of Your Feed", s: "How social media algorithms create filter bubbles by tracking engagement and serving similar content. Students learn how echo chambers form and why they make users vulnerable to misinformation.", o: ["Understand how algorithms create filter bubbles and echo chambers", "Recognize the importance of diversifying information sources", "Apply critical thinking by fact checking content before sharing"] },
@@ -681,55 +727,55 @@
   var ELEM_TRAITS = [["Safe", "Strangers online, apps and websites with permission, never share personal info, never lie about your age"], ["Responsible", "Wise choices online, take care of devices"], ["Respectful", "Be kind online, don't be a cyberbully"]];
   var GRADES = {
     le: {
-      intro: "<b>Lower Elementary, Grades 1 to 3.</b> Each module is a set of short video parts followed by a 5 question knowledge check.",
+      intro: "<b>Lower Elementary, Grades 1 to 3.</b> Each lesson is a set of short video parts followed by a 5-question knowledge check.",
       mods: [
-        { n: "Digital Citizenship Overview", p: [["v", "Part 1 &middot; 1:48"], ["v", "Part 2 &middot; 2:53"], ["q", "5 Question Check"]], t: ELEM_TRAITS },
-        { n: "Cyberbullying", p: [["v", "Part 1 &middot; 2:31"], ["v", "Part 2 &middot; 2:18"], ["v", "Part 3 &middot; 1:48"], ["q", "5 Question Check"]], t: [["Topics", "Definition, examples, and the 4 roles in cyberbullying"], ["4 Step Plan", "Stop, Show, Block, Share"]] },
-        { n: "Digital Footprint", p: [["v", "Part 1 &middot; 1:45"], ["v", "Part 2 &middot; 2:31"], ["v", "Part 3 &middot; 2:39"], ["q", "5 Question Check"]], t: [["Topics", "Meaning of permanent, reputation, online video games"], ["3 P's", "Privacy, Positive, Permission"]] },
-        { n: "Digital World Basics", p: [["v", "Part 1 &middot; 3:58"], ["v", "Part 2 &middot; 3:29"], ["q", "5 Question Check"]], t: [["Topics", "Strong passwords, online safety, online gaming"]] },
-        { n: "Media Literacy", p: [["v", "Part 1 &middot; 2:17"], ["v", "Part 2 &middot; 3:04"], ["q", "5 Question Check"]], t: [["Topics", "Questions to ask yourself: who is the message for, why did they make it, who made it and can they be trusted"], ["Rule", "Pop ups: skip it, don't click it"]] },
-        { n: "Privacy and Cyber Awareness", p: [["v", "Part 1 &middot; 2:51"], ["v", "Part 2 &middot; 3:34"], ["q", "5 Question Check"]], t: [["Topics", "Examples of private information, permission and strong passwords, online strangers, usernames and images"]] },
-        { n: "Age Appropriateness", p: [["v", "Part 1 &middot; 2:18"], ["v", "Part 2 &middot; 1:53"], ["v", "Part 3 &middot; 3:17"], ["q", "5 Question Check"]], t: [["Topics", "Age restrictions, COPPA, never lie about your age online"]] },
-        { n: "Review", p: [["v", "Review &middot; 4:46"], ["q", "5 Question Check"]], t: [["Recap", "Safe, Responsible, and Respectful, including passwords, rules online, and the 3 P's"]] }
+        { n: "Digital Citizenship Overview", p: [["v", "Part 1 &middot; 1:48"], ["v", "Part 2 &middot; 2:53"], ["q", "5-Question Check"]], t: ELEM_TRAITS },
+        { n: "Cyberbullying", p: [["v", "Part 1 &middot; 2:31"], ["v", "Part 2 &middot; 2:18"], ["v", "Part 3 &middot; 1:48"], ["q", "5-Question Check"]], t: [["Topics", "Definition, examples, and the 4 roles in cyberbullying"], ["4 Step Plan", "Stop, Show, Block, Share"]] },
+        { n: "Digital Footprint", p: [["v", "Part 1 &middot; 1:45"], ["v", "Part 2 &middot; 2:31"], ["v", "Part 3 &middot; 2:39"], ["q", "5-Question Check"]], t: [["Topics", "Meaning of permanent, reputation, online video games"], ["3 P's", "Privacy, Positive, Permission"]] },
+        { n: "Digital World Basics", p: [["v", "Part 1 &middot; 3:58"], ["v", "Part 2 &middot; 3:29"], ["q", "5-Question Check"]], t: [["Topics", "Strong passwords, online safety, online gaming"]] },
+        { n: "Media Literacy", p: [["v", "Part 1 &middot; 2:17"], ["v", "Part 2 &middot; 3:04"], ["q", "5-Question Check"]], t: [["Topics", "Questions to ask yourself: who is the message for, why did they make it, who made it and can they be trusted"], ["Rule", "Pop ups: skip it, don't click it"]] },
+        { n: "Privacy and Cyber Awareness", p: [["v", "Part 1 &middot; 2:51"], ["v", "Part 2 &middot; 3:34"], ["q", "5-Question Check"]], t: [["Topics", "Examples of private information, permission and strong passwords, online strangers, usernames and images"]] },
+        { n: "Age Appropriateness", p: [["v", "Part 1 &middot; 2:18"], ["v", "Part 2 &middot; 1:53"], ["v", "Part 3 &middot; 3:17"], ["q", "5-Question Check"]], t: [["Topics", "Age restrictions, COPPA, never lie about your age online"]] },
+        { n: "Review", p: [["v", "Review &middot; 4:46"], ["q", "5-Question Check"]], t: [["Recap", "Safe, Responsible, and Respectful, including passwords, rules online, and the 3 P's"]] }
       ]
     },
     ue: {
-      intro: "<b>Upper Elementary, Grades 4 and 5.</b> Each module is a set of short video parts followed by a 10 question quiz.",
+      intro: "<b>Upper Elementary, Grades 4 and 5.</b> Each lesson is a set of short video parts followed by a 10-question quiz.",
       mods: [
-        { n: "Digital Citizenship Overview", p: [["v", "Part 1 &middot; 1:34"], ["v", "Part 2 &middot; 2:35"], ["q", "10 Question Quiz"]], t: ELEM_TRAITS },
-        { n: "Cyberbullying", p: [["v", "Part 1 &middot; 2:30"], ["v", "Part 2 &middot; 1:38"], ["v", "Part 3 &middot; 1:39"], ["q", "10 Question Quiz"]], t: [["Topics", "Definition, examples, and the 4 roles in cyberbullying"], ["4 Step Plan", "Stop, Show, Block, Share"]] },
-        { n: "Digital Footprint", p: [["v", "Part 1 &middot; 2:16"], ["v", "Part 2 &middot; 1:55"], ["v", "Part 3 &middot; 2:06"], ["q", "10 Question Quiz"]], t: [["Topics", "Nothing is private and everything is permanent, screenshots, online video games"], ["3 P's", "Privacy, Positive, Permission"]] },
-        { n: "Digital World Basics", p: [["v", "Part 1 &middot; 4:31"], ["v", "Part 2 &middot; 3:50"], ["q", "10 Question Quiz"]], t: [["Topics", "Strong passwords, online safety, online gaming"]] },
-        { n: "Media Literacy", p: [["v", "Part 1 &middot; 3:54"], ["v", "Part 2 &middot; 4:26"], ["q", "10 Question Quiz"]], t: [["Framework", "Access the information, Analyze where it comes from, Evaluate if it is reliable, Create different forms of media"]] },
-        { n: "Privacy and Cyber Awareness", p: [["v", "Part 1 &middot; 2:21"], ["v", "Part 2 &middot; 4:36"], ["q", "10 Question Quiz"]], t: [["Topics", "Personally identifiable information, permission and strong passwords, online strangers, usernames and images"]] },
-        { n: "Age Appropriateness", p: [["v", "Part 1 &middot; 4:33"], ["v", "Part 2 &middot; 3:22"], ["q", "10 Question Quiz"]], t: [["Topics", "Age restrictions, COPPA, never lie about your age online, social media challenges"]] },
-        { n: "Review", p: [["v", "Review &middot; 5:15"], ["q", "10 Question Quiz"]], t: [["Recap", "Safe, Responsible, and Respectful, including COPPA and following age restrictions"]] }
+        { n: "Digital Citizenship Overview", p: [["v", "Part 1 &middot; 1:34"], ["v", "Part 2 &middot; 2:35"], ["q", "10-Question Quiz"]], t: ELEM_TRAITS },
+        { n: "Cyberbullying", p: [["v", "Part 1 &middot; 2:30"], ["v", "Part 2 &middot; 1:38"], ["v", "Part 3 &middot; 1:39"], ["q", "10-Question Quiz"]], t: [["Topics", "Definition, examples, and the 4 roles in cyberbullying"], ["4 Step Plan", "Stop, Show, Block, Share"]] },
+        { n: "Digital Footprint", p: [["v", "Part 1 &middot; 2:16"], ["v", "Part 2 &middot; 1:55"], ["v", "Part 3 &middot; 2:06"], ["q", "10-Question Quiz"]], t: [["Topics", "Nothing is private and everything is permanent, screenshots, online video games"], ["3 P's", "Privacy, Positive, Permission"]] },
+        { n: "Digital World Basics", p: [["v", "Part 1 &middot; 4:31"], ["v", "Part 2 &middot; 3:50"], ["q", "10-Question Quiz"]], t: [["Topics", "Strong passwords, online safety, online gaming"]] },
+        { n: "Media Literacy", p: [["v", "Part 1 &middot; 3:54"], ["v", "Part 2 &middot; 4:26"], ["q", "10-Question Quiz"]], t: [["Framework", "Access the information, Analyze where it comes from, Evaluate if it is reliable, Create different forms of media"]] },
+        { n: "Privacy and Cyber Awareness", p: [["v", "Part 1 &middot; 2:21"], ["v", "Part 2 &middot; 4:36"], ["q", "10-Question Quiz"]], t: [["Topics", "Personally identifiable information, permission and strong passwords, online strangers, usernames and images"]] },
+        { n: "Age Appropriateness", p: [["v", "Part 1 &middot; 4:33"], ["v", "Part 2 &middot; 3:22"], ["q", "10-Question Quiz"]], t: [["Topics", "Age restrictions, COPPA, never lie about your age online, social media challenges"]] },
+        { n: "Review", p: [["v", "Review &middot; 5:15"], ["q", "10-Question Quiz"]], t: [["Recap", "Safe, Responsible, and Respectful, including COPPA and following age restrictions"]] }
       ]
     },
     jh: {
-      intro: "<b>Junior High, Grades 6 to 8.</b> Each module has one lesson video, two short readings, and a 10 question quiz.",
+      intro: "<b>Junior High, Grades 6 to 8.</b> Each lesson has one video, two short readings, and a 10-question quiz.",
       mods: [
-        { n: "Digital Citizenship Overview", p: [["v", "Video &middot; 6:12"], ["r", "How to Be a Good Digital Citizen"], ["r", "Showing Respect Online"], ["q", "10 Question Quiz"]], t: [["Traits", "Honesty, Compassion, Respect, Responsibility, Courage"], ["Topics", "Age restrictions, impersonation, think before you post, nothing is private, obeying laws, public vs. private"]] },
-        { n: "Cyberbullying", p: [["v", "Video &middot; 5:45"], ["r", "How to Avoid Being a Target of Cyberbullying"], ["r", "How to Be an Upstander"], ["q", "10 Question Quiz"]], t: [["Topics", "Definition, examples, and the 4 roles in cyberbullying"], ["5 Step Plan", "Stop, Screenshot, Block, Tell, Share"]] },
-        { n: "Digital Reputation", p: [["v", "Video &middot; 6:21"], ["r", "How Much Do Our Words Matter?"], ["r", "Understanding Your Digital Footprint"], ["q", "10 Question Quiz"]], t: [["Topics", "Digital tattoo, words matter, screenshots, impact on your future"], ["Reputation", "Think before you post, set and respect boundaries, stay positive"]] },
-        { n: "Social Media", p: [["v", "Video &middot; 6:07"], ["r", "Words Have Impact"], ["r", "Kindness Goes Viral"], ["q", "10 Question Quiz"]], t: [["Topics", "COPPA, don't share personal info, privacy settings, think before you post, you are more than a number, set boundaries"]] },
-        { n: "Media Literacy", p: [["v", "Video &middot; 8:15"], ["r", "Navigating the Information Age Using the SIFT Method"], ["r", "Reverse Image Search"], ["q", "10 Question Quiz"]], t: [["Topics", "Analyzing media, searches and web addresses, misinformation, disinformation, and AI tools, validating sources"], ["Evaluate", "SIFT method, lateral reading, fact checking"]] },
-        { n: "Privacy and Cyber Awareness", p: [["v", "Video &middot; 7:22"], ["r", "Passkeys Are the New Login"], ["r", "Watch Out for Smishing Scams"], ["q", "10 Question Quiz"]], t: [["Topics", "Private vs. public settings, chat rooms and online gaming, strong passwords, secure websites, don't click links"]] },
-        { n: "Tech Laws", p: [["v", "Video &middot; 10:13"], ["r", "Nothing About Sexting Is Safe"], ["r", "Copyright and Fair Use"], ["q", "10 Question Quiz"]], t: [["Topics", "Plagiarism, COPPA, online impersonation, inappropriate photos and sexting, cyberbullying"]] },
-        { n: "Review", p: [["v", "Video &middot; 7:11"], ["r", "Netiquette"], ["r", "AI Scams"], ["q", "10 Question Quiz"]], t: [["Recap", "Honesty, Compassion, Respect, Responsibility, and Courage, including taking a stand against cyberbullying"]] }
+        { n: "Digital Citizenship Overview", p: [["v", "Video &middot; 6:12"], ["r", "How to Be a Good Digital Citizen"], ["r", "Showing Respect Online"], ["q", "10-Question Quiz"]], t: [["Traits", "Honesty, Compassion, Respect, Responsibility, Courage"], ["Topics", "Age restrictions, impersonation, think before you post, nothing is private, obeying laws, public vs. private"]] },
+        { n: "Cyberbullying", p: [["v", "Video &middot; 5:45"], ["r", "How to Avoid Being a Target of Cyberbullying"], ["r", "How to Be an Upstander"], ["q", "10-Question Quiz"]], t: [["Topics", "Definition, examples, and the 4 roles in cyberbullying"], ["5 Step Plan", "Stop, Screenshot, Block, Tell, Share"]] },
+        { n: "Digital Reputation", p: [["v", "Video &middot; 6:21"], ["r", "How Much Do Our Words Matter?"], ["r", "Understanding Your Digital Footprint"], ["q", "10-Question Quiz"]], t: [["Topics", "Digital tattoo, words matter, screenshots, impact on your future"], ["Reputation", "Think before you post, set and respect boundaries, stay positive"]] },
+        { n: "Social Media", p: [["v", "Video &middot; 6:07"], ["r", "Words Have Impact"], ["r", "Kindness Goes Viral"], ["q", "10-Question Quiz"]], t: [["Topics", "COPPA, don't share personal info, privacy settings, think before you post, you are more than a number, set boundaries"]] },
+        { n: "Media Literacy", p: [["v", "Video &middot; 8:15"], ["r", "Navigating the Information Age Using the SIFT Method"], ["r", "Reverse Image Search"], ["q", "10-Question Quiz"]], t: [["Topics", "Analyzing media, searches and web addresses, misinformation, disinformation, and AI tools, validating sources"], ["Evaluate", "SIFT method, lateral reading, fact checking"]] },
+        { n: "Privacy and Cyber Awareness", p: [["v", "Video &middot; 7:22"], ["r", "Passkeys Are the New Login"], ["r", "Watch Out for Smishing Scams"], ["q", "10-Question Quiz"]], t: [["Topics", "Private vs. public settings, chat rooms and online gaming, strong passwords, secure websites, don't click links"]] },
+        { n: "Tech Laws", p: [["v", "Video &middot; 10:13"], ["r", "Nothing About Sexting Is Safe"], ["r", "Copyright and Fair Use"], ["q", "10-Question Quiz"]], t: [["Topics", "Plagiarism, COPPA, online impersonation, inappropriate photos and sexting, cyberbullying"]] },
+        { n: "Review", p: [["v", "Video &middot; 7:11"], ["r", "Netiquette"], ["r", "AI Scams"], ["q", "10-Question Quiz"]], t: [["Recap", "Honesty, Compassion, Respect, Responsibility, and Courage, including taking a stand against cyberbullying"]] }
       ]
     },
     hs: {
-      intro: "<b>High School, Grades 9 to 12.</b> Each module has one lesson video, two short readings, and a 10 question quiz.",
+      intro: "<b>High School, Grades 9 to 12.</b> Each lesson has one video, two short readings, and a 10-question quiz.",
       mods: [
-        { n: "Digital Citizenship Overview", p: [["v", "Video &middot; 7:11"], ["r", "The Sleepless Generation: How Social Media Impacts Teens' Health"], ["r", "How Teens and Parents Approach Screen Time"], ["q", "10 Question Quiz"]], t: [["Traits", "Honesty, Compassion, Respect, Responsibility, Courage"], ["Topics", "Sharing accurate information, impersonation, words matter, nothing is private, obeying laws, public vs. private"]] },
-        { n: "Cyberbullying", p: [["v", "Video &middot; 7:29"], ["r", "Am I Others?"], ["r", "Athletes and Social Media: A Double Edged Sword"], ["q", "10 Question Quiz"]], t: [["Topics", "Definition, examples, and the 4 roles in cyberbullying"], ["5 Step Plan", "Stop, Screenshot, Block, Tell, Share"]] },
-        { n: "Digital Reputation", p: [["v", "Video &middot; 8:02"], ["r", "Think Before You Post"], ["r", "The Invisible Trail: Understanding Your Digital Footprint"], ["q", "10 Question Quiz"]], t: [["Topics", "Words matter, impact on your future"], ["Reputation", "Think before you post, don't overshare, set boundaries, stay positive"]] },
-        { n: "Social Media", p: [["v", "Video &middot; 8:13"], ["r", "Safety"], ["r", "Social Networking Advice for Teens"], ["q", "10 Question Quiz"]], t: [["Topics", "Scope of social media, personal info, privacy settings, think before you post, you are more than a number, set boundaries"]] },
-        { n: "Media Literacy", p: [["v", "Video &middot; 8:25"], ["r", "Navigating the Information Age Using the SIFT Method"], ["r", "Reverse Image Search"], ["q", "10 Question Quiz"]], t: [["Topics", "Analyzing media, misinformation and disinformation, AI tools and reverse image search, validating sources"], ["Evaluate", "SIFT method, lateral reading, fact checking"]] },
-        { n: "Privacy and Cyber Awareness", p: [["v", "Video &middot; 9:20"], ["r", "The Password Pitfalls We All Fall For"], ["r", "Privacy Issues in the World of AI"], ["q", "10 Question Quiz"]], t: [["Topics", "Private vs. public settings, passwords and passphrases, password managers, two factor authentication, don't click links"]] },
-        { n: "Tech Laws", p: [["v", "Video &middot; 10:29"], ["r", "The Dangers of Deepfakes"], ["r", "The Rise of Deepfakes"], ["q", "10 Question Quiz"]], t: [["Intellectual Property", "Plagiarism, copyright, fair use, artificial intelligence"], ["Cyber Crimes", "Harassment, cyberbullying, online impersonation, sextortion"]] },
-        { n: "Review", p: [["v", "Video &middot; 7:42"], ["r", "The Importance of Screentime Boundaries"], ["r", "The Risks of Oversharing"], ["q", "10 Question Quiz"]], t: [["Recap", "The five traits plus the SIFT method, protecting your reputation, controlling your social media, and ethical use of AI"]] }
+        { n: "Digital Citizenship Overview", p: [["v", "Video &middot; 7:11"], ["r", "The Sleepless Generation: How Social Media Impacts Teens' Health"], ["r", "How Teens and Parents Approach Screen Time"], ["q", "10-Question Quiz"]], t: [["Traits", "Honesty, Compassion, Respect, Responsibility, Courage"], ["Topics", "Sharing accurate information, impersonation, words matter, nothing is private, obeying laws, public vs. private"]] },
+        { n: "Cyberbullying", p: [["v", "Video &middot; 7:29"], ["r", "Am I Others?"], ["r", "Athletes and Social Media: A Double Edged Sword"], ["q", "10-Question Quiz"]], t: [["Topics", "Definition, examples, and the 4 roles in cyberbullying"], ["5 Step Plan", "Stop, Screenshot, Block, Tell, Share"]] },
+        { n: "Digital Reputation", p: [["v", "Video &middot; 8:02"], ["r", "Think Before You Post"], ["r", "The Invisible Trail: Understanding Your Digital Footprint"], ["q", "10-Question Quiz"]], t: [["Topics", "Words matter, impact on your future"], ["Reputation", "Think before you post, don't overshare, set boundaries, stay positive"]] },
+        { n: "Social Media", p: [["v", "Video &middot; 8:13"], ["r", "Safety"], ["r", "Social Networking Advice for Teens"], ["q", "10-Question Quiz"]], t: [["Topics", "Scope of social media, personal info, privacy settings, think before you post, you are more than a number, set boundaries"]] },
+        { n: "Media Literacy", p: [["v", "Video &middot; 8:25"], ["r", "Navigating the Information Age Using the SIFT Method"], ["r", "Reverse Image Search"], ["q", "10-Question Quiz"]], t: [["Topics", "Analyzing media, misinformation and disinformation, AI tools and reverse image search, validating sources"], ["Evaluate", "SIFT method, lateral reading, fact checking"]] },
+        { n: "Privacy and Cyber Awareness", p: [["v", "Video &middot; 9:20"], ["r", "The Password Pitfalls We All Fall For"], ["r", "Privacy Issues in the World of AI"], ["q", "10-Question Quiz"]], t: [["Topics", "Private vs. public settings, passwords and passphrases, password managers, two factor authentication, don't click links"]] },
+        { n: "Tech Laws", p: [["v", "Video &middot; 10:29"], ["r", "The Dangers of Deepfakes"], ["r", "The Rise of Deepfakes"], ["q", "10-Question Quiz"]], t: [["Intellectual Property", "Plagiarism, copyright, fair use, artificial intelligence"], ["Cyber Crimes", "Harassment, cyberbullying, online impersonation, sextortion"]] },
+        { n: "Review", p: [["v", "Video &middot; 7:42"], ["r", "The Importance of Screentime Boundaries"], ["r", "The Risks of Oversharing"], ["q", "10-Question Quiz"]], t: [["Recap", "The five traits plus the SIFT method, protecting your reputation, controlling your social media, and ethical use of AI"]] }
       ]
     }
   };
@@ -763,7 +809,71 @@
       var el = document.getElementById(a.getAttribute("href").slice(1));
       if (!el) return;
       e.preventDefault();
+      if (el.id === "year") { var d = el.querySelector("details.more"); if (d) d.open = true; }
       el.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+
+  /* Communication templates */
+  var TPL = {"legacy": [{"t": "Teacher Heads-Up", "a": "Email to teachers from a district leader. Send a week before you want teachers to start.", "b": "Subject: 5-minute videos to help students stay safe online\n\nHi [Teacher Name],\n\nStudents are online more than ever, and scams, oversharing, and AI misinformation reach them every day. To help, you now have a library of short classroom videos on phishing, privacy, online kindness, and using AI safely.\n\nWhat we're asking:\n- Show one video [this month / each month]. Each takes just a few minutes.\n- Follow it with a quick class discussion.\n\nGetting started takes two minutes:\n1. Go to teachers.cybernut.com\n2. Sign in with your school Google or Microsoft account\n3. Choose Elementary or Middle/High School and pick a video\n\nElementary videos include a Teacher Guide and a printable quiz. Suggested first video: [Video Title]\n\nQuestions? Contact [Program Contact Name, Email].\n\nThank you,\n[District Leader Name], [Title]"}, {"t": "Student Announcement: Welcome to Digital Safety Videos", "a": "Read aloud or post in your LMS when you introduce the videos.", "b": "Welcome to Digital Safety Videos!\n\nThis year we'll watch short videos about staying safe, smart, and kind online. Each one only takes a few minutes, and afterward we'll talk about it together.\n\nHere's what you'll learn:\n- How to spot scams and suspicious links\n- What's okay to share online and what to keep private\n- How to treat others with kindness online\n- How to use AI safely and tell what's real\n- How to keep your devices and accounts secure\n- How to build healthy tech habits\n\nBring your questions and your stories. The best ideas often come from you!"}], "neptune": [{"t": "Teacher Heads-Up", "a": "Email to teachers from a district leader. Send one to two weeks before Lesson 1.", "b": "Subject: Digital citizenship lessons start [Start Date]: what you need to know\n\nHi [Teacher Name],\n\nStarting [Start Date], students in [Grades / Schools] will complete Neptune Navigate, an ISTE-aligned course on digital citizenship and AI media literacy. Each grade band course has eight lessons, and we'll complete one each [month / other pace].\n\nLesson formats vary by grade band. Grades 1 to 5 watch short video parts and finish with a knowledge check or quiz. Grades 6 to 12 watch a video, complete two brief readings, and take a quiz.\n\nWhat we're asking:\n1. Post this link where students can find it: [Neptune Navigate login link]\n2. Give students class time for the lesson by [Due Date]\n3. Remind students to stay on the video until it ends. Leaving the tab can make them restart.\n\nYou can check completion and quiz results anytime in the Neptune Navigate gradebook. Short parent guides for every lesson are available to share with families at https://neptunenavigate.com/ctc/\n\nQuestions? Contact [Program Contact Name, Email].\n\nThank you,\n[District Leader Name], [Title]"}, {"t": "Student Announcement: Welcome to Neptune Navigate", "a": "Read aloud or post in your LMS when you introduce the program.", "b": "Welcome to Neptune Navigate!\n\nThis year you'll take a journey through eight lessons about being a smart, safe, and responsible digital citizen. Each lesson has a short video and a quick check to see what you learned.\n\nHere's what you'll learn:\n- What it means to be a good digital citizen\n- How to handle and stand up to cyberbullying\n- How your digital footprint follows you\n- How to stay safe on social media and online\n- How to spot fake news and AI tricks\n- How to protect your privacy\n- The rules and laws that apply online\n\nBy the end of the year, you'll have the skills to navigate the digital world with confidence. Let's get started!"}, {"t": "Parent Letter", "a": "Email or newsletter to families. Send around the time Lesson 1 begins.", "b": "Subject: Helping your child stay safe online this year\n\nDear Families,\n\nThis year, [School / District Name] students are learning how to stay safe, kind, and smart online. Lessons cover cyberbullying, privacy, social media, recognizing misinformation, and using AI responsibly.\n\nYou can help at home. Each lesson has a short parent guide with what your child learned and easy ways to talk about it. Guides are available in English and Spanish:\nhttps://neptunenavigate.com/ctc/\n\nThree easy conversation starters:\n- What is one thing you learned about staying safe online?\n- What would you do if someone you don't know messaged you?\n- How can you tell if something online is fake?\n\nQuestions? Contact [Contact Name, Email].\n\nThank you for partnering with us,\n[Your Name]\n[School / District Name]"}], "phish": [{"t": "Teacher Heads-Up", "a": "Email to teachers from a district leader. Send a few days before the campaign launches.", "b": "Subject: Helping students spot phishing, starting [Start Date]\n\nHi [Teacher Name],\n\nScammers target students through the apps, games, and accounts they use every day. Starting [Start Date], students in [Grades / Schools] will receive safe practice phishing emails so they can learn to catch them.\n\nThe one thing to remember: if a student asks about a suspicious email, tell them to report it with {REPORT}. When in doubt, report.\n\nShow students where the button is (each video is about 2 minutes or less):\n- On a computer: {VIDEO_WEB}\n- On a phone: {VIDEO_MOBILE}\n\nWhat to expect:\n- Students who report a practice email earn points.\n- Students who click see a short lesson on the warning signs.\n- This is a learning program, not a test.\n\nPlease don't confirm which emails are practice, so the training stays realistic.\n\nQuestions? Contact [Program Contact Name, Email].\n\nThank you,\n[District Leader Name], [Title]"}, {"t": "Student Announcement: Can You Spot the Phish?", "a": "Read aloud, post in your LMS, or show on screen before the campaign launches.", "b": "Can You Spot the Phish?\n\nScammers send fake messages to trick people into clicking links or sharing passwords. This year you'll get practice emails that look like they come from games, apps, and brands you know. Your mission: catch them!\n\nHow to catch a phish:\n1. Pause. Was I expecting this?\n2. Look. Is it rushing me or too good to be true? Does the sender or link look off?\n3. Report it with {REPORT}.\n\nWatch how (under 2 minutes):\n- On a computer: {VIDEO_WEB}\n- On a phone: {VIDEO_MOBILE}\n\nEvery phish you catch earns points, and your class can climb the leaderboard. Clicked one by accident? No worries. You'll get a quick tip so you can catch the next one.\n\nWhen in doubt, report it!"}]};
+  var PLAT = {"google": {"REPORT": "the blue squirrel Report button in Gmail (in the sidebar or above an open email)", "VIDEO_WEB": "https://www.loom.com/share/0c4d3fbebbc542f3beddcfe0851ad0e0", "VIDEO_MOBILE": "https://www.loom.com/share/0e032427e3664fbd9e7c138266deb6b1"}, "microsoft": {"REPORT": "the blue squirrel Report button in your Outlook toolbar", "VIDEO_WEB": "https://www.loom.com/share/88e851d3856e4f66ae111279494f0112", "VIDEO_MOBILE": "https://www.loom.com/share/c9a14fbba5e24c04a3774e39e09bff19"}};
+  var tplState = { k: "legacy", plat: "google" };
+  var tplList = document.getElementById("tplList");
+  var platBar = document.getElementById("platBar");
+  function escT(x) { return x.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+  function fill(b) { var P = PLAT[tplState.plat]; return b.replace(/\{(REPORT|VIDEO_WEB|VIDEO_MOBILE)\}/g, function (m, k) { return P[k]; }); }
+  function linkify(h) { return h.replace(/https:\/\/[^\s<]+/g, function (u) { return '<a href="' + u + '" target="_blank" rel="noopener">' + u + '</a>'; }); }
+  function renderTpl() {
+    var k = tplState.k;
+    platBar.style.display = k === "phish" ? "flex" : "none";
+    tplList.innerHTML = TPL[k].map(function (t, i) {
+      return '<div class="tpl"><div class="tpl-hd"><div><b>' + escT(t.t) + '</b><span>' + escT(t.a) + '</span></div>' +
+        '<button class="copy" data-i="' + i + '">Copy</button></div>' +
+        '<pre class="tpl-body">' + linkify(escT(fill(t.b))) + '</pre></div>';
+    }).join("");
+  }
+  function fallbackCopy(text) {
+    var ta = document.createElement("textarea");
+    ta.value = text; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select();
+    var ok = false; try { ok = document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(ta); return ok;
+  }
+  function flag(btn, ok) {
+    btn.textContent = ok ? "Copied" : "Select text to copy";
+    btn.classList.toggle("done", ok);
+    setTimeout(function () { btn.textContent = "Copy"; btn.classList.remove("done"); }, 2000);
+  }
+  tplList.addEventListener("click", function (e) {
+    var btn = e.target.closest ? e.target.closest(".copy") : null;
+    if (!btn) return;
+    var text = fill(TPL[tplState.k][+btn.getAttribute("data-i")].b);
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(function () { flag(btn, true); }, function () { flag(btn, fallbackCopy(text)); });
+    } else { flag(btn, fallbackCopy(text)); }
+  });
+  document.querySelectorAll("#tplTabs .tab").forEach(function (b) {
+    b.addEventListener("click", function () {
+      document.querySelectorAll("#tplTabs .tab").forEach(function (x) { x.classList.remove("active"); });
+      b.classList.add("active"); tplState.k = b.getAttribute("data-t"); renderTpl();
+    });
+  });
+  document.querySelectorAll("#platBar .plat").forEach(function (b) {
+    b.addEventListener("click", function () {
+      document.querySelectorAll("#platBar .plat").forEach(function (x) { x.classList.remove("active"); });
+      b.classList.add("active"); tplState.plat = b.getAttribute("data-p"); renderTpl();
+    });
+  });
+  renderTpl();
+
+  /* Tip links that open a specific video in the library */
+  document.querySelectorAll("a[data-find]").forEach(function (a) {
+    a.addEventListener("click", function () {
+      var parts = a.getAttribute("data-find").split("|");
+      var ld = document.getElementById("library-details"); if (ld) ld.open = true;
+      var tab = document.querySelector('.tab[data-band="' + parts[0] + '"]');
+      if (tab) tab.click();
+      searchEl.value = parts[1]; state.q = parts[1]; render();
     });
   });
 </script>
