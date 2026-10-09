@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CyberStudent Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #3144CD;
+    --blue-deep: #2535B0;
+    --navy: #0A1343;
+    --text: #2B2D42;
+    --muted: #5B5F7A;
+    --yellow: #EDE04C;
+    --tint: #D5E1FF;
+    --tint-soft: #EEF2FD;
+    --line: #E3E7F5;
+    --white: #FFFFFF;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--blue);
+    font-family: 'Montserrat', Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.55;
+  }
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 24px 16px 48px; }
+  .card { background: var(--white); border-radius: 8px; padding: 28px 32px; margin-bottom: 40px; }
+  .card.tight { margin-bottom: 24px; }
+  h1, h2, h3, h4 { color: var(--navy); margin: 0; }
+  a { color: var(--blue); }
+
+  /* Header */
+  .header { text-align: center; padding: 30px 32px 22px; }
+  .header .icon {
+    width: 62px; height: 62px; border-radius: 50%; background: #5B6CF0;
+    display: inline-flex; align-items: center; justify-content: center; margin-bottom: 14px;
+  }
+  .header .wordmark { display:block; width:100%; max-width:380px; height:auto; margin:0 auto 18px; }
+  .header .icons { display:block; height:56px; width:auto; margin:0 auto 10px; }
+  .hero { position: relative; }
+  .footer-note { text-align:center; color:#fff; opacity:.85; font-size:12.5px; font-weight:600; margin-top:-16px; }
+  .header h1 { font-size: 32px; font-weight: 700; }
+  .header .sub { font-size: 14px; color: var(--muted); margin-top: 4px; font-weight: 600; }
+
+
+  /* Hero */
+  .hero {
+    background: var(--blue);
+    background-image: radial-gradient(rgba(255,255,255,.12) 1.2px, transparent 1.2px);
+    background-size: 18px 18px;
+    border-radius: 8px; padding: 36px 40px; color: var(--white);
+    display: block;
+  }
+  .eyebrow { color: var(--yellow); font-size: 12px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+  .hero h2 { color: var(--white); font-size: 34px; line-height: 1.2; font-weight: 800; margin: 10px 0 14px; }
+  .hero h2 span { color: var(--yellow); }
+  .hero p { margin: 0; font-size: 15px; opacity: .95; }
+
+  /* Find tiles */
+  .tile a { color: inherit; text-decoration: none; }
+  .tile span a { color: var(--blue); text-decoration: underline; }
+  .tlinks { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }
+  .tlinks a { font-size:12px; font-weight:700; background:#fff; color:var(--blue); padding:4px 9px; border-radius:6px; text-decoration:none; }
+  .tlinks a:hover { background:var(--blue); color:#fff; }
+  .pillar li a { font-weight:700; color:var(--blue); text-decoration:none; }
+  .find-title { text-align: center; font-size: 22px; font-weight: 800; margin: 34px 0 20px; }
+  .find-title .spark { color: var(--yellow); margin: 0 10px; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; }
+  .tile { background: var(--tint); border-radius: 10px; padding: 18px; text-decoration: none; color: var(--navy); transition: transform .15s ease; }
+  .tile .n {
+    width: 34px; height: 34px; border-radius: 50%; background: var(--blue); color: var(--white);
+    display: inline-flex; align-items: center; justify-content: center; font-weight: 800; margin-bottom: 10px;
+  }
+  .tile b { display: block; font-size: 14px; margin-bottom: 4px; }
+  .tile span { font-size: 12.5px; color: var(--muted); }
+
+  /* Sections */
+  .section-head h2 { font-size: 21px; font-weight: 700; margin-bottom: 8px; }
+  .section-head p { margin: 0 0 24px; font-size: 15px; }
+  .banner { background: var(--blue); border-radius: 8px 8px 0 0; color: var(--white); padding: 24px 32px; display: flex; align-items: center; gap: 28px; }
+  .banner .brand { font-weight: 700; font-size: 20px; min-width: 150px; opacity: .95; }
+  .banner h3 { color: var(--white); font-size: 26px; font-weight: 800; margin-top: 4px; }
+  .panel { border: 2px solid var(--blue); border-top: none; border-radius: 0 0 8px 8px; padding: 26px 32px; }
+  .stack + .stack { margin-top: 28px; }
+
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .box { background: var(--tint-soft); border-radius: 10px; padding: 20px; }
+  .box h4 { margin: 0 0 6px; font-size: 16px; }
+  .box p { margin: 0; font-size: 14px; }
+  .label { font-size: 11px; font-weight: 800; letter-spacing: .12em; color: var(--blue); text-transform: uppercase; margin-bottom: 6px; }
+
+  .pillar { border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: var(--white); }
+  .pillar .top { background: var(--navy); color: var(--white); padding: 16px 20px; }
+  .pillar .top .eyebrow { font-size: 11px; }
+  .pillar .top h4 { color: var(--white); font-size: 20px; margin-top: 2px; }
+  .pillar ul { list-style: none; margin: 0; padding: 14px 20px 18px; }
+  .pillar li { padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 13.5px; }
+  .pillar li:last-child { border-bottom: none; }
+  .pillar li b { display: block; color: var(--navy); font-size: 14px; }
+
+  .steps { list-style: none; padding: 0; margin: 0; counter-reset: s; }
+  .steps li { counter-increment: s; position: relative; padding: 0 0 18px 52px; font-size: 14.5px; }
+  .steps li::before {
+    content: counter(s); position: absolute; left: 0; top: -2px; width: 34px; height: 34px; border-radius: 50%;
+    background: var(--yellow); color: var(--navy); font-weight: 800; display: flex; align-items: center; justify-content: center;
+  }
+  .steps li b { color: var(--navy); display: block; font-size: 15px; }
+
+  .btn { display: inline-block; background: var(--blue); color: var(--white); text-decoration: none; font-weight: 700; font-size: 14px; padding: 12px 22px; border-radius: 8px; margin-top: 6px; }
+  .btn:hover { background: var(--blue-deep); }
+  .btn.alt { background: var(--yellow); color: var(--navy); }
+
+  /* Library */
+  .tabs { display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; }
+  .tab {
+    font-family: inherit; font-size: 14px; font-weight: 700; padding: 11px 20px; border-radius: 999px;
+    border: 2px solid var(--blue); background: var(--white); color: var(--blue); cursor: pointer;
+  }
+  .tab.active { background: var(--blue); color: var(--white); }
+  .lib-intro { background: var(--tint-soft); border-radius: 10px; padding: 16px 20px; margin-bottom: 16px; font-size: 14px; }
+  .lib-intro b { color: var(--navy); }
+  .tools { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 18px; }
+  .chips { display: flex; gap: 8px; flex-wrap: wrap; flex: 1; }
+  .chip {
+    font-family: inherit; font-size: 12.5px; font-weight: 700; padding: 7px 13px; border-radius: 999px;
+    border: 1px solid var(--line); background: var(--tint-soft); color: var(--navy); cursor: pointer;
+  }
+  .chip.active { background: var(--yellow); border-color: var(--yellow); }
+  .search {
+    font-family: inherit; font-size: 14px; padding: 10px 14px; border-radius: 8px; border: 1px solid #C9D0EE;
+    min-width: 220px; color: var(--navy);
+  }
+  .count { font-size: 13px; color: var(--muted); font-weight: 600; margin-bottom: 12px; }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .mod { border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; background: var(--white); }
+  .mod .meta { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .cat { font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--blue); background: var(--tint-soft); padding: 4px 9px; border-radius: 6px; }
+  .dur { font-size: 12px; font-weight: 700; color: var(--muted); display: inline-flex; align-items: center; gap: 4px; }
+  .mod h4 { font-size: 16px; margin-bottom: 6px; }
+  .mod p { margin: 0 0 10px; font-size: 13.5px; }
+  .mod .ko { font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--navy); margin-bottom: 4px; }
+  .mod ul { margin: 0 0 12px; padding-left: 18px; font-size: 13px; color: var(--text); }
+  .mod ul li { margin-bottom: 3px; }
+  .res { margin-top: auto; display: flex; gap: 8px; flex-wrap: wrap; padding-top: 6px; }
+  .res a { font-size: 12.5px; font-weight: 700; text-decoration: none; padding: 7px 12px; border-radius: 6px; background: var(--blue); color: var(--white); }
+  .res a.q { background: var(--yellow); color: var(--navy); }
+  .res .note { font-size: 12.5px; color: var(--muted); font-weight: 600; }
+  .lnum { font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .parts { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 12px; }
+  .part { font-size: 12px; font-weight: 700; padding: 5px 9px; border-radius: 6px; background: var(--tint-soft); color: var(--navy); }
+  .part.v { background: var(--blue); color: var(--white); }
+  .part.r { background: #E4F4E8; color: #1F5B30; }
+  .part.q { background: var(--yellow); color: var(--navy); }
+  .topics { font-size: 13px; margin: 0 0 6px; }
+  .topics b { color: var(--blue); }
+  #gradeTabs .tab { border-color:#1F9D55; color:#1F9D55; }
+  #gradeTabs .tab.active { background:#1F9D55; color:#fff; }
+  .ptag { display:inline-block; font-size:11px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; padding:4px 10px; border-radius:999px; margin-bottom:10px; }
+  .ptag.legacy { background: var(--navy); color: var(--yellow); }
+  .ptag.neptune { background: #1F9D55; color: #fff; }
+  .part-div { color:#fff; padding:30px 32px; margin-bottom:24px; }
+  .part-div h2 { color:#fff; font-size:30px; font-weight:800; margin:6px 0 8px; }
+  .part-div p { margin:0; font-size:15px; opacity:.95; max-width:760px; }
+  .ctc-lang { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:22px; }
+  .ctc-lang .box h4 { display:flex; align-items:center; gap:8px; }
+  .lang { font-size:11px; font-weight:800; letter-spacing:.08em; background:var(--navy); color:var(--yellow); padding:3px 8px; border-radius:6px; }
+  .ctc-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:20px; }
+  .ctc-tile { border-radius:10px; overflow:hidden; text-decoration:none; display:flex; flex-direction:column; min-height:150px; }
+  .ctc-tile .t { flex:1; padding:14px 14px 10px; color:#fff; font-weight:800; font-style:italic; font-size:16px; line-height:1.2; }
+  .ctc-tile .es { display:block; font-size:12px; font-weight:600; font-style:normal; opacity:.92; margin-top:6px; }
+  .ctc-tile .b { height:26px; }
+  @media (max-width:860px){ .ctc-lang { grid-template-columns:1fr; } .ctc-grid { grid-template-columns:1fr 1fr; } }
+  .family { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+  .fam { border:1px solid var(--line); border-radius:10px; padding:14px 16px; }
+  .fam.on { border:2px solid var(--blue); background:var(--tint-soft); }
+  .fam b { display:block; color:var(--navy); font-size:15px; }
+  .fam .tl { display:block; font-size:12px; font-weight:800; letter-spacing:.06em; color:var(--blue); margin:2px 0 6px; text-transform:uppercase; }
+  .fam p { margin:0; font-size:13px; }
+  .fam .you { float:right; font-size:10px; font-weight:800; background:var(--yellow); color:var(--navy); padding:2px 7px; border-radius:999px; }
+  .tbl-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:10px; }
+  table.year { border-collapse:collapse; width:100%; min-width:760px; font-size:13.5px; }
+  table.year th { background:var(--navy); color:#fff; text-align:left; padding:10px 12px; font-size:12px; letter-spacing:.04em; }
+  table.year th.n { background:#1F9D55; } table.year th.l { background:#0A1343; } table.year th.p { background:#E8742A; }
+  table.year td { padding:10px 12px; border-top:1px solid var(--line); vertical-align:top; }
+  table.year td.m { font-weight:800; color:var(--navy); white-space:nowrap; }
+  table.year tr:nth-child(even) td { background:#FAFBFF; }
+  .prek { border-left:4px solid #1F9D55; background:#E9F6EE; border-radius:8px; padding:14px 18px; margin-bottom:18px; font-size:14px; }
+  .prek b { color:var(--navy); }
+  @media (max-width:860px){ .family { grid-template-columns:1fr; } }
+  .ptag.phish { background: #E8742A; color: #fff; }
+  .sender-cats { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:14px; }
+  .scat { border:1px solid var(--line); border-radius:10px; padding:16px 18px; }
+  .scat .hd { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+  .scat .hd b { color:var(--navy); font-size:15px; }
+  .scat .hd span { white-space:nowrap; margin-left:8px; font-size:12px; font-weight:800; color:#E8742A; background:#FDEBDD; padding:3px 9px; border-radius:999px; }
+  .snd { display:flex; flex-wrap:wrap; gap:6px; }
+  .snd span { font-size:12.5px; font-weight:600; background:var(--tint-soft); color:var(--navy); padding:5px 10px; border-radius:6px; }
+  .snd span.more { background:none; color:var(--muted); font-style:italic; }
+  .ptag.both { background: var(--tint); color: var(--navy); }
+  .empty { text-align: center; color: var(--muted); padding: 24px; font-weight: 600; display: none; }
+
+  .check { list-style: none; padding: 0; margin: 0; }
+  .check li { padding: 10px 0 10px 34px; position: relative; border-bottom: 1px solid var(--line); font-size: 14.5px; }
+  .check li:last-child { border-bottom: none; }
+  .check li::before { content: ""; position: absolute; left: 0; top: 11px; width: 20px; height: 20px; border-radius: 5px; border: 2px solid var(--blue); background: var(--white); }
+
+  .help { text-align: center; }
+  .help h2 { font-size: 22px; margin-bottom: 8px; }
+  .help p { margin: 0 auto 16px; max-width: 640px; font-size: 15px; }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; padding: 28px 22px; }
+      .hero h2 { font-size: 28px; }
+      .tiles { grid-template-columns: 1fr 1fr; }
+    .two, .three, .grid { grid-template-columns: 1fr; }
+    .banner { flex-direction: column; align-items: flex-start; gap: 8px; padding: 20px 22px; }
+    .panel, .card { padding: 22px 20px; }
+    .search { width: 100%; min-width: 0; }
+  }
+  @media (max-width: 520px) {
+    .tiles { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- Header -->
+  <div class="card tight header">
+    <img class="wordmark" src="data:image/png;base64,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" alt="CyberNut">
+    <img class="icons" src="data:image/png;base64,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" alt="">
+    <h1>&#127891; CyberStudent</h1>
+    <div class="sub">Digital Citizenship, AI Media Literacy, and Phishing Training for Students</div>
+  </div>
+
+  <!-- Hero + Start Here -->
+  <div class="card">
+    <div class="hero">
+      <div>
+        <div class="eyebrow">CyberStudent Overview</div>
+        <h2>Educate. Protect.<br><span>Comply.</span></h2>
+        <p>Equip students with the knowledge and skills to navigate the digital world safely through engaging education and real-world phishing practice, while helping your district document learning and demonstrate compliance efforts.</p>
+      </div>
+    </div>
+
+    <div class="find-title"><span class="spark">+</span>Start Here<span class="spark">+</span></div>
+    <div class="tiles">
+      <div class="tile"><div class="n">1</div><b>Explore</b><span>See the three offerings and choose what fits.</span><div class="tlinks"><a href="#overview">View offerings</a></div></div>
+      <div class="tile"><div class="n">2</div><b>Get Set Up</b><span>Access each portal.</span><div class="tlinks"><a href="#setup-legacy">Legacy</a><a href="#setup-neptune">Neptune</a><a href="#setup-phish">Phishing</a></div></div>
+      <div class="tile"><div class="n">3</div><b>Launch</b><span>Checklists, tips, and an <a href="#year">example year</a>.</span><div class="tlinks"><a href="#launch-legacy">Legacy</a><a href="#launch-neptune">Neptune</a><a href="#launch-phish">Phishing</a></div></div>
+      <div class="tile"><div class="n">4</div><b>Measure Success</b><span>What to monitor once students are learning.</span><div class="tlinks"><a href="#measure">What to monitor</a></div></div>
+    </div>
+  </div>
+
+  <!-- 1. Explore -->
+  <div class="card" id="overview">
+    <div class="section-head">
+      <span class="ptag both">Step 1 &middot; Explore</span>
+      <h2>What's in CyberStudent</h2>
+      <p>Three offerings, each in its own portal. Start with the one that fits your goals.</p>
+    </div>
+    <div class="three">
+      <div class="pillar">
+        <div class="top" style="background:var(--navy)"><div class="eyebrow">Quick Learning</div><h4>Legacy Student Videos</h4></div>
+        <ul>
+          <li><b>What it is</b>Short, flexible cybersecurity lessons and discussion resources, aligned to Common Sense Media.</li>
+          <li><b>Where it lives</b>The CyberNut Teacher Portal</li>
+          <li><a href="#part-legacy">Go to Legacy Student Videos</a></li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <div class="top" style="background:#1F9D55"><div class="eyebrow" style="color:#fff">Structured Curriculum</div><h4>Neptune Navigate</h4></div>
+        <ul>
+          <li><b>What it is</b>Structured, ISTE aligned digital citizenship and AI media literacy education with assessments and progress tracking.</li>
+          <li><b>Where it lives</b>The Neptune Navigate portal</li>
+          <li><a href="#part-neptune">Go to Neptune Navigate</a></li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <div class="top" style="background:#E8742A"><div class="eyebrow" style="color:#fff">Hands On Practice</div><h4>Student Phishing</h4></div>
+        <ul>
+          <li><b>What it is</b>Phishing simulations, reporting practice, and reinforcement of safe behaviors.</li>
+          <li><b>Where it lives</b>The CyberNut admin portal</li>
+          <li><a href="#part-phish">Go to Student Phishing</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="box" style="margin-top:18px;">
+      <h4>How Legacy Videos and Neptune Navigate fit together</h4>
+      <p>Each works well on its own. Legacy videos are quick and flexible, ideal for a short lesson or class discussion. Neptune Navigate is a structured, grade by grade program with assessments. Some districts use both, using the videos to reinforce Neptune topics. Your Customer Success Manager can help you choose.</p>
+    </div>
+    <h3 style="font-size:16px;margin:22px 0 10px;">Where CyberStudent Fits</h3>
+    <div class="family">
+      <div class="fam"><b>CyberStaff</b><span class="tl">Train. Protect. Comply.</span><p>For the adults in your district. Phishing simulations, threat reporting and remediation, and compliance records.</p></div>
+      <div class="fam on"><span class="you">You are here</span><b>CyberStudent</b><span class="tl">Educate. Protect. Comply.</span><p>For students. Curriculum, student phishing simulations, threat reporting, and completion records.</p></div>
+      <div class="fam"><b>CyberAutomations</b><span class="tl">Automate. Protect. Control.</span><p>Runs across both. Compromised accounts caught automatically, reported threats scored and removed.</p></div>
+    </div>
+  </div>
+
+  <!-- ===== LEGACY STUDENT VIDEOS ===== -->
+  <div class="card part-div" id="part-legacy" style="background:var(--navy)">
+    <div class="eyebrow" style="color:var(--yellow)">Offering 1</div>
+    <h2>Legacy Student Videos</h2>
+    <p>Short, flexible lessons and discussion resources in the CyberNut Teacher Portal.</p>
+  </div>
+
+  <div class="card" id="setup-legacy">
+    <div class="banner" style="background:var(--navy)">
+      <div class="brand">CyberStudent</div>
+      <div><div class="eyebrow">Legacy Student Videos &middot; Get Set Up</div><h3>Sign In to the Teacher Portal</h3></div>
+    </div>
+    <div class="panel">
+      <ol class="steps">
+        <li><b>Go to the Teacher Portal</b>Open teachers.cybernut.com. It is available to teachers at schools enrolled in the CyberNut program.</li>
+        <li><b>Sign in with your school account</b>Choose Sign in with Google or Sign in with Microsoft.</li>
+        <li><b>Find a lesson</b>Choose Elementary or Middle and High School, then filter by topic.</li>
+        <li><b>Prep with teacher resources</b>Elementary lessons include a Teacher Guide and a printable quiz. Preview the video before class.</li>
+      </ol>
+      <a class="btn" href="https://teachers.cybernut.com/" target="_blank" rel="noopener">Open the Teacher Portal</a>
+    </div>
+  </div>
+
+  <div class="card" id="library">
+    <div class="section-head">
+      <span class="ptag legacy">Legacy Student Videos</span>
+      <h2>Legacy Student Video Library</h2>
+      <p>Every video by grade band and topic, aligned to Common Sense Media. Watch them in the Teacher Portal.</p>
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-band="elem" role="tab">Elementary</button>
+      <button class="tab" data-band="mshs" role="tab">Middle and High School</button>
+    </div>
+
+    <div class="lib-intro" id="libIntro"></div>
+
+    <div class="tools">
+      <div class="chips" id="chips"></div>
+      <input class="search" id="search" type="search" placeholder="Search lessons" aria-label="Search lessons">
+    </div>
+    <div class="count" id="count"></div>
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty">No lessons match that search. Try a different word or topic.</div>
+  </div>
+
+  <div class="card" id="launch-legacy">
+    <div class="two">
+      <div>
+        <div class="section-head"><span class="ptag legacy">Legacy Student Videos &middot; Launch</span><h2>Launch Checklist</h2></div>
+        <ul class="check">
+          <li>Share the Teacher Portal link with participating teachers</li>
+          <li>Confirm teachers can sign in with Google or Microsoft</li>
+          <li>Pick a starting video for each class</li>
+        </ul>
+      </div>
+      <div>
+        <div class="section-head"><span class="ptag legacy">Legacy Student Videos &middot; Launch</span><h2>Tips for Success</h2></div>
+        <div class="box" style="margin-bottom:12px;"><h4>Start with phishing</h4><p>Try Don't Click That or Phishing Made Simple for elementary, or Don't Get Hooked for older students.</p></div>
+        <div class="box"><h4>Pause and discuss</h4><p>Videos are short, so talk through the learning outcomes as a class afterward.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== NEPTUNE NAVIGATE ===== -->
+  <div class="card part-div" id="part-neptune" style="background:#1F9D55">
+    <div class="eyebrow" style="color:#fff">Offering 2</div>
+    <h2>Neptune Navigate</h2>
+    <p>Structured digital citizenship and AI media literacy education in the Neptune Navigate portal, separate from the CyberNut Teacher Portal.</p>
+  </div>
+
+  <div class="card" id="setup-neptune">
+    <div class="banner" style="background:#1F9D55">
+      <div class="brand">CyberStudent</div>
+      <div><div class="eyebrow" style="color:#fff">Neptune Navigate &middot; Get Set Up</div><h3>Access the Neptune Navigate Portal</h3></div>
+    </div>
+    <div class="panel" style="border-color:#1F9D55">
+      <ol class="steps">
+        <li><b>Confirm your account setup first</b>Before you begin, check with your Customer Success Manager that your Neptune Navigate account is set up and that teachers and students have access.</li>
+        <li><b>Use your district's sign in method</b>Neptune Navigate supports ClassLink, Clever, Google, Microsoft, or email and password.</li>
+        <li><b>Share the login link</b>Post it in your LMS, class website, or student bookmarks.</li>
+        <li><b>Start the first module</b>Students open their grade level course, watch the video, complete any readings, and finish with the quiz.</li>
+      </ol>
+      <a class="btn" href="https://universal.neptunenavigate.com/auth/login" target="_blank" rel="noopener">Open Neptune Navigate</a>
+    </div>
+  </div>
+
+  <div class="card" id="courses">
+    <div class="section-head">
+      <span class="ptag neptune">Neptune Navigate</span>
+      <h2>Courses by Grade Level</h2>
+      <p>Four ISTE aligned grade level courses, each following the same eight lesson path at the right depth for each age.</p>
+    </div>
+
+    <div class="prek"><b>Pre-K and Kindergarten:</b> Younger learners have their own Pre-K and K lessons, found under Resources in the Neptune Navigate portal. Track their completion with Pre-K / K Tracking and the Pre-K / K Summary Report under Reports and Tools. <a href="https://neptunenavigate.com/ctc-prek/" target="_blank" rel="noopener">View Pre-K / K Lessons</a></div>
+
+    <div class="tabs" role="tablist" id="gradeTabs">
+      <button class="tab active" data-g="le">Grades 1 to 3</button>
+      <button class="tab" data-g="ue">Grades 4 and 5</button>
+      <button class="tab" data-g="jh">Grades 6 to 8</button>
+      <button class="tab" data-g="hs">Grades 9 to 12</button>
+    </div>
+
+    <div class="lib-intro" id="gradeIntro"></div>
+    <div class="grid" id="gradeGrid"></div>
+  </div>
+
+  <div class="card" id="ctc">
+    <div class="section-head">
+      <span class="ptag neptune">Neptune Navigate</span>
+      <h2>Continue the Conversation for Parents</h2>
+    </div>
+    <div class="ctc-lang">
+      <div class="box"><h4><span class="lang">EN</span> What is it?</h4><p>Continue the Conversation helps families keep learning at home. Each of the eight Neptune Navigate lessons has a short guide for parents, so they know what their child learned and can talk about it together. Share the link in your newsletter, on your website, or after each lesson.</p></div>
+      <div class="box"><h4><span class="lang">ES</span> &iquest;Qu&eacute; es?</h4><p>Continuar la Conversaci&oacute;n ayuda a las familias a seguir aprendiendo en casa. Cada una de las ocho lecciones de Neptune Navigate tiene una gu&iacute;a breve para padres, para que sepan lo que su hijo aprendi&oacute; y puedan hablar del tema juntos. Comparta el enlace en su bolet&iacute;n, en su sitio web o despu&eacute;s de cada lecci&oacute;n.</p></div>
+    </div>
+    <div class="ctc-grid">
+      <a class="ctc-tile" href="https://neptunenavigate.com/ctc/" target="_blank" rel="noopener" style="background:#E38B35"><span class="t">1. Digital Citizenship Overview<span class="es">Resumen de Ciudadan&iacute;a Digital</span></span><span class="b" style="background:#CF5C33"></span></a>
+      <a class="ctc-tile" href="https://neptunenavigate.com/ctc/" target="_blank" rel="noopener" style="background:#4479E3"><span class="t">2. Cyberbullying<span class="es">Ciberacoso</span></span><span class="b" style="background:#95B4E3"></span></a>
+      <a class="ctc-tile" href="https://neptunenavigate.com/ctc/" target="_blank" rel="noopener" style="background:#6A9E58"><span class="t">3. Digital Footprint / Digital Reputation<span class="es">Huella Digital / Reputaci&oacute;n Digital</span></span><span class="b" style="background:#83C171"></span></a>
+      <a class="ctc-tile" href="https://neptunenavigate.com/ctc/" target="_blank" rel="noopener" style="background:#7FA0DA"><span class="t">4. Digital World Basics / Social Media<span class="es">Conceptos B&aacute;sicos del Mundo Digital / Redes Sociales</span></span><span class="b" style="background:#4479E3"></span></a>
+      <a class="ctc-tile" href="https://neptunenavigate.com/ctc/" target="_blank" rel="noopener" style="background:#B9ADA4"><span class="t">5. Media Literacy<span class="es">Alfabetizaci&oacute;n Medi&aacute;tica</span></span><span class="b" style="background:#E38B35"></span></a>
+      <a class="ctc-tile" href="https://neptunenavigate.com/ctc/" target="_blank" rel="noopener" style="background:#83C171"><span class="t">6. Privacy &amp; Cyber Awareness<span class="es">Privacidad y Conciencia Cibern&eacute;tica</span></span><span class="b" style="background:#6A9E58"></span></a>
+      <a class="ctc-tile" href="https://neptunenavigate.com/ctc/" target="_blank" rel="noopener" style="background:#CF5C33"><span class="t">7. Age Appropriateness / Tech Laws<span class="es">Adecuaci&oacute;n a la Edad / Leyes Tecnol&oacute;gicas</span></span><span class="b" style="background:#E38B35"></span></a>
+      <a class="ctc-tile" href="https://neptunenavigate.com/ctc/" target="_blank" rel="noopener" style="background:#231F20"><span class="t">8. Review<span class="es">Repaso</span></span><span class="b" style="background:#4479E3"></span></a>
+    </div>
+    <a class="btn" href="https://neptunenavigate.com/ctc/" target="_blank" rel="noopener" style="background:#1F9D55">Open Parent Guides / Abrir Gu&iacute;as para Padres</a>
+  </div>
+
+  <div class="card" id="launch-neptune">
+    <div class="two">
+      <div>
+        <div class="section-head"><span class="ptag neptune">Neptune Navigate &middot; Launch</span><h2>Launch Checklist</h2></div>
+        <ul class="check">
+          <li>Confirm account setup and access with your Customer Success Manager</li>
+          <li>Post the Neptune Navigate login link where students can find it</li>
+          <li>Choose a pace for the eight lesson path</li>
+          <li>Share the Continue the Conversation guides with families</li>
+        </ul>
+      </div>
+      <div>
+        <div class="section-head"><span class="ptag neptune">Neptune Navigate &middot; Launch</span><h2>Tips for Success</h2></div>
+        <div class="box"><h4>Keep a steady pace</h4><p>One module a month moves students through the full course and keeps progress data easy to follow.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== STUDENT PHISHING ===== -->
+  <div class="card part-div" id="part-phish" style="background:#E8742A">
+    <div class="eyebrow" style="color:#fff">Offering 3</div>
+    <h2>Student Phishing</h2>
+    <p>Simulations, reporting practice, and reinforcement of safe behaviors, managed in the CyberNut admin portal.</p>
+  </div>
+
+  <div class="card" id="phishing">
+    <div class="three" style="margin-bottom:26px;">
+      <div class="box"><div class="label" style="color:#E8742A">Realistic</div><h4>Student Specific Senders</h4><p>Templates based on the school tools, games, and brands students use. Simulations get harder as each student improves.</p></div>
+      <div class="box"><div class="label" style="color:#E8742A">Reinforcing</div><h4>Microlessons and Points</h4><p>Short microlessons teach what to look for. Students earn points for spotting scams and climb class leaderboards.</p></div>
+      <div class="box"><div class="label" style="color:#E8742A">Practice</div><h4>Reporting and Removal</h4><p>Students practice flagging suspicious messages, and reported threats can be removed from student inboxes. CyberAutomations can score and remove reported threats and catch compromised accounts automatically.</p></div>
+    </div>
+    <h3 style="font-size:17px;margin-bottom:12px;">Student Sender Library</h3>
+    <div class="sender-cats">
+      <div class="scat"><div class="hd"><b>EdTech Vendor</b><span>14 senders</span></div><div class="snd"><span>Canvas</span><span>ClassLink</span><span>Clever</span><span>Google Classroom</span><span>Google Drive</span><span>Google Workspace</span><span>i-Ready</span><span>Infinite Campus</span><span>Khan Academy</span><span class="more">and more</span></div></div>
+      <div class="scat"><div class="hd"><b>Gaming</b><span>10 senders</span></div><div class="snd"><span>Discord</span><span>EA/EA Sports</span><span>Fortnite/Epic Games</span><span>Minecraft/Mojang</span><span>Nintendo</span><span>PlayStation Network</span><span>Roblox</span><span class="more">and more</span></div></div>
+      <div class="scat"><div class="hd"><b>Streaming and Entertainment</b><span>4 senders</span></div><div class="snd"><span>Disney+</span><span class="more">and more</span></div></div>
+      <div class="scat"><div class="hd"><b>Food and Retail</b><span>3 senders</span></div><div class="snd"><span>Chick-fil-A</span><span>McDonald's</span><span>Starbucks</span></div></div>
+      <div class="scat"><div class="hd"><b>Prizes and Giveaways</b><span>2 senders</span></div><div class="snd"><span>"You Won" Giveaway</span><span>Gift Card Giveaway</span></div></div>
+    </div>
+  </div>
+
+  <div class="card" id="setup-phish">
+    <div class="banner" style="background:#E8742A">
+      <div class="brand">CyberStudent</div>
+      <div><div class="eyebrow" style="color:#fff">Student Phishing &middot; Get Set Up</div><h3>Build a Student Phishing Campaign</h3></div>
+    </div>
+    <div class="panel" style="border-color:#E8742A">
+      <ol class="steps">
+        <li><b>Start a new campaign</b>In the CyberNut admin portal, create a campaign and choose a student campaign type.</li>
+        <li><b>Set up and create teams</b>Complete setup, then build teams for the students you want to include.</li>
+        <li><b>Review senders</b>All senders are on by default. Preview templates and turn off any that don't fit. At least 8 must stay on.</li>
+        <li><b>Final review and launch</b>Confirm your settings and launch.</li>
+      </ol>
+      <a class="btn" href="https://admin.cybernut.com/" target="_blank" rel="noopener" style="background:#E8742A">Open the Admin Portal</a>
+    </div>
+  </div>
+
+  <div class="card" id="launch-phish">
+    <div class="two">
+      <div>
+        <div class="section-head"><span class="ptag phish">Student Phishing &middot; Launch</span><h2>Launch Checklist</h2></div>
+        <ul class="check">
+          <li>Let teachers know simulations are coming so they can reinforce reporting</li>
+          <li>Pair your first campaign with a phishing lesson</li>
+          <li>Choose how often to run campaigns</li>
+        </ul>
+      </div>
+      <div>
+        <div class="section-head"><span class="ptag phish">Student Phishing &middot; Launch</span><h2>Tips for Success</h2></div>
+        <div class="box" style="margin-bottom:12px;"><h4>Celebrate reporting</h4><p>Recognize students who report phishing and use class leaderboards to build momentum.</p></div>
+        <div class="box"><h4>Start broad, then tune</h4><p>Begin with all senders on and adjust after your first campaign.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Example Year -->
+  <div class="card" id="year">
+    <div class="section-head">
+      <span class="ptag both">Step 3 &middot; Launch</span>
+      <h2>Example Year</h2>
+      <p>One way to pace CyberStudent across a school year. It is an example, not a required schedule. Use only the columns that apply to you. Video pairings show Elementary / Middle and High School.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table class="year">
+        <thead><tr><th>Month</th><th class="n">Neptune Navigate Lesson</th><th class="l">Legacy Student Video Pairing</th><th class="p">Student Phishing Training</th></tr></thead>
+        <tbody>
+          <tr><td class="m">August</td><td>Setup: roster students, share portal links</td><td>Pick starting videos</td><td>Build student teams</td></tr>
+          <tr><td class="m">September</td><td>1. Digital Citizenship Overview</td><td>Classroom Technology Rules / Online Challenges and Risky Trends</td><td>&nbsp;</td></tr>
+          <tr><td class="m">October</td><td>2. Cyberbullying</td><td>Kindness Counts Online / Cyberbullying and Harassment: A Security Risk</td><td>Campaign 1 (Cybersecurity Awareness Month)</td></tr>
+          <tr><td class="m">November</td><td>3. Digital Footprint / Reputation</td><td>The Digital Trail You Leave Behind / Your Digital Footprint and Personal Security</td><td>&nbsp;</td></tr>
+          <tr><td class="m">December</td><td>4. Digital World Basics / Social Media</td><td>Sharing Accounts Isn't Sharing Toys / Passwords and MFA for Social/Game Accounts</td><td>Campaign 2</td></tr>
+          <tr><td class="m">January</td><td>5. Media Literacy</td><td>Can You Believe Everything Online? / Spotting Fake News and Misinformation</td><td>&nbsp;</td></tr>
+          <tr><td class="m">February</td><td>6. Privacy and Cyber Awareness</td><td>Personal Info: What's Okay to Share? / What is Doxxing?</td><td>Campaign 3</td></tr>
+          <tr><td class="m">March</td><td>7. Age Appropriateness / Tech Laws</td><td>Is That a Robot or a Person? / AI Can Help, But Don't Copy/Paste</td><td>&nbsp;</td></tr>
+          <tr><td class="m">April</td><td>8. Review</td><td>Phishing Made Simple / Don't Get Hooked: Phishing and QR Code Traps</td><td>Campaign 4</td></tr>
+          <tr><td class="m">May</td><td>Export reports and celebrate</td><td>Screen Time Balance / Screen Time and Digital Balance</td><td>Export results, recognize top reporters</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 4. Measure Success -->
+  <div class="card" id="measure">
+    <div class="section-head">
+      <span class="ptag both">Step 4 &middot; Measure Success</span>
+      <h2>Measure Success</h2>
+      <p>Check in on three things throughout the year.</p>
+    </div>
+    <div class="three">
+      <div class="box"><div class="label">Lesson Completion</div><h4>Are students finishing lessons?</h4><p>In Neptune Navigate, use the gradebook, Student Progress Report, Navigate District Report, and Pre-K / K Summary Report.</p></div>
+      <div class="box"><div class="label">Student Engagement</div><h4>Are students participating?</h4><p>Watch Neptune quiz results, class discussion after Legacy Videos, and points and leaderboards in Student Phishing.</p></div>
+      <div class="box"><div class="label">Reporting Behavior</div><h4>Are students reporting phishing?</h4><p>Review campaign results by student, school, and district in the admin portal to see reporting grow over time.</p></div>
+    </div>
+    <p style="margin:16px 0 0;font-size:14px;color:var(--muted);">Completion records can be exported and may help document your district's compliance efforts.</p>
+  </div>
+
+  <!-- Help -->
+  <div class="card help">
+    <h2>Need a Hand?</h2>
+    <p>Your Customer Success Manager can help you choose an offering, confirm access, and plan your rollout.</p>
+  </div>
+
+  <p class="footer-note">&copy; 2026 CyberNut Inc. All rights reserved.</p>
+</div>
+
+<script>
+  var T = "https://teachers.cybernut.com/";
+  function res(folder) {
+    return { guide: T + folder + "/" + folder + "_teacher_guide.pdf", quiz: T + folder + "/" + folder + "_all_pages.pdf" };
+  }
+
+  var BANDS = {
+    elem: {
+      intro: "<b>Elementary lessons</b> pair a short classroom video with a Teacher Guide and a printable quiz, so you can teach each topic with no extra prep.",
+      cats: ["Cybersecurity Basics", "Healthy Tech Use", "Safe Online Behavior", "Data Privacy & Protection", "Engaging AI Safely", "Media Literacy", "Device/Account Security"],
+      mods: [
+        { c: "Cybersecurity Basics", t: "Don't Click That!", d: "3:45", f: "Don't%20Click%20That", s: "Learn why it's important to think before clicking on links or buttons online. Students learn to recognize suspicious links and avoid potential online dangers.", o: ["Identify suspicious links and buttons", "Understand consequences of clicking unknown links", "Practice safe clicking habits"] },
+        { c: "Healthy Tech Use", t: "When Tech Makes You Tired", d: "4:12", f: "when%20tech%20makes%20you%20tired", s: "Explore how too much screen time can affect our bodies and minds. Students learn to recognize signs of tech fatigue and discover healthy habits for balanced technology use.", o: ["Recognize signs of screen fatigue", "Understand how screens affect sleep and mood", "Learn healthy tech break strategies"] },
+        { c: "Safe Online Behavior", t: "Kindness Counts Online", d: "3:28", f: "Kindness%20Counts%20Online", s: "Discover why being kind online is just as important as being kind in person. Students learn about digital citizenship and treating others with respect in online spaces.", o: ["Understand impact of words online", "Practice respectful digital communication", "Recognize and respond to cyberbullying"] },
+        { c: "Data Privacy & Protection", t: "Personal Info: What's Okay to Share?", d: "4:05", f: "Personal%20Info%20Whats%20Okay%20to%20Share", s: "Learn the difference between information that's safe to share and information that should stay private. Students discover how to protect their personal details online.", o: ["Distinguish private vs. shareable information", "Understand why personal data matters", "Make smart sharing decisions"] },
+        { c: "Cybersecurity Basics", t: "Phishing Made Simple", d: "3:52", f: "phishing%20made%20simple", s: "Understand what phishing is and how to spot it. Students learn to identify tricky messages that try to steal information and what to do when they encounter them.", o: ["Define phishing in simple terms", "Spot red flags in suspicious messages", "Know what to do when phished"] },
+        { c: "Engaging AI Safely", t: "Is That a Robot or a Person?", d: "4:18", f: "Is%20That%20a%20Robot%20or%20a%20Person%3F", s: "Explore the world of artificial intelligence and learn how to tell the difference between AI and real people online. Students discover how to interact safely with AI technology.", o: ["Understand what AI is", "Identify AI vs. human interactions", "Learn safe AI interaction practices"] },
+        { c: "Data Privacy & Protection", t: "The Digital Trail You Leave Behind", d: "3:35", f: "the%20digital%20trail%20you%20leave%20behind", s: "Learn about digital footprints and how our online activities create a trail. Students understand why it's important to think about what they do online.", o: ["Understand digital footprints", "Recognize how data is collected", "Think before posting online"] },
+        { c: "Media Literacy", t: "Check with a Grown Up", d: "3:42", f: "Check%20with%20a%20grownup", s: "Learn when and why to ask a trusted adult for help online. Students discover situations where checking with a grown up is the smart choice.", o: ["Identify when to ask for help", "Know who trusted adults are", "Feel confident asking questions"] },
+        { c: "Safe Online Behavior", t: "Classroom Technology Rules", d: "4:01", f: "Classroom%20technology%20Rules", s: "Understand the important rules for using technology in the classroom. Students learn how to be responsible digital citizens at school.", o: ["Follow classroom tech guidelines", "Respect shared devices", "Use technology responsibly at school"] },
+        { c: "Healthy Tech Use", t: "Focus First, Fun Later", d: "3:55", f: "Focus%20First%20Fun%20Later", s: "Learn about managing distractions and staying focused when using technology. Students discover strategies for prioritizing tasks before entertainment.", o: ["Recognize digital distractions", "Prioritize tasks over entertainment", "Build healthy tech habits"] },
+        { c: "Media Literacy", t: "Can You Believe Everything Online?", d: "4:22", f: "Can%20You%20believe%20everything%20online", s: "Explore critical thinking skills for evaluating online information. Students learn to question what they see and read on the internet.", o: ["Question online information", "Identify misinformation", "Verify facts before sharing"] },
+        { c: "Device/Account Security", t: "Taking Care of Your Device", d: "3:38", f: "taking%20care%20of%20your%20device", s: "Learn how to properly care for and protect your devices. Students discover best practices for keeping their technology safe and working well.", o: ["Handle devices with care", "Keep devices clean and charged", "Report problems to adults"] },
+        { c: "Device/Account Security", t: "Sharing Accounts Isn't Sharing Toys", d: "3:48", f: "Sharing%20Accounts%20Isnt%20Sharing%20Toys", s: "Understand why keeping accounts private is important. Students learn the difference between sharing toys and sharing passwords or accounts.", o: ["Keep passwords private", "Understand account ownership", "Know when sharing isn't safe"] },
+        { c: "Healthy Tech Use", t: "Screen Time Balance", d: "4:08", f: "Screen%20Time%20Balance", s: "Learn about balancing screen time with other activities. Students discover ways to enjoy technology while still making time for play, family, and rest.", o: ["Balance screen and non screen activities", "Create healthy daily routines", "Enjoy tech without overusing it"] }
+      ]
+    },
+    mshs: {
+      intro: "<b>Middle and High School lessons</b> tackle the real situations older students face, from social media and gaming to scams, AI tools, and digital wellness. Each one is a short classroom video with clear learning outcomes.",
+      cats: ["Media Literacy", "Device/Account Security", "Healthy Tech Use", "Cybersecurity Basics", "Safe Online Behavior", "Data Privacy & Protection", "Engaging AI Safely"],
+      mods: [
+        { c: "Media Literacy", t: "Echo Chambers & Filter Bubbles: Breaking Out of Your Feed", s: "How social media algorithms create filter bubbles by tracking engagement and serving similar content. Students learn how echo chambers form and why they make users vulnerable to misinformation.", o: ["Understand how algorithms create filter bubbles and echo chambers", "Recognize the importance of diversifying information sources", "Apply critical thinking by fact checking content before sharing"] },
+        { c: "Media Literacy", t: "Hidden Agendas: Ads, Clickbait, and Sponsored Content", s: "Students learn to identify online advertising, including clickbait and sponsored content, and how these tactics are designed to capture attention and influence behavior.", o: ["Identify clickbait by recognizing exaggerated headlines and thumbnails", "Distinguish sponsored content from editorial content by looking for disclosure labels", "Evaluate sources to determine credibility before engaging with content"] },
+        { c: "Media Literacy", t: "Spotting Fake News & Misinformation", s: "How fake news and misinformation are engineered to trigger emotional responses. Students learn to recognize manipulated content, including doctored images and deepfakes, and the risks of clicking malicious links.", o: ["Recognize emotional manipulation tactics used in misinformation", "Apply the stop and analyze method before clicking or sharing content", "Verify information sources using reliable fact checking practices"] },
+        { c: "Device/Account Security", t: "Passwords & MFA for Social/Game Accounts", s: "Essential account security, including the risks of weak and reused passwords. Students learn how hackers use brute force attacks and why strong passphrases and multi factor authentication matter.", o: ["Create strong passphrases using 16+ characters and unrelated words", "Use password managers to keep unique credentials for each account", "Enable multi factor authentication using authenticator apps"] },
+        { c: "Healthy Tech Use", t: "Why Apps Hook You: The Science of Digital Addiction", s: "The psychology behind app engagement, including how notifications, streaks, and rewards trigger dopamine responses. Students learn to recognize these techniques and build healthier habits.", o: ["Understand how apps use psychological techniques to maximize engagement", "Manage notifications to reduce digital distractions", "Set boundaries including screen time limits and device free zones"] },
+        { c: "Device/Account Security", t: "Mobile Phone Security 101", s: "Fundamental mobile security practices. Students learn about the risks of excessive app permissions, why software updates matter, and how to prepare for device loss or theft.", o: ["Evaluate and manage app permissions to protect personal data", "Understand the importance of installing security updates promptly", "Set up strong passcodes and Find My Device"] },
+        { c: "Cybersecurity Basics", t: "The Dangers of Piracy & \"Free\" Streaming", s: "The cybersecurity risks of piracy and illegal streaming sites. Students learn how these sites deliver spyware, ransomware, and botnet software, and why legitimate sources matter.", o: ["Understand the security risks of piracy and unauthorized streaming sites", "Recognize suspicious websites and respond by closing them", "Keep software and antivirus protection up to date"] },
+        { c: "Safe Online Behavior", t: "Online Challenges and Risky Trends: What's the Real Cost?", s: "The real world consequences of viral challenges and dangerous trends. Students learn to weigh risks including physical harm, legal consequences, and lasting damage to their digital reputation.", o: ["Evaluate content before posting using the future audience test", "Recognize peer pressure and understand that consequences outlast trends", "Identify safe ways to participate in online trends"] },
+        { c: "Data Privacy & Protection", t: "Your Digital Footprint & Personal Security", s: "How online activity creates a permanent footprint that can be collected, sold, and exploited. Students learn how data brokers and scammers use personal information for targeted attacks.", o: ["Understand how digital footprints are created and monetized", "Use privacy settings including private profiles and disabled location services", "Apply the future rule before posting"] },
+        { c: "Safe Online Behavior", t: "AI Friends: What's the Catch?", s: "The privacy and emotional risks of AI companion apps. Students learn that chatbots are built for engagement, that conversations are logged as data, and how these tools can affect real world relationships.", o: ["Understand that AI companions are algorithms, not genuine relationships", "Recognize data collection practices and avoid sharing sensitive information", "Prioritize human relationships over AI interactions"] },
+        { c: "Data Privacy & Protection", t: "Privacy on Social Media: Stop Oversharing", s: "The privacy risks of oversharing. Students learn how location data, photos of valuables, and personal documents can be exploited by stalkers, thieves, and identity thieves.", o: ["Understand the risks of sharing location data and valuable possessions online", "Disable geolocation and set profiles to private", "Practice selective sharing using close friends lists"] },
+        { c: "Data Privacy & Protection", t: "What is Doxxing? How Your Info Is Used Against You", s: "Doxxing is the practice of collecting and exposing someone's personal information online. Students learn how small details can be pieced together to reveal identities and how to protect themselves.", o: ["Understand how doxxers compile personal information from online sources", "Avoid using real names in usernames", "Keep separate online identities across platforms to limit exposure"] },
+        { c: "Cybersecurity Basics", t: "Don't Get Hooked: Phishing & QR Code Traps", s: "Phishing attacks and the growing threat of malicious QR codes. Students learn to recognize social engineering tactics that create urgency and fear, and how to verify links and QR codes first.", o: ["Recognize phishing tactics including urgency, fear, and impersonation", "Hover over links to check URLs before clicking", "Spot malicious QR codes by checking for stickers or suspicious destinations"] },
+        { c: "Engaging AI Safely", t: "AI Can Help, But Don't Copy/Paste", s: "Appropriate use of AI tools in school. Students learn the difference between AI as a learning aid and academic dishonesty, and how to brainstorm with AI while keeping their own voice.", o: ["Understand appropriate uses of AI including brainstorming and concept explanation", "Maintain academic integrity by expressing ideas in their own words", "Follow school policies on AI use and academic honesty"] },
+        { c: "Healthy Tech Use", t: "Screen Time and Digital Balance: Taking Control", s: "Digital wellness and how apps are designed to maximize engagement. Students learn to recognize their own usage patterns and find a healthier balance with offline activities.", o: ["Recognize personal digital habits and time consuming apps", "Set practical limits including notification management and app organization", "Establish device free times and prioritize offline activities"] },
+        { c: "Safe Online Behavior", t: "Cyberbullying & Harassment: A Security Risk", s: "Cyberbullying as both an emotional and security threat. Students learn that harassers may try to access accounts or expose private information, and how to respond with a clear protocol.", o: ["Document harassment with screenshots that show usernames and timestamps", "Block and report without engaging with attackers", "Change passwords and enable MFA during incidents"] },
+        { c: "Cybersecurity Basics", t: "Financial Scams on Venmo, Depop, and Cash App", s: "Common scams targeting young users on payment apps and marketplaces. Students learn to identify advance fee, overpayment, and fake investment scams, and that digital payments can't be reversed.", o: ["Recognize advance fee scams and know legitimate jobs never require payment", "Identify overpayment scams and never refund strangers", "Verify transactions in the app instead of trusting screenshots"] },
+        { c: "Engaging AI Safely", t: "AI Knows A Lot, But Not Everything", s: "The limits of AI systems, which generate responses through pattern prediction rather than understanding. Students learn that AI can sound confident and still be wrong, so human verification matters.", o: ["Understand that AI predicts patterns rather than comprehending information", "Verify AI generated information using reliable sources", "Take responsibility for final answers instead of relying only on AI"] },
+        { c: "Device/Account Security", t: "Safe Online Gaming: Protect Your Account", s: "Threats targeting gamers, including free item phishing scams and social engineering through voice chat. Students learn to protect their gaming accounts and spot common attacks.", o: ["Enable multi factor authentication as the main defense against account takeover", "Use strong, unique passwords stored in a password manager", "Recognize and avoid free item scams sent through direct messages"] }
+      ]
+    }
+  };
+
+  var state = { band: "elem", cat: "All", q: "" };
+  var grid = document.getElementById("grid");
+  var chips = document.getElementById("chips");
+  var countEl = document.getElementById("count");
+  var emptyEl = document.getElementById("empty");
+  var introEl = document.getElementById("libIntro");
+  var searchEl = document.getElementById("search");
+
+  function esc(s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
+
+  function renderChips() {
+    var cats = ["All"].concat(BANDS[state.band].cats);
+    chips.innerHTML = cats.map(function (c) {
+      return '<button class="chip' + (c === state.cat ? ' active' : '') + '" data-cat="' + esc(c) + '">' + (c === "All" ? "All Topics" : esc(c)) + '</button>';
+    }).join("");
+  }
+
+  function render() {
+    var band = BANDS[state.band];
+    introEl.innerHTML = band.intro;
+    var q = state.q.toLowerCase();
+    var list = band.mods.filter(function (m) {
+      var okCat = state.cat === "All" || m.c === state.cat;
+      var hay = (m.t + " " + m.s + " " + m.c + " " + m.o.join(" ")).toLowerCase();
+      return okCat && (!q || hay.indexOf(q) !== -1);
+    });
+    countEl.textContent = list.length + (list.length === 1 ? " lesson" : " lessons");
+    emptyEl.style.display = list.length ? "none" : "block";
+    grid.innerHTML = list.map(function (m) {
+      var r = m.f ? res(m.f) : null;
+      var links = r
+        ? '<a href="' + r.guide + '" target="_blank" rel="noopener">Teacher Guide</a><a class="q" href="' + r.quiz + '" target="_blank" rel="noopener">Quiz</a>'
+        : '<span class="note">Video available in the Teacher Portal</span>';
+      var dur = m.d ? '<span class="dur">&#9654; ' + m.d + '</span>' : '<span class="dur">&#9654; Video</span>';
+      return '<div class="mod">' +
+        '<div class="meta"><span class="cat">' + esc(m.c) + '</span>' + dur + '</div>' +
+        '<h4>' + esc(m.t) + '</h4>' +
+        '<p>' + esc(m.s) + '</p>' +
+        '<div class="ko">Key Learning Outcomes</div>' +
+        '<ul>' + m.o.map(function (o) { return '<li>' + esc(o) + '</li>'; }).join("") + '</ul>' +
+        '<div class="res">' + links + '</div>' +
+      '</div>';
+    }).join("");
+  }
+
+  document.querySelectorAll(".tab[data-band]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll(".tab[data-band]").forEach(function (b) { b.classList.remove("active"); });
+      btn.classList.add("active");
+      state.band = btn.getAttribute("data-band");
+      state.cat = "All";
+      renderChips();
+      render();
+    });
+  });
+  chips.addEventListener("click", function (e) {
+    var c = e.target.getAttribute && e.target.getAttribute("data-cat");
+    if (!c) return;
+    state.cat = c;
+    renderChips();
+    render();
+  });
+  searchEl.addEventListener("input", function () { state.q = searchEl.value.trim(); render(); });
+
+  renderChips();
+  render();
+
+  /* Student courses by grade */
+  var ELEM_TRAITS = [["Safe", "Strangers online, apps and websites with permission, never share personal info, never lie about your age"], ["Responsible", "Wise choices online, take care of devices"], ["Respectful", "Be kind online, don't be a cyberbully"]];
+  var GRADES = {
+    le: {
+      intro: "<b>Lower Elementary, Grades 1 to 3.</b> Each module is a set of short video parts followed by a 5 question knowledge check.",
+      mods: [
+        { n: "Digital Citizenship Overview", p: [["v", "Part 1 &middot; 1:48"], ["v", "Part 2 &middot; 2:53"], ["q", "5 Question Check"]], t: ELEM_TRAITS },
+        { n: "Cyberbullying", p: [["v", "Part 1 &middot; 2:31"], ["v", "Part 2 &middot; 2:18"], ["v", "Part 3 &middot; 1:48"], ["q", "5 Question Check"]], t: [["Topics", "Definition, examples, and the 4 roles in cyberbullying"], ["4 Step Plan", "Stop, Show, Block, Share"]] },
+        { n: "Digital Footprint", p: [["v", "Part 1 &middot; 1:45"], ["v", "Part 2 &middot; 2:31"], ["v", "Part 3 &middot; 2:39"], ["q", "5 Question Check"]], t: [["Topics", "Meaning of permanent, reputation, online video games"], ["3 P's", "Privacy, Positive, Permission"]] },
+        { n: "Digital World Basics", p: [["v", "Part 1 &middot; 3:58"], ["v", "Part 2 &middot; 3:29"], ["q", "5 Question Check"]], t: [["Topics", "Strong passwords, online safety, online gaming"]] },
+        { n: "Media Literacy", p: [["v", "Part 1 &middot; 2:17"], ["v", "Part 2 &middot; 3:04"], ["q", "5 Question Check"]], t: [["Topics", "Questions to ask yourself: who is the message for, why did they make it, who made it and can they be trusted"], ["Rule", "Pop ups: skip it, don't click it"]] },
+        { n: "Privacy and Cyber Awareness", p: [["v", "Part 1 &middot; 2:51"], ["v", "Part 2 &middot; 3:34"], ["q", "5 Question Check"]], t: [["Topics", "Examples of private information, permission and strong passwords, online strangers, usernames and images"]] },
+        { n: "Age Appropriateness", p: [["v", "Part 1 &middot; 2:18"], ["v", "Part 2 &middot; 1:53"], ["v", "Part 3 &middot; 3:17"], ["q", "5 Question Check"]], t: [["Topics", "Age restrictions, COPPA, never lie about your age online"]] },
+        { n: "Review", p: [["v", "Review &middot; 4:46"], ["q", "5 Question Check"]], t: [["Recap", "Safe, Responsible, and Respectful, including passwords, rules online, and the 3 P's"]] }
+      ]
+    },
+    ue: {
+      intro: "<b>Upper Elementary, Grades 4 and 5.</b> Each module is a set of short video parts followed by a 10 question quiz.",
+      mods: [
+        { n: "Digital Citizenship Overview", p: [["v", "Part 1 &middot; 1:34"], ["v", "Part 2 &middot; 2:35"], ["q", "10 Question Quiz"]], t: ELEM_TRAITS },
+        { n: "Cyberbullying", p: [["v", "Part 1 &middot; 2:30"], ["v", "Part 2 &middot; 1:38"], ["v", "Part 3 &middot; 1:39"], ["q", "10 Question Quiz"]], t: [["Topics", "Definition, examples, and the 4 roles in cyberbullying"], ["4 Step Plan", "Stop, Show, Block, Share"]] },
+        { n: "Digital Footprint", p: [["v", "Part 1 &middot; 2:16"], ["v", "Part 2 &middot; 1:55"], ["v", "Part 3 &middot; 2:06"], ["q", "10 Question Quiz"]], t: [["Topics", "Nothing is private and everything is permanent, screenshots, online video games"], ["3 P's", "Privacy, Positive, Permission"]] },
+        { n: "Digital World Basics", p: [["v", "Part 1 &middot; 4:31"], ["v", "Part 2 &middot; 3:50"], ["q", "10 Question Quiz"]], t: [["Topics", "Strong passwords, online safety, online gaming"]] },
+        { n: "Media Literacy", p: [["v", "Part 1 &middot; 3:54"], ["v", "Part 2 &middot; 4:26"], ["q", "10 Question Quiz"]], t: [["Framework", "Access the information, Analyze where it comes from, Evaluate if it is reliable, Create different forms of media"]] },
+        { n: "Privacy and Cyber Awareness", p: [["v", "Part 1 &middot; 2:21"], ["v", "Part 2 &middot; 4:36"], ["q", "10 Question Quiz"]], t: [["Topics", "Personally identifiable information, permission and strong passwords, online strangers, usernames and images"]] },
+        { n: "Age Appropriateness", p: [["v", "Part 1 &middot; 4:33"], ["v", "Part 2 &middot; 3:22"], ["q", "10 Question Quiz"]], t: [["Topics", "Age restrictions, COPPA, never lie about your age online, social media challenges"]] },
+        { n: "Review", p: [["v", "Review &middot; 5:15"], ["q", "10 Question Quiz"]], t: [["Recap", "Safe, Responsible, and Respectful, including COPPA and following age restrictions"]] }
+      ]
+    },
+    jh: {
+      intro: "<b>Junior High, Grades 6 to 8.</b> Each module has one lesson video, two short readings, and a 10 question quiz.",
+      mods: [
+        { n: "Digital Citizenship Overview", p: [["v", "Video &middot; 6:12"], ["r", "How to Be a Good Digital Citizen"], ["r", "Showing Respect Online"], ["q", "10 Question Quiz"]], t: [["Traits", "Honesty, Compassion, Respect, Responsibility, Courage"], ["Topics", "Age restrictions, impersonation, think before you post, nothing is private, obeying laws, public vs. private"]] },
+        { n: "Cyberbullying", p: [["v", "Video &middot; 5:45"], ["r", "How to Avoid Being a Target of Cyberbullying"], ["r", "How to Be an Upstander"], ["q", "10 Question Quiz"]], t: [["Topics", "Definition, examples, and the 4 roles in cyberbullying"], ["5 Step Plan", "Stop, Screenshot, Block, Tell, Share"]] },
+        { n: "Digital Reputation", p: [["v", "Video &middot; 6:21"], ["r", "How Much Do Our Words Matter?"], ["r", "Understanding Your Digital Footprint"], ["q", "10 Question Quiz"]], t: [["Topics", "Digital tattoo, words matter, screenshots, impact on your future"], ["Reputation", "Think before you post, set and respect boundaries, stay positive"]] },
+        { n: "Social Media", p: [["v", "Video &middot; 6:07"], ["r", "Words Have Impact"], ["r", "Kindness Goes Viral"], ["q", "10 Question Quiz"]], t: [["Topics", "COPPA, don't share personal info, privacy settings, think before you post, you are more than a number, set boundaries"]] },
+        { n: "Media Literacy", p: [["v", "Video &middot; 8:15"], ["r", "Navigating the Information Age Using the SIFT Method"], ["r", "Reverse Image Search"], ["q", "10 Question Quiz"]], t: [["Topics", "Analyzing media, searches and web addresses, misinformation, disinformation, and AI tools, validating sources"], ["Evaluate", "SIFT method, lateral reading, fact checking"]] },
+        { n: "Privacy and Cyber Awareness", p: [["v", "Video &middot; 7:22"], ["r", "Passkeys Are the New Login"], ["r", "Watch Out for Smishing Scams"], ["q", "10 Question Quiz"]], t: [["Topics", "Private vs. public settings, chat rooms and online gaming, strong passwords, secure websites, don't click links"]] },
+        { n: "Tech Laws", p: [["v", "Video &middot; 10:13"], ["r", "Nothing About Sexting Is Safe"], ["r", "Copyright and Fair Use"], ["q", "10 Question Quiz"]], t: [["Topics", "Plagiarism, COPPA, online impersonation, inappropriate photos and sexting, cyberbullying"]] },
+        { n: "Review", p: [["v", "Video &middot; 7:11"], ["r", "Netiquette"], ["r", "AI Scams"], ["q", "10 Question Quiz"]], t: [["Recap", "Honesty, Compassion, Respect, Responsibility, and Courage, including taking a stand against cyberbullying"]] }
+      ]
+    },
+    hs: {
+      intro: "<b>High School, Grades 9 to 12.</b> Each module has one lesson video, two short readings, and a 10 question quiz.",
+      mods: [
+        { n: "Digital Citizenship Overview", p: [["v", "Video &middot; 7:11"], ["r", "The Sleepless Generation: How Social Media Impacts Teens' Health"], ["r", "How Teens and Parents Approach Screen Time"], ["q", "10 Question Quiz"]], t: [["Traits", "Honesty, Compassion, Respect, Responsibility, Courage"], ["Topics", "Sharing accurate information, impersonation, words matter, nothing is private, obeying laws, public vs. private"]] },
+        { n: "Cyberbullying", p: [["v", "Video &middot; 7:29"], ["r", "Am I Others?"], ["r", "Athletes and Social Media: A Double Edged Sword"], ["q", "10 Question Quiz"]], t: [["Topics", "Definition, examples, and the 4 roles in cyberbullying"], ["5 Step Plan", "Stop, Screenshot, Block, Tell, Share"]] },
+        { n: "Digital Reputation", p: [["v", "Video &middot; 8:02"], ["r", "Think Before You Post"], ["r", "The Invisible Trail: Understanding Your Digital Footprint"], ["q", "10 Question Quiz"]], t: [["Topics", "Words matter, impact on your future"], ["Reputation", "Think before you post, don't overshare, set boundaries, stay positive"]] },
+        { n: "Social Media", p: [["v", "Video &middot; 8:13"], ["r", "Safety"], ["r", "Social Networking Advice for Teens"], ["q", "10 Question Quiz"]], t: [["Topics", "Scope of social media, personal info, privacy settings, think before you post, you are more than a number, set boundaries"]] },
+        { n: "Media Literacy", p: [["v", "Video &middot; 8:25"], ["r", "Navigating the Information Age Using the SIFT Method"], ["r", "Reverse Image Search"], ["q", "10 Question Quiz"]], t: [["Topics", "Analyzing media, misinformation and disinformation, AI tools and reverse image search, validating sources"], ["Evaluate", "SIFT method, lateral reading, fact checking"]] },
+        { n: "Privacy and Cyber Awareness", p: [["v", "Video &middot; 9:20"], ["r", "The Password Pitfalls We All Fall For"], ["r", "Privacy Issues in the World of AI"], ["q", "10 Question Quiz"]], t: [["Topics", "Private vs. public settings, passwords and passphrases, password managers, two factor authentication, don't click links"]] },
+        { n: "Tech Laws", p: [["v", "Video &middot; 10:29"], ["r", "The Dangers of Deepfakes"], ["r", "The Rise of Deepfakes"], ["q", "10 Question Quiz"]], t: [["Intellectual Property", "Plagiarism, copyright, fair use, artificial intelligence"], ["Cyber Crimes", "Harassment, cyberbullying, online impersonation, sextortion"]] },
+        { n: "Review", p: [["v", "Video &middot; 7:42"], ["r", "The Importance of Screentime Boundaries"], ["r", "The Risks of Oversharing"], ["q", "10 Question Quiz"]], t: [["Recap", "The five traits plus the SIFT method, protecting your reputation, controlling your social media, and ethical use of AI"]] }
+      ]
+    }
+  };
+
+  var gGrid = document.getElementById("gradeGrid");
+  var gIntro = document.getElementById("gradeIntro");
+  function renderGrade(g) {
+    var d = GRADES[g];
+    gIntro.innerHTML = d.intro;
+    gGrid.innerHTML = d.mods.map(function (m, i) {
+      return '<div class="mod">' +
+        '<div class="lnum">Lesson ' + (i + 1) + '</div>' +
+        '<h4>' + m.n + '</h4>' +
+        '<div class="parts">' + m.p.map(function (p) { return '<span class="part ' + p[0] + '">' + p[1] + '</span>'; }).join("") + '</div>' +
+        m.t.map(function (t) { return '<p class="topics"><b>' + t[0] + ':</b> ' + t[1] + '</p>'; }).join("") +
+      '</div>';
+    }).join("");
+  }
+  document.querySelectorAll("#gradeTabs .tab").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll("#gradeTabs .tab").forEach(function (b) { b.classList.remove("active"); });
+      btn.classList.add("active");
+      renderGrade(btn.getAttribute("data-g"));
+    });
+  });
+  renderGrade("le");
+
+  /* In-page links: scroll without changing the URL so they work inside embeds like Dock */
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      var el = document.getElementById(a.getAttribute("href").slice(1));
+      if (!el) return;
+      e.preventDefault();
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+</script>
+</body>
+</html>
